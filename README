@@ -1,4 +1,12 @@
 == README
 
+To set up and run:
+    Need: Ruby 1.9.x and Rails 3.x
+In a unix shell:
+    'cd barcmap'
+    'bundle install'
+    'rails server'
+then navigate in your browser to 'http://localhost:3000'
+
 TODO: Fill this in once my group decides to have time to meet up.
       Until then: keep coding!
