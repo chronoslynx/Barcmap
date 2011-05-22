@@ -6,22 +6,24 @@ html
     = javascript_include_tag :defaults, 'jquery-1.5.1.min', 'app'
     = csrf_meta_tag
     header
-      p Welcome!
-    #user_nav
-      - if current_user
-        = "Signed in as #{current_user.login}. Not you?"
-        = link_to "Sign out", logout_path
-      - else
-        = link_to "Sign in", new_user_session_path
-        ' 
-        = link_to " New User?", new_user_path
+      p Barcelona Adventure Map
   body.center
     = yield
   footer.center
       br/
       br/
-      = link_to "Home", '/'
-      ' , 
-      = link_to "About", 'about' 
-      ' ,  
-      = link_to "Contact ", 'contact'
+      p.alignleft
+        = link_to "Home", '/'
+        ' , 
+        = link_to "About", 'about' 
+        ' ,  
+        = link_to "Contact ", 'contact'
+      p.alignright
+        - if current_user
+          = "Signed in as #{current_user.login}. Not you? "
+          = link_to "Sign out", logout_path
+        - else
+          = link_to "Sign in", new_user_session_path
+          ' 
+          = link_to " New User?", new_user_path
+      p#user_nav
