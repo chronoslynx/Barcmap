@@ -10,12 +10,14 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.xml
   def show
+    session[:return_to] = request.referer
     @user = User.find(params[:id])
   end
 
   # GET /users/new
   # GET /users/new.xml
   def new
+    session[:return_to] = request.referer
     @user = User.new
   end
 

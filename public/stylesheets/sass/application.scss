@@ -5,9 +5,11 @@ $blue:    #0a648b;
 $green:   #2b9b08;
 $yellow:  #ffbc00;
 $lgrey:   #f5f5f5;
-// Mixins
+$dgrey:   #ddd;
+/* Mixins
+========================================*/
 
-@mixin rounded($radius: 5px) {
+@mixin rounded($radius: 3px) {
     border-radius: $radius;
     -moz-border-radius: $radius;
     -webkit-border-radius: $radius;
@@ -17,6 +19,8 @@ $lgrey:   #f5f5f5;
     float: $side;
 }
 
+/* Classes
+========================================*/
 .alignleft {
     @include align(left);
 }
@@ -32,34 +36,62 @@ $lgrey:   #f5f5f5;
     width: 80em;
 }
 
+
 .imgcenter {
     @include rounded();
     display: block;
     //top right bottom left
     margin: 0 auto 20px auto;
-    height: 150px;
+    //height: 150px;
 }
 
-header {
-    background-color: $red;
-    @include rounded(3px);
-    width: 80em;
-    margin: {
-        top:   20px;
-        left:  auto;
-        right: auto;
-    }
-    p {
-        //width: 80em;
-        color: #ffffff;
-        padding: 25px;    
-        border:1px solid lighten($red, 15%); 
-        @include rounded(3px);   
-    }
-
+.simple_overlay {
+	
+	/* must be initially hidden */
+	display:none;
+	
+	/* place overlay on top of other elements */
+	z-index:10000;
+	
+	/* styling */
+	background-color:#333;
+	
+	width:675px;	
+	min-height:200px;
+	border:1px solid #666;
+	
+	/* CSS3 styling for latest browsers */
+	-moz-box-shadow:0 0 90px 5px #000;
+	-webkit-box-shadow: 0 0 90px #000;	
 }
 
+/* close button positioned on upper right corner */
+.simple_overlay .close {
+	background-image: "images/close.png";
+	position:absolute;
+	right:-15px;
+	top:-15px;
+	cursor:pointer;
+	height:35px;
+	width:35px;
+}
 
+.details {
+	position:absolute;
+	top:15px;
+	right:15px;
+	font-size:11px;
+	color:#fff;
+	width:150px;
+}
+
+.details h3 {
+	color:#aba;
+	font-size:15px;
+	margin:0 0 -10px 0;
+}
+/* IDs
+========================================*/
 #inset {
     //width: 500px;
 	//margin:0px auto;
@@ -67,7 +99,46 @@ header {
 	border:1px solid #ccc;
 	background: $lgrey;
 }
+#clear {
+    clear: both;
+}
 
+/* Elements
+========================================*/
+header {
+    background-color: $red;
+    width: 80em;
+    @include rounded();
+    margin: {
+        top:   20px;
+        left:  auto;
+        right: auto;
+    }
+    p {
+        color: #ffffff;
+        padding: 25px;    
+        @include rounded(3px);    
+        border:1px solid lighten($red, 15%); 
+    }
+
+}
+
+footer {
+    background-color: $lgrey;
+    border-top-style: solid; 
+    border-top-width: 1px;
+    border-top-color: $dgrey;
+    width: 80em;
+    @include rounded();
+    margin: {
+        left:  auto;
+        right: auto;
+    }
+}
+.footerinfo {
+    font-size: 0.75em;
+    
+}
 // stuff from base.css lies below
 /* Table of Contents
 ==================================================
@@ -85,7 +156,7 @@ header {
 
 /* #Reset & Basics (Inspired by E. Meyers)
 ================================================== */
-	html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+/*	html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 		margin: 0;
 		padding: 0;
 		border: 0;
@@ -108,7 +179,7 @@ header {
 		border-collapse: collapse;
 		border-spacing: 0; }
 		
-		
+*/		
 /* #Basic Styles
 ================================================== */
 	body { 
@@ -135,7 +206,7 @@ header {
 	h6 { font-size: 14px; line-height: 21px; }
 	.subheader { color: #777; }
 
-	p { margin: 0 0 20px; }
+	//p { margin: 0 0 0px; }
 	p img { margin: 0; }
 	p.lead { font-size: 21px; line-height: 27px; color: #777;  }
 	

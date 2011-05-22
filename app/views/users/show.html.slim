@@ -14,6 +14,6 @@ p
 p
   b Persistence token:
   = @user.persistence_token
-= link_to 'Edit', edit_user_path(@user)
+| #{link_to 'Edit', edit_user_path(@user)} #{link_to 'Back', @return_to} 
 | \
 | \#{link_to 'Back', users_path}
