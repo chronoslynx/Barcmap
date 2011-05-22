@@ -1,11 +1,67 @@
-/* 
-* Skeleton V1.0
-* Created by Dave Gamache
-* www.getskeleton.com
-* 5/15/2011
-*/
+//Application colorscheme
+$red:     #fa1a39;
+$orange:  #ff881a;
+$blue:    #0a648b;
+$green:   #2b9b08;
+$yellow:  #ffbc00;
+$lgrey:   #e6e6e6;
+// Mixins
 
-/* Table of Content
+@mixin rounded($radius: 5px) {
+    border-radius: $radius;
+    -moz-border-radius: $radius;
+    -webkit-border-radius: $radius;
+}
+
+.center {
+    margin-top: 20px;
+    
+    margin-left: auto;   
+    margin-right: auto;  
+    width: 80em;
+}
+
+.imgcenter {
+    @include rounded();
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header {
+    background-color: $red;
+    @include rounded(3px);
+    width: 80em;
+    margin: {
+        top:   20px;
+        left:  auto;
+        right: auto;
+    }
+    p {
+        color: #ffffff;
+        padding: 20px;    
+        border:1px solid lighten($red, 15%); 
+        @include rounded(3px);   
+    }
+
+}
+
+#user_nav {
+    //padding: 20px;
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+#inset-div {
+    width:500px;
+	margin:0px auto;
+	padding:30px;
+	border:1px solid #ccc;
+	background: $lgrey;
+}
+
+// stuff from base.css lies below
+/* Table of Contents
 ==================================================
 	#Reset & Basics
 	#Basic Styles
@@ -19,10 +75,9 @@
 	#Forms
 	#Misc */
 
-
 /* #Reset & Basics (Inspired by E. Meyers)
 ================================================== */
-	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 		margin: 0;
 		padding: 0;
 		border: 0;
@@ -313,4 +368,3 @@
 	.add-bottom { margin-bottom: 20px !important; }
 
 		
-	

@@ -6,11 +6,19 @@ gem 'rails', '3.0.7'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+#gem 'jquery-rails'
+# authentication framework
 gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
 gem "rails3-generators"
+
+# slim-lang HTML templating engine
 gem "slim", :require => "slim"
 gem "slim-rails"
 
+gem "formtastic"
+gem "sass"
+#coffeescript support
+gem "barista"
 # Use unicorn as the web server
 # gem 'unicorn'
 
