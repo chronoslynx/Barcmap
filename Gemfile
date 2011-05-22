@@ -7,6 +7,7 @@ gem 'rails', '3.0.7'
 
 gem 'sqlite3'
 #gem 'jquery-rails'
+
 # authentication framework
 gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
 gem "rails3-generators"
@@ -19,6 +20,9 @@ gem "formtastic"
 gem "sass"
 #coffeescript support
 gem "barista"
+
+#social networking integration
+#gem 'facebooker'
 # Use unicorn as the web server
 # gem 'unicorn'
 

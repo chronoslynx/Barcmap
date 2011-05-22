@@ -6,6 +6,7 @@ Barcmap::Application.routes.draw do
   root :to => 'home#index'
   match 'about' => 'home#about'
   match 'contact' => 'home#contact'
+  match 'profile/:id' => 'users#show/:id'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

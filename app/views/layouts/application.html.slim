@@ -1,17 +1,33 @@
 ! doctype
-html
+html.grey
   head
     title Barcmap
     = stylesheet_link_tag :all
     = javascript_include_tag 'jquery-1.5.1.min', 'app', 'jquery-ui.min', 'jquery.simplemodal'
     = csrf_meta_tag
-    header
-      p Barcelona Adventure Map
-    #clear
-  body.center
+    a href='/'
+      header
+        p Bork, bork, bork!
+      #clear
+      .usernav
+        .alignright
+           = link_to "Home", '/'
+           '  
+           = link_to "About", '/about' 
+           '   
+           = link_to "Contact", '/contact'
+           ' 
+           = link_to "Map", '/map'
+           ' 
+           - if current_user
+            = link_to "Profile", "/users/#{current_user.id}"
+           - else
+            = link_to " New Here?", new_user_path 
+  body.container
     = yield
+  #clear
   footer.center
-  .footerinfo
+  .footerright
     .alignright
       - if current_user
         = "Signed in as #{current_user.login}. Not you? "
@@ -20,14 +36,15 @@ html
         = link_to "Sign in", new_user_session_path
         ' 
         = link_to " New User?", new_user_path
+  .footerleft
     .alignleft
       = link_to "Home", '/'
       '  
-      = link_to "About", 'about' 
+      = link_to "About", '/about' 
       '   
-      = link_to "Contact", 'contact'
+      = link_to "Contact", '/contact'
       ' 
-      = link_to "Map", 'map'
+      = link_to "Map", '/map'
       ' 
-      = link_to "Users", 'users'
+      = link_to "Users", '/users'
   #clear

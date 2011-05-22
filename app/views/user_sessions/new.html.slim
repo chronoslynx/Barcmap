@@ -1,16 +1,17 @@
-h1 Login
+.sixteen.columns
+  h1 Login
 
-= form_for @user_session, :url => {:action => "create"} do |f|
-  div
-    = f.label :login
-    = f.text_field :login
-  div
-    = f.label :password
-    = f.password_field :password
-  div
-    = f.check_box :remember_me
-    = f.label :remember_me
-  div
-    = f.submit "Login"
-  div
-    =  link_to "New User? Register Here", new_user_path
+  = form_for @user_session, :url => {:action => "create"} do |f|
+    div
+      = f.label :login
+      = f.text_field :login
+    div
+      = f.label :password
+      = f.password_field :password
+    div
+      = f.label :remember_me
+      = f.check_box :remember_me
+    div
+      = f.submit "Login"
+    div
+      =  link_to "New User? Register Here", new_user_path

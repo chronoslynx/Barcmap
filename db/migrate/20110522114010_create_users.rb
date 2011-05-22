@@ -6,9 +6,11 @@ class CreateUsers < ActiveRecord::Migration
       t.string    :crypted_password,    :null => false
       t.string    :password_salt,       :null => false
       t.string    :persistence_token,   :null => false
+      t.text      :bio,                 :null => false
+      #t.string    :pimage,              :default => 'images/anon.png'
+      
       #t.string    :single_access_token, :null => false                # optional, see Authlogic::Session::Params
       #t.string    :perishable_token,    :null => false                # optional, see Authlogic::Session::Perishability
-      t.string    :pimage,              :null => false
       # magic fields (all optional, see Authlogic::Session::MagicColumns)
       #t.integer   :login_count,         :null => false, :default => 0
       #t.integer   :failed_login_count,  :null => false, :default => 0

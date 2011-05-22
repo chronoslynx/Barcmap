@@ -1,7 +1,71 @@
-/* Mixins
-========================================*/
-/* Classes
-========================================*/
+/* Table of Contents
+==================================================
+	#Colors
+	#Mixins
+	#Basic Styles
+	#Site Styles
+	#Typography
+	#Links
+	#Lists
+	#Images
+	#Buttons
+	#Tabs
+	#Forms
+	#Modal Dialogs
+	#Misc */
+/* #Colors
+==================================================*/
+.grey {
+  background: #eeeeee; }
+
+/* #Mixins
+==================================================*/
+/* #Basic Styles
+================================================== */
+header {
+  background-color: #fa1a39;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  -moz-border-top-left-radius: 5px;
+  -moz-border-top-right-radius: 5px;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto; }
+  header p {
+    color: white;
+    padding: 25px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border: 1px solid #fc657a; }
+
+footer {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  -moz-border-bottom-left-radius: 5px;
+  -moz-border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  background-color: #f5f5f5;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #dddddd;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  margin-left: auto;
+  margin-right: auto; }
+
+body {
+  background: white;
+  font: 14px/21px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  /* Fix for webkit rendering */
+  -webkit-text-size-adjust: none; }
+
 .alignleft {
   float: left; }
 
@@ -12,18 +76,9 @@
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
-  width: 80em; }
+  width: 960px; }
 
-.imgcenter {
-  border-radius: 3px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  display: block;
-  margin: 0 auto 20px auto; }
-
-/* IDs
-========================================*/
-#inset {
+.inset {
   padding: 30px;
   border: 1px solid #ccc;
   background: #f5f5f5; }
@@ -31,138 +86,59 @@
 #clear {
   clear: both; }
 
-/* Modal Dialog stuff
-========================================*/
-/* Modal element itself */
-.modal {
-  display: none; }
+#maptasks {
+  padding: 10px;
+  border: 1px solid #dddddd;
+  background: #f5f5f5;
+  height: 300px;
+  width: 318px; }
 
-/* Overlay */
-#simplemodal-overlay {
-  background-color: #000;
-  cursor: wait; }
+/* The canvas containing the map */
+#mapcan {
+  margin-bottom: 0px; }
 
-/* Container */
-#simplemodal-container {
+#notice {
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
-  height: 360px;
-  width: 600px;
-  color: #000;
-  background-color: #ffffff;
-  border: 1px solid #f5f5f5;
-  padding: 12px; }
-  #simplemodal-container a {
-    color: #0a648b; }
-  #simplemodal-container a.modalCloseImg {
-    background: url("../../images/close.png") no-repeat;
-    width: 36px;
-    height: 36px;
-    display: inline;
-    z-index: 3200;
-    position: absolute;
-    top: -15px;
-    right: -16px;
-    cursor: pointer; }
-  #simplemodal-container .simplemodal-data {
-    padding: 8px; }
-  #simplemodal-container code {
-    background: #141414;
-    border-left: 3px solid #65B43D;
-    color: #bbb;
-    display: block;
-    font-size: 12px;
-    margin-bottom: 12px;
-    padding: 4px 6px 6px; }
-  #simplemodal-container h3 {
-    color: #fa1a39; }
-
-/* Elements
-========================================*/
-header {
-  background-color: #fa1a39;
-  width: 80em;
-  border-radius: 3px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto; }
-  header p {
-    color: #ffffff;
-    padding: 25px;
-    border-radius: 3px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border: 1px solid #fc657a; }
-
-footer {
-  background-color: #f5f5f5;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #dddddd;
-  width: 80em;
-  border-radius: 3px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  margin-left: auto;
-  margin-right: auto; }
-
-.footerinfo {
-  font-size: 0.75em; }
-
-/* Table of Contents
-==================================================
-	#Reset & Basics
-	#Basic Styles
-	#Site Styles
-	#Typography
-	#Links
-	#Lists
-	#Images
-	#Buttons
-	#Tabs
-	#Forms
-	#Misc */
-/* #Reset & Basics (Inspired by E. Meyers)
-================================================== */
-/*	html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-		margin: 0;
-		padding: 0;
-		border: 0;
-		font-size: 100%;
-		font: inherit;
-		vertical-align: baseline; }
-	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-		display: block; }
-	body {
-		line-height: 1; }
-	ol, ul {
-		list-style: none; }
-	blockquote, q {
-		quotes: none; }
-	blockquote:before, blockquote:after,
-	q:before, q:after {
-		content: '';
-		content: none; }
-	table {
-		border-collapse: collapse;
-		border-spacing: 0; }
-		
-*/
-/* #Basic Styles
-================================================== */
-body {
-  background: #fff;
-  font: 14px/21px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  /* Fix for webkit rendering */
-  -webkit-text-size-adjust: none; }
+  background: #0a648b;
+  color: white; }
 
 /* #Typography
 ================================================== */
+.footerleft {
+  position: relative;
+  left: 2px;
+  font-size: 0.75em;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  -moz-border-bottom-left-radius: 5px;
+  -moz-border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px; }
+
+.footerright {
+  position: relative;
+  right: 2px;
+  font-size: 0.75em;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  -moz-border-bottom-left-radius: 5px;
+  -moz-border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px; }
+
+.job {
+  font-size: 0.875em;
+  font-style: italic;
+  color: #777777; }
+
+.usernav {
+  position: relative;
+  bottom: 16px;
+  right: 5px;
+  font-size: 12px; }
+
 h1, h2, h3, h4, h5, h6 {
   color: #181818;
   font-family: "Georgia", "Times New Roman", Helvetica, Arial, sans-serif;
@@ -311,9 +287,26 @@ img {
   max-width: 100%;
   height: auto; }
 
+.imgcenter {
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  display: block;
+  width: 900px;
+  margin: 0 auto 20px auto; }
+
+.pic {
+  position: relative;
+  top: 20px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  background: #dddddd;
+  border: 1px #f5f5f5; }
+
 /* #Buttons
 ================================================== */
-a.button,
+a.button, #user_submit, #user_session_submit,
 button {
   background: #eee;
   /* Old browsers */
@@ -487,7 +480,6 @@ fieldset {
 input[type="text"],
 input[type="password"],
 input[type="email"],
-textarea,
 select {
   border: 1px solid #ccc;
   padding: 6px 4px;
@@ -498,7 +490,23 @@ select {
   font: 13px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #777;
   margin: 0;
-  width: 210px;
+  width: 200px;
+  max-width: 100%;
+  display: block;
+  margin-bottom: 20px;
+  background: #fff; }
+
+textarea {
+  border: 1px solid #ccc;
+  padding: 6px 4px;
+  outline: none;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  font: 13px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #777;
+  margin: 0;
+  width: 565px;
   max-width: 100%;
   display: block;
   margin-bottom: 20px;
@@ -535,6 +543,53 @@ label span {
   font-weight: normal;
   font-size: 13px;
   color: #444; }
+
+/* #Modal Dialogs
+================================================== */
+/* Modal element itself */
+.modal {
+  display: none; }
+
+/* Overlay */
+#simplemodal-overlay {
+  background-color: #000;
+  cursor: wait; }
+
+/* Container */
+#simplemodal-container {
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  height: 360px;
+  width: 600px;
+  color: #000;
+  background-color: #ffffff;
+  border: 1px solid #f5f5f5;
+  padding: 12px; }
+  #simplemodal-container a {
+    color: #0a648b; }
+  #simplemodal-container a.modalCloseImg {
+    background: url("../../images/close.png") no-repeat;
+    width: 36px;
+    height: 36px;
+    display: inline;
+    z-index: 3200;
+    position: absolute;
+    top: -15px;
+    right: -16px;
+    cursor: pointer; }
+  #simplemodal-container .simplemodal-data {
+    padding: 8px; }
+  #simplemodal-container code {
+    background: #141414;
+    border-left: 3px solid #65B43D;
+    color: #bbb;
+    display: block;
+    font-size: 12px;
+    margin-bottom: 12px;
+    padding: 4px 6px 6px; }
+  #simplemodal-container h3 {
+    color: #fa1a39; }
 
 /* #Misc
 ================================================== */

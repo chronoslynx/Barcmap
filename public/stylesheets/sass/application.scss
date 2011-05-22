@@ -1,155 +1,7 @@
-//Application colorscheme
-$red:     #fa1a39;
-$orange:  #ff881a;
-$blue:    #0a648b;
-$green:   #2b9b08;
-$yellow:  #ffbc00;
-$lgrey:   #f5f5f5;
-$dgrey:   #ddd;
-$white:   #000000;
-/* Mixins
-========================================*/
-
-@mixin rounded($radius: 3px) {
-    border-radius: $radius;
-    -moz-border-radius: $radius;
-    -webkit-border-radius: $radius;
-}
-
-@mixin align($side) {
-    float: $side;
-}
-
-/* Classes
-========================================*/
-.alignleft {
-    @include align(left);
-}
-
-.alignright {
-    @include align(right);
-}
-
-.center {
-    margin-top: 20px;
-    margin-left: auto;   
-    margin-right: auto;  
-    width: 80em;
-}
-
-
-.imgcenter {
-    @include rounded();
-    display: block;
-    //top right bottom left
-    margin: 0 auto 20px auto;
-    //height: 150px;
-}
-
-/* IDs
-========================================*/
-#inset {
-    //width: 500px;
-	//margin:0px auto;
-	padding:30px;
-	border:1px solid #ccc;
-	background: $lgrey;
-}
-
-#clear {
-    clear: both;
-}
-
-/* Modal Dialog stuff
-========================================*/
-/* Modal element itself */
-.modal {
-    display:none;
-}
-
-/* Overlay */
-#simplemodal-overlay {
-    background-color:#000; 
-    cursor:wait;
-}
-/* Container */
-#simplemodal-container {
-    @include rounded();
-    height:360px; 
-    width:600px; 
-    color: #000; 
-    background-color:#ffffff; 
-    border:1px solid $lgrey; 
-    padding:12px;
-    
-    a {color: $blue;}
-    a.modalCloseImg {
-        background:url('../../images/close.png') no-repeat; 
-        width:36px;
-        height:36px; 
-        display:inline; 
-        z-index:3200; 
-        position:absolute; 
-        top:-15px; 
-        right:-16px; 
-        cursor:pointer;
-    }
-    .simplemodal-data {
-        padding:8px;
-    }
-    
-    code {
-        background:#141414; 
-        border-left:3px solid #65B43D; 
-        color:#bbb; 
-        display:block; 
-        font-size:12px; 
-        margin-bottom:12px; 
-        padding:4px 6px 6px;
-    }
-    h3 {color:$red;}
-}
-
-/* Elements
-========================================*/
-header {
-    background-color: $red;
-    width: 80em;
-    @include rounded();
-    margin: {
-        top:   20px;
-        left:  auto;
-        right: auto;
-    }
-    p {
-        color: #ffffff;
-        padding: 25px;    
-        @include rounded(3px);    
-        border:1px solid lighten($red, 15%); 
-    }
-
-}
-
-footer {
-    background-color: $lgrey;
-    border-top-style: solid; 
-    border-top-width: 1px;
-    border-top-color: $dgrey;
-    width: 80em;
-    @include rounded();
-    margin: {
-        left:  auto;
-        right: auto;
-    }
-}
-.footerinfo {
-    font-size: 0.75em;
-    
-}
-// stuff from base.css lies below
 /* Table of Contents
 ==================================================
-	#Reset & Basics
+	#Colors
+	#Mixins
 	#Basic Styles
 	#Site Styles
 	#Typography
@@ -159,47 +11,162 @@ footer {
 	#Buttons
 	#Tabs
 	#Forms
+	#Modal Dialogs
 	#Misc */
+/* #Colors
+==================================================*/
+    $red:     #fa1a39;
+    $orange:  #ff881a;
+    $blue:    #0a648b;
+    $green:   #2b9b08;
+    $yellow:  #ffbc00;
+    $lgrey:   #f5f5f5;
+    $dgrey:   #ddd;
+    $white:   #ffffff;
+    $grey:    #eeeeee;
+    .grey {
+        background: $grey;
+    }
 
-/* #Reset & Basics (Inspired by E. Meyers)
-================================================== */
-/*	html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-		margin: 0;
-		padding: 0;
-		border: 0;
-		font-size: 100%;
-		font: inherit;
-		vertical-align: baseline; }
-	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-		display: block; }
-	body {
-		line-height: 1; }
-	ol, ul {
-		list-style: none; }
-	blockquote, q {
-		quotes: none; }
-	blockquote:before, blockquote:after,
-	q:before, q:after {
-		content: '';
-		content: none; }
-	table {
-		border-collapse: collapse;
-		border-spacing: 0; }
-		
-*/		
+/* #Mixins
+==================================================*/
+
+    @mixin rounded($radius: 3px) {
+        border-radius: $radius;
+        -moz-border-radius: $radius;
+        -webkit-border-radius: $radius;
+    }
+
+    @mixin align($side) {
+        float: $side;
+    }
+    @mixin roundedSide($side: top, $radius: 5px) {
+        border: {
+            #{$side}: {
+                left-radius: $radius;
+                right-radius: $radius;
+            }
+        }
+        -moz-border: {
+           #{$side}: {
+               left-radius: $radius;
+               right-radius: $radius;
+           }
+        }
+        -webkit-border: {
+           #{$side}: {
+               left-radius: $radius;
+               right-radius: $radius;
+           }
+        }
+    }
+
 /* #Basic Styles
 ================================================== */
+    header {
+        background-color: $red;
+        //width: 960px;
+        //@include rounded();
+        @include roundedSide(top);
+        margin: {
+            top:   20px;
+            left:  auto;
+            right: auto;
+        }
+        p {
+            color: $white;
+            padding: 25px;    
+            @include rounded(3px);    
+            border:1px solid lighten($red, 15%); 
+        }
+
+    }
+    footer {
+        @include roundedSide(bottom);
+        background-color: $lgrey;
+        border-top-style: solid; 
+        border-top-width: 1px;
+        border-top-color: $dgrey;
+        //width: 960px;
+        @include rounded();
+        margin: {
+            left:  auto;
+            right: auto;
+        }
+    }
 	body { 
-		background: #fff;
+		background: $white;
 		font: 14px/21px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		color: #444; 
 		-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
 		-webkit-text-size-adjust: none;
- }
-	
-
+    }
+	.alignleft {
+        @include align(left);
+    }
+    .alignright {
+        @include align(right);
+    }
+    .center {
+        margin-top: 20px;
+        margin-left: auto;   
+        margin-right: auto;  
+        width: 960px;
+    }
+    .inset {
+    	padding:30px;
+    	border:1px solid #ccc;
+    	background: $lgrey;
+    }
+    #clear {
+        clear: both;
+    }
+    #maptasks {
+        padding: 10px;
+        border: 1px solid $dgrey;
+        background: $lgrey;
+        height: 300px;
+        width: 318px;
+    }
+    /* The canvas containing the map */
+    #mapcan {
+        margin-bottom: 0px;
+    }
+    #notice {
+        @include rounded();
+        background: $blue;
+        color: $white;
+    }
 /* #Typography
 ================================================== */
+    .footerleft {
+        position: relative;
+        left: 2px;
+        font-size: 0.75em;
+        @include roundedSide(bottom);
+         
+    }
+    .footerright {
+        position: relative;
+        right: 2px;
+        font-size: 0.75em;
+        @include roundedSide(bottom);
+         
+    }
+    .job {
+        font: {
+           size: 0.875em;
+           style: italic;
+        }
+        color: #777777;
+    }
+    .usernav {
+        position: relative;
+        bottom: 16px;
+        right: 5px;
+        font-size: 12px;
+    }
+    
 	h1, h2, h3, h4, h5, h6 { 
 		color: #181818; 
 		font-family: "Georgia", "Times New Roman", Helvetica, Arial, sans-serif;
@@ -233,7 +200,11 @@ footer {
 
 /* #Links
 ================================================== */
-	a, a:visited { color: #333; text-decoration: underline; outline: 0; }
+	a, a:visited { 
+	    color: #333; 
+	    text-decoration: underline; 
+	    outline: 0; 
+	}
 	a:hover, a:focus { color: #000; }
 	p a, p a:visited { line-height: inherit; }
 	
@@ -259,13 +230,26 @@ footer {
 ================================================== */
 	img { 
 		max-width: 100%;
-		height: auto; }
-
+		height: auto; 
+	}
+    .imgcenter {
+       @include rounded();
+       display: block;
+       width: 900px;
+       //top right bottom left
+       margin: 0 auto 20px auto;
+   }  
+   .pic {
+       position: relative;
+       top: 20px;
+       @include rounded();
+       background: $dgrey;
+       border: 1px $lgrey;
+   }
 
 /* #Buttons
 ================================================== */
-	
-	a.button, 
+	a.button, #user_submit, #user_session_submit, 
 	button {
 		background: #eee; /* Old browsers */
 		background: -moz-linear-gradient(top, rgba(255,255,255,.2) 0%, rgba(0,0,0,.2) 100%); /* FF3.6+ */
@@ -405,8 +389,7 @@ footer {
 		margin-bottom: 20px; }
 	input[type="text"], 
 	input[type="password"],
-	input[type="email"],
-	textarea, 
+	input[type="email"], 
 	select {
 		border: 1px solid #ccc;
 		padding: 6px 4px;
@@ -417,11 +400,27 @@ footer {
 		font: 13px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		color: #777;
 		margin: 0;
-		width: 210px;
+		width: 200px;
 		max-width: 100%;
 		display: block;
 		margin-bottom: 20px;
-		background: #fff; }
+		background: #fff; }	
+    textarea {
+    	border: 1px solid #ccc;
+		padding: 6px 4px;
+		outline: none;
+		-moz-border-radius: 2px;
+		-webkit-border-radius: 2px;
+		border-radius: 2px;
+		font: 13px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		color: #777;
+		margin: 0;
+		width: 565px;
+		max-width: 100%;
+		display: block;
+		margin-bottom: 20px;
+		background: #fff; 
+	}
 	select { 
 		padding: 0; }
 	input[type="text"]:focus,
@@ -447,7 +446,55 @@ footer {
 		font-weight: normal;
 		font-size: 13px;
 		color: #444; }
-		
+/* #Modal Dialogs
+================================================== */
+     /* Modal element itself */
+    .modal {
+        display:none;
+    }
+
+    /* Overlay */
+    #simplemodal-overlay {
+        background-color:#000; 
+        cursor:wait;
+    }
+    /* Container */
+    #simplemodal-container {
+        @include rounded();
+        height:360px; 
+        width:600px; 
+        color: #000; 
+        background-color:#ffffff; 
+        border:1px solid $lgrey; 
+        padding:12px;
+
+        a {color: $blue;}
+        a.modalCloseImg {
+            background:url('../../images/close.png') no-repeat; 
+            width:36px;
+            height:36px; 
+            display:inline; 
+            z-index:3200; 
+            position:absolute; 
+            top:-15px; 
+            right:-16px; 
+            cursor:pointer;
+        }
+        .simplemodal-data {
+            padding:8px;
+        }
+
+        code {
+            background:#141414; 
+            border-left:3px solid #65B43D; 
+            color:#bbb; 
+            display:block; 
+            font-size:12px; 
+            margin-bottom:12px; 
+            padding:4px 6px 6px;
+        }
+        h3 {color:$red;}
+    }		
 /* #Misc
 ================================================== */
 	.remove-bottom { margin-bottom: 0 !important; }

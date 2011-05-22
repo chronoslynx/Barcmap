@@ -1,19 +1,23 @@
-p#notice= notice
-p
-  b Username:
-  = @user.login
-p
-  b Email:
-  = @user.email
-p
-  b Crypted password:
-  = @user.crypted_password
-p
-  b Password salt:
-  = @user.password_salt
-p
-  b Persistence token:
-  = @user.persistence_token
-| #{link_to 'Edit', edit_user_path(@user)} #{link_to 'Back', @return_to} 
-| \
-| \#{link_to 'Back', users_path}
+.row
+  .two.column.offset-by-seven
+    p#notice= notice
+.row
+  .eleven.columns
+    p.lead
+      = @user.login
+    p
+      b Email: 
+      = @user.email
+    = link_to 'Edit', edit_user_path(@user)     
+    /p
+    /  b Crypted password:
+    /  = @user.crypted_password
+    /p
+    /  b Password salt:
+    /  = @user.password_salt
+    /p
+    /  b Persistence token:
+    /  = @user.persistence_token
+  .five.columns
+    p.lead Bio:
+    = @user.bio
