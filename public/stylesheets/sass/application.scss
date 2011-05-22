@@ -6,6 +6,7 @@ $green:   #2b9b08;
 $yellow:  #ffbc00;
 $lgrey:   #f5f5f5;
 $dgrey:   #ddd;
+$white:   #000000;
 /* Mixins
 ========================================*/
 
@@ -45,51 +46,6 @@ $dgrey:   #ddd;
     //height: 150px;
 }
 
-.simple_overlay {
-	
-	/* must be initially hidden */
-	display:none;
-	
-	/* place overlay on top of other elements */
-	z-index:10000;
-	
-	/* styling */
-	background-color:#333;
-	
-	width:675px;	
-	min-height:200px;
-	border:1px solid #666;
-	
-	/* CSS3 styling for latest browsers */
-	-moz-box-shadow:0 0 90px 5px #000;
-	-webkit-box-shadow: 0 0 90px #000;	
-}
-
-/* close button positioned on upper right corner */
-.simple_overlay .close {
-	background-image: "images/close.png";
-	position:absolute;
-	right:-15px;
-	top:-15px;
-	cursor:pointer;
-	height:35px;
-	width:35px;
-}
-
-.details {
-	position:absolute;
-	top:15px;
-	right:15px;
-	font-size:11px;
-	color:#fff;
-	width:150px;
-}
-
-.details h3 {
-	color:#aba;
-	font-size:15px;
-	margin:0 0 -10px 0;
-}
 /* IDs
 ========================================*/
 #inset {
@@ -99,8 +55,59 @@ $dgrey:   #ddd;
 	border:1px solid #ccc;
 	background: $lgrey;
 }
+
 #clear {
     clear: both;
+}
+
+/* Modal Dialog stuff
+========================================*/
+/* Modal element itself */
+.modal {
+    display:none;
+}
+
+/* Overlay */
+#simplemodal-overlay {
+    background-color:#000; 
+    cursor:wait;
+}
+/* Container */
+#simplemodal-container {
+    @include rounded();
+    height:360px; 
+    width:600px; 
+    color: #000; 
+    background-color:#ffffff; 
+    border:1px solid $lgrey; 
+    padding:12px;
+    
+    a {color: $blue;}
+    a.modalCloseImg {
+        background:url('../../images/close.png') no-repeat; 
+        width:36px;
+        height:36px; 
+        display:inline; 
+        z-index:3200; 
+        position:absolute; 
+        top:-15px; 
+        right:-16px; 
+        cursor:pointer;
+    }
+    .simplemodal-data {
+        padding:8px;
+    }
+    
+    code {
+        background:#141414; 
+        border-left:3px solid #65B43D; 
+        color:#bbb; 
+        display:block; 
+        font-size:12px; 
+        margin-bottom:12px; 
+        padding:4px 6px 6px;
+    }
+    h3 {color:$red;}
 }
 
 /* Elements
