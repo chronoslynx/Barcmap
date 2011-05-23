@@ -22,12 +22,27 @@
   background-image: url("/images/backgroundStrip.png");
   background-repeat: no-repeat; }
 
+.grad {
+  background: #ff881a;
+  /* for non-css3 browsers */
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff9534), to(#ff7b00));
+  /* for webkit browsers */
+  background: -moz-linear-gradient(top, #ff9534, #ff7b00);
+  /* for firefox 3.6+ */ }
+
 /* #Mixins
 ==================================================*/
 /* #Basic Styles
 ================================================== */
 header {
-  background-color: #ffa34d;
+  background: #ffb066;
+  /* for non-css3 browsers */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$start, endColorstr=#end);
+  /* for IE */
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffb066), to(#ff9534));
+  /* for webkit browsers */
+  background: -moz-linear-gradient(top, #ffb066, #ff9534);
+  /* for firefox 3.6+ */
   margin-bottom: 40px;
   margin-left: auto;
   margin-right: auto; }
@@ -143,7 +158,7 @@ body {
   text-shadow: 0px -1px 0px #374683; }
 
 .lengrave {
-  text-shadow: 0px 1px 0px #e5e5ee; }
+  text-shadow: -1px 1px 0px #ffb066; }
 
 .footerleft {
   position: relative;
