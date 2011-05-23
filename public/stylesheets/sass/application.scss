@@ -32,23 +32,14 @@
     $brown:   #8b4914;
     $black:   #000000;
     .solid { background: $grey; }
-    .striped { background-image: url('/images/backgroundStrip.png'); background-repeat: no-repeat; }
-    .grad {
-        background: $orange; /* for non-css3 browsers */
-        //filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff881a', endColorstr='#000000'); /* for IE */
-        background: -webkit-gradient(linear, left top, left bottom, from($lorange), to($dorange)); /* for webkit browsers */
-        background: -moz-linear-gradient(top,  $lorange,  $dorange); /* for firefox 3.6+ */
-    }
-
+    .striped { background-image: url('/images/backgroundStrip.png'); background-repeat: repeat-y; }
 /* #Mixins
 ==================================================*/
-
     @mixin rounded($radius: 3px) {
         border-radius: $radius;
         -moz-border-radius: $radius;
         -webkit-border-radius: $radius;
     }
-
     @mixin align($side) { float: $side;}
     @mixin roundedSide($side: top, $radius: 5px) {
         border: { #{$side}: {left-radius: $radius; right-radius: $radius; }}
@@ -65,7 +56,6 @@
 ================================================== */
     header {
         @include grad(lighten($orange, 15%), $lorange);
-        //background-color: lighten($orange, 10%);
         margin: {
             bottom: 40px;
             left:  auto;
@@ -96,7 +86,6 @@
         border-top-style: solid; 
         border-top-width: 1px;
         border-top-color: #ccc;
-        //width: 960px;
         @include rounded();
         margin: {
             left:  auto;
@@ -113,6 +102,7 @@
 		-webkit-text-size-adjust: none;
     }
     .container {
+        overfow: auto;
         //position: relative;
         //top: 40px;
     }
