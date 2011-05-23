@@ -15,11 +15,17 @@ javascript:
   });
 .row
   .ten.columns
-    img#map src='images/placeholder.png'
-    canvas#mapcan
+    /Canvas JS
+    img id='map' src='images/placeholder.png' style='display: none;'
+    canvas id='mapcan' width="580px" height="340px"
     javascript:
-      var ctx = document.getElementById("mapcan").getContext("2d");
-      ctx.drawImage(map, 0, 0);
+      window.onload = function(){
+          var mapcan = document.getElementById("mapcan");
+          var ctx = mapcan.getContext("2d");
+          ctx.drawImage(document.getElementById("map"), 10, 10);
+      }
+      
+    /End Canvas JS
   .six.columns#maptasks
     p Other information can go here beside our map, such as tasks etc.
       Things such as overlay links! Here's one now: 

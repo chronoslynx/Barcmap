@@ -16,7 +16,7 @@
 /* #Colors
 ==================================================*/
 .solid {
-  background: #8ac8d4; }
+  background: #eeeeee; }
 
 .striped {
   background-image: url("/images/backgroundStrip.png");
@@ -28,13 +28,17 @@
 ================================================== */
 header {
   background-color: #ffa34d;
+  margin-bottom: 40px;
   margin-left: auto;
   margin-right: auto; }
   header p {
-    color: white;
-    padding: 25px;
+    color: #803d00;
+    padding: 40px;
+    border-top-style: solid;
+    border-top-color: #ffbd80;
+    border-top-width: 1px;
     border-bottom-style: solid;
-    border-bottom-color: #e66e00;
+    border-bottom-color: #b35600;
     border-bottom-width: 1px; }
 
 footer {
@@ -47,7 +51,7 @@ footer {
   background-color: #f5f5f5;
   border-top-style: solid;
   border-top-width: 1px;
-  border-top-color: #8ac8d4;
+  border-top-color: #ccc;
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -55,9 +59,8 @@ footer {
   margin-right: auto; }
 
 body {
-  position: relative;
-  top: 20px;
-  background: white;
+  margin: auto auto auto auto;
+  background: #f5f5f5;
   font: 14px/21px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #444;
   -webkit-font-smoothing: antialiased;
@@ -72,16 +75,20 @@ body {
 
 .line {
   border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #dddddd;
+  border-top-width: 1px;
+  border-top-color: #ccc;
   margin-left: auto;
   margin-right: auto; }
 
 .alignleft {
-  float: left; }
+  float: left;
+  position: relative;
+  left: 150px; }
 
 .alignright {
-  float: right; }
+  float: right;
+  position: relative;
+  right: 150px; }
 
 .bord {
   border: 1px solid #43a3b5; }
@@ -95,7 +102,12 @@ body {
 .inset {
   padding: 30px;
   border: 1px solid #ccc;
-  background: #f5f5f5; }
+  background: white; }
+
+.insetbody {
+  padding: 60px;
+  border: 1px solid #ccc;
+  background: white; }
 
 .roundinset {
   border-radius: 3px;
@@ -164,8 +176,10 @@ body {
   font-style: italic; }
 
 .usernav {
+  float: left;
   position: relative;
-  right: 5px;
+  padding: 10px;
+  bottom: 70px;
   font-size: 12px; }
 
 h1, h2, h3, h4, h5, h6 {
@@ -325,7 +339,7 @@ img {
   -webkit-border-radius: 3px;
   display: block;
   width: 900px;
-  margin: 0 auto 20px auto; }
+  margin: auto auto auto auto; }
 
 .pic {
   border-radius: 3px;

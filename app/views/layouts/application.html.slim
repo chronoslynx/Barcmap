@@ -1,16 +1,19 @@
 ! doctype
-html.solid
+html 
   head
     title Barcmap
     = stylesheet_link_tag :all
     = javascript_include_tag 'jquery-1.5.1.min', 'app', 'jquery-ui.min', 'jquery.simplemodal'
     = csrf_meta_tag
+    /<!--[if lt IE 9]>  
+    /html5shiv for IE < 9  
+    /<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>  
+    /<![endif]-->
     a href='/'
       header
         p Bork, bork, bork!
       #clear
       .usernav
-        .alignright
            = link_to "Home", '/'
            '  
            = link_to "About", '/about' 
@@ -23,9 +26,10 @@ html.solid
             = link_to "Profile", "/users/#{current_user.id}"
            - else
             = link_to " New Here?", new_user_path 
-  body.container.bord
-    = yield
-  #clear
+  body
+    .container.insetbody
+      = yield
+    #clear
   footer.center
   .footerright
     .alignright
