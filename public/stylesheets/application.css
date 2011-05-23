@@ -15,31 +15,27 @@
 	#Misc */
 /* #Colors
 ==================================================*/
-.grey {
-  background: #eeeeee; }
+.solid {
+  background: #8ac8d4; }
+
+.striped {
+  background-image: url("/images/backgroundStrip.png");
+  background-repeat: no-repeat; }
 
 /* #Mixins
 ==================================================*/
 /* #Basic Styles
 ================================================== */
 header {
-  background-color: #fa1a39;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  -moz-border-top-left-radius: 5px;
-  -moz-border-top-right-radius: 5px;
-  -webkit-border-top-left-radius: 5px;
-  -webkit-border-top-right-radius: 5px;
-  margin-top: 20px;
+  background-color: #ffa34d;
   margin-left: auto;
   margin-right: auto; }
   header p {
     color: white;
     padding: 25px;
-    border-radius: 3px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border: 1px solid #fc657a; }
+    border-bottom-style: solid;
+    border-bottom-color: #e66e00;
+    border-bottom-width: 1px; }
 
 footer {
   border-bottom-left-radius: 5px;
@@ -51,7 +47,7 @@ footer {
   background-color: #f5f5f5;
   border-top-style: solid;
   border-top-width: 1px;
-  border-top-color: #dddddd;
+  border-top-color: #8ac8d4;
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -59,6 +55,8 @@ footer {
   margin-right: auto; }
 
 body {
+  position: relative;
+  top: 20px;
   background: white;
   font: 14px/21px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #444;
@@ -66,11 +64,27 @@ body {
   /* Fix for webkit rendering */
   -webkit-text-size-adjust: none; }
 
+.gradLine {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #eeeeee;
+  -moz-border-bottom-colors: #dddddd #eeeeee #f5f5f5; }
+
+.line {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #dddddd;
+  margin-left: auto;
+  margin-right: auto; }
+
 .alignleft {
   float: left; }
 
 .alignright {
   float: right; }
+
+.bord {
+  border: 1px solid #43a3b5; }
 
 .center {
   margin-top: 20px;
@@ -79,6 +93,16 @@ body {
   width: 960px; }
 
 .inset {
+  padding: 30px;
+  border: 1px solid #ccc;
+  background: #f5f5f5; }
+
+.roundinset {
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  position: relative;
+  top: 103px;
   padding: 30px;
   border: 1px solid #ccc;
   background: #f5f5f5; }
@@ -94,9 +118,6 @@ body {
   width: 318px; }
 
 /* The canvas containing the map */
-#mapcan {
-  margin-bottom: 0px; }
-
 #notice {
   border-radius: 3px;
   -moz-border-radius: 3px;
@@ -106,6 +127,12 @@ body {
 
 /* #Typography
 ================================================== */
+.dengrave {
+  text-shadow: 0px -1px 0px #374683; }
+
+.lengrave {
+  text-shadow: 0px 1px 0px #e5e5ee; }
+
 .footerleft {
   position: relative;
   left: 2px;
@@ -133,9 +160,11 @@ body {
   font-style: italic;
   color: #777777; }
 
+.title {
+  font-style: italic; }
+
 .usernav {
   position: relative;
-  bottom: 16px;
   right: 5px;
   font-size: 12px; }
 
@@ -177,6 +206,9 @@ h6 {
 
 .subheader {
   color: #777; }
+
+p {
+  margin: 0 0 0px; }
 
 p img {
   margin: 0; }
@@ -296,13 +328,11 @@ img {
   margin: 0 auto 20px auto; }
 
 .pic {
-  position: relative;
-  top: 20px;
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
-  background: #dddddd;
-  border: 1px #f5f5f5; }
+  position: relative;
+  top: 90px; }
 
 /* #Buttons
 ================================================== */

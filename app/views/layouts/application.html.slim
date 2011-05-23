@@ -1,5 +1,5 @@
 ! doctype
-html.grey
+html.solid
   head
     title Barcmap
     = stylesheet_link_tag :all
@@ -23,7 +23,7 @@ html.grey
             = link_to "Profile", "/users/#{current_user.id}"
            - else
             = link_to " New Here?", new_user_path 
-  body.container
+  body.container.bord
     = yield
   #clear
   footer.center
