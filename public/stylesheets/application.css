@@ -1,5 +1,6 @@
 /* Table of Contents
 ==================================================
+    #Reset and Basics
 	#Colors
 	#Mixins
 	#Basic Styles
@@ -13,22 +14,45 @@
 	#Forms
 	#Modal Dialogs
 	#Misc */
+/* #Reset & Basics (Inspired by E. Meyers)
+================================================== */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
 /* #Colors
 ==================================================*/
 .solid {
   background: #eeeeee; }
 
 .striped {
-  background-image: url("/images/backgroundStrip.png");
-  background-repeat: no-repeat; }
-
-.grad {
-  background: #ff881a;
-  /* for non-css3 browsers */
-  background: -webkit-gradient(linear, left top, left bottom, from(#ff9534), to(#ff7b00));
-  /* for webkit browsers */
-  background: -moz-linear-gradient(top, #ff9534, #ff7b00);
-  /* for firefox 3.6+ */ }
+  background-image: url("/images/stripe.png");
+  background-repeat: repeat; }
 
 /* #Mixins
 ==================================================*/
@@ -81,6 +105,9 @@ body {
   -webkit-font-smoothing: antialiased;
   /* Fix for webkit rendering */
   -webkit-text-size-adjust: none; }
+
+.container {
+  overfow: auto; }
 
 .gradLine {
   border-bottom-width: 1px;
@@ -138,11 +165,13 @@ body {
   clear: both; }
 
 #maptasks {
+  position: relative;
+  left: 10px;
   padding: 10px;
   border: 1px solid #dddddd;
   background: #f5f5f5;
   height: 300px;
-  width: 318px; }
+  width: 880px; }
 
 /* The canvas containing the map */
 #notice {
@@ -162,7 +191,7 @@ body {
 
 .footerleft {
   position: relative;
-  left: 2px;
+  left: 46px;
   font-size: 0.75em;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -173,7 +202,7 @@ body {
 
 .footerright {
   position: relative;
-  right: 2px;
+  right: 46px;
   font-size: 0.75em;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;

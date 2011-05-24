@@ -1,5 +1,6 @@
 /* Table of Contents
 ==================================================
+    #Reset and Basics
 	#Colors
 	#Mixins
 	#Basic Styles
@@ -13,6 +14,33 @@
 	#Forms
 	#Modal Dialogs
 	#Misc */
+/* #Reset & Basics (Inspired by E. Meyers)
+================================================== */
+	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline; }
+	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+		display: block; }
+	body {
+		line-height: 1; }
+	ol, ul {
+		list-style: none; }
+	blockquote, q {
+		quotes: none; }
+	blockquote:before, blockquote:after,
+	q:before, q:after {
+		content: '';
+		content: none; }
+	table {
+		border-collapse: collapse;
+		border-spacing: 0; }
+
+
+
 /* #Colors
 ==================================================*/
     $red:     #fa1a39;
@@ -32,7 +60,7 @@
     $brown:   #8b4914;
     $black:   #000000;
     .solid { background: $grey; }
-    .striped { background-image: url('/images/backgroundStrip.png'); background-repeat: repeat-y; }
+    .striped { background-image: url('/images/stripe.png'); background-repeat: repeat; }
 /* #Mixins
 ==================================================*/
     @mixin rounded($radius: 3px) {
@@ -93,7 +121,6 @@
         }
     }
 	body { 
-	    //@include rounded(6px);
 	    margin: auto auto auto auto;
 		background: $lgrey;
 		font: 14px/21px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -159,11 +186,13 @@
     #clear {clear: both; }
     
     #maptasks {
+        position: relative;
+        left: 10px;
         padding: 10px;
         border: 1px solid $dgrey;
         background: $lgrey;
         height: 300px;
-        width: 318px;
+        width: 880px;
     }
     /* The canvas containing the map */
     #mapcan { }
@@ -185,14 +214,14 @@
     }
     .footerleft {
         position: relative;
-        left: 2px;
+        left: 46px;
         font-size: 0.75em;
         @include roundedSide(bottom);
          
     }
     .footerright {
         position: relative;
-        right: 2px;
+        right: 46px;
         font-size: 0.75em;
         @include roundedSide(bottom);
          

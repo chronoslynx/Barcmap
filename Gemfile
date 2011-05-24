@@ -20,7 +20,7 @@ gem "formtastic"
 gem "sass"
 #coffeescript support
 gem "barista"
-
+gem 'barista_growl', :git => 'http://github.com/TrevorBurnham/barista_growl.git'
 #social networking integration
 #gem 'facebooker'
 # Use unicorn as the web server

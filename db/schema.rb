@@ -10,7 +10,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110522114010) do
+ActiveRecord::Schema.define(:version => 20110524114155) do
+
+  create_table "badges", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "uid"
+    t.string   "imageurl"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "locations", :force => true do |t|
+    t.string   "name"
+    t.string   "mapurl"
+    t.text     "description"
+    t.text     "tips"
+    t.text     "nearby"
+    t.string   "uid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "login",             :null => false

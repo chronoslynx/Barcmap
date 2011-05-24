@@ -1,1 +1,0 @@
-# application coffeescript. compiled to 'public/javascripts/custom.js

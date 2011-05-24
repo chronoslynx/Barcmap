@@ -1,4 +1,5 @@
 /this does the work to create modal dialogs
+= javascript_include_tag 'canvas'
 javascript:
   jQuery(function ($) {
   	// Load dialog on click
@@ -14,19 +15,18 @@ javascript:
     });
   });
 .row
-  .ten.columns
+  .sixteen.columns
     /Canvas JS
     img id='map' src='images/placeholder.png' style='display: none;'
-    canvas id='mapcan' width="580px" height="340px"
-    javascript:
-      window.onload = function(){
-          var mapcan = document.getElementById("mapcan");
-          var ctx = mapcan.getContext("2d");
-          ctx.drawImage(document.getElementById("map"), 10, 10);
-      }
-      
+    canvas id='mapcan' width="930px" height="340px"
+    /javascript:
+    /  window.onload = function(){
+    /      var mapcan = document.getElementById("mapcan");
+    /      var ctx = mapcan.getContext("2d");
+    /      ctx.drawImage(document.getElementById("map"), 10, 10);
+    /  }
     /End Canvas JS
-  .six.columns#maptasks
+  .ten.columns#maptasks
     p Other information can go here beside our map, such as tasks etc.
       Things such as overlay links! Here's one now: 
     .modal-a#basic
