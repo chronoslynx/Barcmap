@@ -16,26 +16,6 @@ window.onload = function(){
     }, false);
 }
 
-
-/*function getCursorPosition(e) {
-    var x;
-    var y;
-    if (e.pageX != undefined && e.pageY != undefined) {
-	x = e.pageX;
-	y = e.pageY;
-    }
-    else {
-	x = e.clientX + document.body.scrollLeft +
-            document.documentElement.scrollLeft;
-	y = e.clientY + document.body.scrollTop +
-            document.documentElement.scrollTop;
-    return { x: x, y: y };
-}*/
-
-/*function clickedOnLoc(){
-    
-}*/
-
 function getNumericStyleProperty(style, prop){
     return parseInt(style.getPropertyValue(prop),10) ;
 }

@@ -48,7 +48,7 @@ table {
 /* #Colors
 ==================================================*/
 .solid {
-  background: #eeeeee; }
+  background: #e6ebea; }
 
 .striped {
   background-image: url("/images/stripe.png");
@@ -78,7 +78,10 @@ header {
     border-top-width: 1px;
     border-bottom-style: solid;
     border-bottom-color: #b35600;
-    border-bottom-width: 1px; }
+    border-bottom-width: 1px;
+    border-right-style: solid;
+    border-right-color: #ccc;
+    border-right-width: 1px; }
 
 footer {
   border-bottom-left-radius: 5px;
@@ -90,7 +93,7 @@ footer {
   background-color: #f5f5f5;
   border-top-style: solid;
   border-top-width: 1px;
-  border-top-color: #ccc;
+  border-top-color: #c3c7c7;
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -98,10 +101,9 @@ footer {
   margin-right: auto; }
 
 body {
-  margin: auto auto auto auto;
-  background: #f5f5f5;
+  background: #e6ebea;
   font: 14px/21px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #444;
+  color: #424242;
   -webkit-font-smoothing: antialiased;
   /* Fix for webkit rendering */
   -webkit-text-size-adjust: none; }
@@ -112,13 +114,13 @@ body {
 .gradLine {
   border-bottom-width: 1px;
   border-bottom-style: solid;
-  border-bottom-color: #eeeeee;
-  -moz-border-bottom-colors: #dddddd #eeeeee #f5f5f5; }
+  border-bottom-color: #e6ebea;
+  -moz-border-bottom-colors: #dddddd #e6ebea #f5f5f5; }
 
 .line {
   border-top-style: solid;
   border-top-width: 1px;
-  border-top-color: #ccc;
+  border-top-color: #c3c7c7;
   margin-left: auto;
   margin-right: auto; }
 
@@ -143,13 +145,15 @@ body {
 
 .inset {
   padding: 30px;
-  border: 1px solid #ccc;
-  background: white; }
+  border: 1px solid #c3c7c7;
+  background: #f5f5f5; }
 
 .insetbody {
   padding: 60px;
-  border: 1px solid #ccc;
-  background: white; }
+  background: white;
+  -webkit-box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.03) inset, 0 0 0 1px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.03) inset, 0 0 0 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.03) inset, 0 0 0 1px rgba(0, 0, 0, 0.15); }
 
 .roundinset {
   border-radius: 3px;
@@ -158,7 +162,7 @@ body {
   position: relative;
   top: 103px;
   padding: 30px;
-  border: 1px solid #ccc;
+  border: 1px solid #c3c7c7;
   background: #f5f5f5; }
 
 #clear {
@@ -227,7 +231,7 @@ body {
   font-size: 12px; }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #181818;
+  color: #424242;
   font-family: "Georgia", "Times New Roman", Helvetica, Arial, sans-serif;
   font-weight: normal; }
 
