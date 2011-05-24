@@ -6,8 +6,8 @@ html.solid
     = javascript_include_tag 'jquery-1.5.1.min', 'app', 'jquery-ui.min', 'jquery.simplemodal'
     = csrf_meta_tag
     a href='/'
-      header
-        p.lengrave Bork, bork, bork!
+      header.lengrave
+        p Bork, bork, bork!
       .usernav.lengrave
            = link_to "Home", '/'
            '  
@@ -24,7 +24,6 @@ html.solid
   body.solid
     .container.insetbody
       = yield
-      /#clear
   footer.center
   .footerright
     .alignright

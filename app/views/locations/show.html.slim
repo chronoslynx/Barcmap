@@ -6,6 +6,7 @@ p
 p
   b Mapurl:
   = @location.mapurl
+  img src='#{@location.mapurl}'
 p
   b Description:
   = @location.description
@@ -18,6 +19,11 @@ p
 p
   b Uid:
   = @location.uid
+p
+  b Y position on canvas:
+  = @location.ypos
+  b X position on canvas
+  = @location.xpos
 
 = link_to 'Edit', edit_location_path(@location)
 '|

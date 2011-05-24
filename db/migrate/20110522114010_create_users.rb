@@ -8,6 +8,10 @@ class CreateUsers < ActiveRecord::Migration
       t.string    :persistence_token,   :null => false
       t.text      :bio,                 :null => false
       #t.string    :pimage,              :default => 'images/anon.png'
+      #Figure out how to store data on unlocked badges
+      #can we do arrays? or do we have to store each badge independantly as a bit?
+      
+      
       
       #t.string    :single_access_token, :null => false                # optional, see Authlogic::Session::Params
       #t.string    :perishable_token,    :null => false                # optional, see Authlogic::Session::Perishability

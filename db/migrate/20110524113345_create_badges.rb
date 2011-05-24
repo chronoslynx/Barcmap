@@ -6,6 +6,7 @@ class CreateBadges < ActiveRecord::Migration
       t.string :uid
       t.string :imageurl
 
+
       t.timestamps
     end
   end
