@@ -1,47 +1,21 @@
 /this does the work to create modal dialogs
-= javascript_include_tag 'canvas'
-javascript:
-  jQuery(function ($) {
-  	// Load dialog on click
-  	$('.modal-a').click(function (e) {
-        e.preventDefault();
-        $('#' + this.id + '-modal').modal({onOpen: function (dialog) {
-        	dialog.overlay.fadeIn('slow', function () {
-        		dialog.container.slideDown('medium', function () {
-        			dialog.data.fadeIn('slow');
-      	  	});
-        	});
-        }});
-    });
-  });
+= javascript_include_tag 'map'
+/javascript:
+/  jQuery(function ($) {
+/  	// Load dialog on click
+/  	$('.modal-a').click(function (e) {
+/        e.preventDefault();
+/        $('#' + this.id + '-modal').modal({onOpen: function (dialog) {
+/        	dialog.overlay.fadeIn('slow', function () {
+/        		dialog.container.slideDown('medium', function () {
+/        			dialog.data.fadeIn('slow');
+/      	  	});
+/        	});
+/        }});
+/    });
+/  });
 .row
   .sixteen.columns
     /Canvas JS
     img id='map' src='images/placeholder.png' style='display: none;'
-    canvas id='mapcan' width="930px" height="340px"
-  .ten.columns#maptasks
-    p Other information can go here beside our map, such as tasks etc.
-      Things such as overlay links! Here's one now: 
-    .modal-a#basic
-      a href='#' 
-        img src="images/rails.png"
-.row
-  .sixteen.columns
-      h3 Basic Modal Dialog
-      p A basic modal dialog with minimal styling and no additional options. There are a few CSS properties set internally by SimpleModal, however, SimpleModal relies mostly on style options and/or external CSS for the look and feel. To test it, click the 'Rails' image
-      .modal-a#two
-        a href='#' Here's the second dialog
-.modals 
-  .modal#basic-modal
-  	h3 Basic Modal Dialog
-  	p For this demo, SimpleModal is using this "hidden" data for its content. You can also populate the modal dialog with an AJAX response, standard HTML or DOM element(s).
-  	p You can close this by clicking the 'x' in the upper right hand corner or press 'ESC'
-  	p 
-  	  a href='http://www.ericmmartin.com/projects/simplemodal/' More details...
-
-  .modal#two-modal
-    h3 This is the second modal dialog
-    p Figured out how to do this cleanly. What I need to do now is hide the location info in the database, not in the page...
-    p You can close this by clicking the 'x' in the upper right hand corner or press 'ESC' 
-    p
-      a href='/map' Go Back
+    canvas id='mapcan' width="930px" height="600px"

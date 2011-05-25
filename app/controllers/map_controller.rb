@@ -9,5 +9,4 @@ class MapController < ApplicationController
     #@locations = Location.all
   end
 
-
 end

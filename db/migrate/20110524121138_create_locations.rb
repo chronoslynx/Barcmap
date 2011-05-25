@@ -7,8 +7,8 @@ class CreateLocations < ActiveRecord::Migration
       t.text :tips
       t.text :nearby
       t.string :uid
-      t.integer :ypos
-      t.integer :xpos
+      #t.integer :ypos
+      #t.integer :xpos
       
       t.timestamps
     end

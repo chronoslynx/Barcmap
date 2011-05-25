@@ -28,8 +28,6 @@ ActiveRecord::Schema.define(:version => 20110524121138) do
     t.text     "tips"
     t.text     "nearby"
     t.string   "uid"
-    t.integer  "ypos"
-    t.integer  "xpos"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

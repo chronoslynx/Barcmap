@@ -41,8 +41,27 @@ window.onload = function(){
         t.fillText('canvas y:  ' + (e.pageY - p.y), 16, 96);
     }, false);
     c.addEventListener('click', function(e) {
-        //map click login and rendering goes here
-        $('.modals').append('= render :partial => "popup", :locals => {:location => @location})}');
+         //map click login and rendering goes here
+        //need to get locnum based on pixel location in canvas
+        var locnum = 1;
+        jQuery(function($) {
+            $.ajax({
+                url: '/locations/'+locnum,
+                type: 'GET',
+                //data: locnum,
+                dataType: "html",
+                success: function(data){
+                    //$('.modals').html(data);
+                    $.modal(data, {onOpen: function (dialog) {
+                    	dialog.overlay.fadeIn('slow', function () {
+                    		dialog.container.slideDown('medium', function () {
+                    			dialog.data.fadeIn('slow');
+                      	  	});
+                    	});
+                    }});
+                }
+            });                
+        });
     }, false);
 };
 
