@@ -1,1 +1,14 @@
 p Welcome to the intro page!
+- @locations.each do |location|
+  tr
+    td= location.name
+    td= location.mapurl
+    td= location.description
+    td= location.tips
+    td= location.nearby
+    td= location.uid
+    td= location.ypos
+    td= location.xpos
+    td= link_to 'Show', location
+    td= link_to 'Edit', edit_location_path(location)
+    td= link_to 'Destroy', location, :confirm => 'Are you sure?', :method => :delete
