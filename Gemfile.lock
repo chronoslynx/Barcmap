@@ -111,6 +111,7 @@ DEPENDENCIES
   formtastic
   rails (= 3.0.7)
   rails3-generators
+  rake
   sass
   slim
   slim-rails

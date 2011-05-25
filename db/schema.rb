@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110524114155) do
+ActiveRecord::Schema.define(:version => 20110524121138) do
 
   create_table "badges", :force => true do |t|
     t.string   "name"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(:version => 20110524114155) do
     t.text     "tips"
     t.text     "nearby"
     t.string   "uid"
+    t.integer  "ypos"
+    t.integer  "xpos"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

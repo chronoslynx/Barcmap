@@ -58,7 +58,7 @@
     $dgrey:   #ddd;
     $bgrey:   #c3c7c7;
     $white:   #ffffff;
-    $grey:    #e6ebea;//#eeeeee;
+    $grey:    #e6ebea;//#d4e3eb;//
     $tan:     #f8e4bf;
     $brown:   #8b4914;
     $black:   #000000;
@@ -79,10 +79,19 @@
         -webkit-border: { #{$side}: { left-radius: $radius; right-radius: $radius; } }
     }
     @mixin grad($start, $end){
-        background: $start; /* for non-css3 browsers */
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$start, endColorstr=#end); /* for IE */
-        background: -webkit-gradient(linear, left top, left bottom, from($start), to($end)); /* for webkit browsers */
-        background: -moz-linear-gradient(top,  $start,  $end); /* for firefox 3.6+ */
+		background: $start; /* Old browsers */
+		background: -moz-linear-gradient(top, $start 0%, $end 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$start), color-stop(100%, $end)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, $start 0%,$end 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, $start 0%, $end 100%); /* Opera11.10+ */
+		background: -ms-linear-gradient(top, $start 0%, $end 100%); /* IE10+ */
+		background: linear-gradient(top, $start 0%, $end 100%); /* W3C */
+    }
+    @mixin shadow($start, $end){
+        -webkit-box-shadow: 0 0 0 4px $start inset, 0 0 0 1px $end; 
+    	-moz-box-shadow: 0 0 0 4px $start inset, 0 0 0 1px $end; 
+    	box-shadow: 0 0 0 4px $start inset, 0 0 0 1px $end;
     }
 /* #Basic Styles
 ================================================== */
@@ -92,6 +101,7 @@
     }
     header {
         //@include grad(lighten($orange, 15%), $lorange);
+        padding: 20px;
         background:$white;
         margin: {
             bottom: 40px;
@@ -101,29 +111,6 @@
         -webkit-box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.03) inset, 0 0 0 1px rgba(0,0,0,0.15); 
     	-moz-box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.03) inset, 0 0 0 1px rgba(0,0,0,0.15); 
     	box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.03) inset, 0 0 0 1px rgba(0,0,0,0.15);
-        p {
-            //color: darken($orange, 30%);
-            padding: 20px;             
-            /*border: {
-                top: {
-                    style: solid;
-                    color: $grey;//lighten($orange, 20%);
-                    width: 1px;
-                }
-                bottom: {
-                    style: solid;
-                    color: $bgrey;//darken($orange, 20%);
-                    width: 1px;
-                }
-                right: {
-                    style: solid;
-                    color: #ccc;
-                    width: 1px;
-                }
-
-            }*/
-        }
-
     }
     footer {
         @include roundedSide(bottom);
@@ -159,7 +146,19 @@
     .line {
         border-top-style: solid; 
         border-top-width: 1px;
-        border-top-color: $bgrey;
+        border-top-color: $black;
+        border: {
+            top: {
+                style: solid;
+                width: 1px;
+                color: $dgrey;
+            }
+            bottom: {
+                style: solid;
+                width: 1px;
+                color: $lgrey;
+            }
+        }
         margin: {
             left:  auto;
             right: auto;
@@ -167,7 +166,6 @@
     }
 	.alignleft { @include align(left); position: relative; left: 150px;}
     .alignright { @include align(right);  position: relative; right: 150px;}
-    .bord { border: 1px solid darken($teal, 20%); }
     .center {
         margin-top: 20px;
         margin-left: auto;   
@@ -221,7 +219,7 @@
     }
     .lengrave {
         //dark text on light background
-        //text-shadow: -1px 1px 0px $bgrey;//lighten($lorange, 10%);
+        text-shadow: -1px 1px 0px $bgrey;//lighten($lorange, 10%);
     }
     .footerleft {
         position: relative;
@@ -358,7 +356,7 @@
 	  font-size: 11px;
 	  font-weight: bold;
 	  text-decoration: none;
-	  text-shadow: 0 1px rgba(255, 255, 255, .75);
+	  text-shadow: 0 1px darken($bblue, 15%);//rgba(255, 255, 255, .75);
 	  cursor: pointer;
 	  margin-bottom: 20px;
 	  line-height: 21px;
@@ -366,27 +364,28 @@
 	  
 	a.button:hover, 
 	button:hover {
-		color: #222;
-		background: #eee; /* Old browsers */
-		background: -moz-linear-gradient(top, rgba(255,255,255,.3) 0%, rgba(0,0,0,.3) 100%); /* FF3.6+ */
-		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.3)), color-stop(100%,rgba(0,0,0,.3))); /* Chrome,Safari4+ */
-		background: -webkit-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* Chrome10+,Safari5.1+ */
-		background: -o-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* Opera11.10+ */
-		background: -ms-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* IE10+ */
-		background: linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* W3C */
+		color: $white;//#222;
+		background: $bblue;//#eee; /* Old browsers */
+	//	background: -moz-linear-gradient(top, rgba(255,255,255,.3) 0%, rgba(0,0,0,.3) 100%); /* FF3.6+ */
+	//	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.3)), color-stop(100%,rgba(0,0,0,.3))); /* Chrome,Safari4+ */
+	//	background: -webkit-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* Chrome10+,Safari5.1+ */
+	//	background: -o-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* Opera11.10+ */
+	//	background: -ms-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* IE10+ */
+	//	background: linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* W3C */
 	  border: 1px solid #888;
 	  border-top: 1px solid #aaa;
 	  border-left: 1px solid #aaa; }
 	  
   a.button:active, 
   button:active {
-    background: #eee; /* Old browsers */
-    background: -moz-linear-gradient(top, rgba(0,0,0,.3) 0%, rgba(255,255,255,.3) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,.3)), color-stop(100%,rgba(255,255,255,.3))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, rgba(0,0,0,.3) 0%,rgba(255,255,255,.3) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, rgba(0,0,0,.3) 0%,rgba(255,255,255,.3) 100%); /* Opera11.10+ */
-    background: -ms-linear-gradient(top, rgba(0,0,0,.3) 0%,rgba(255,255,255,.3) 100%); /* IE10+ */
-    background: linear-gradient(top, rgba(0,0,0,.3) 0%,rgba(255,255,255,.3) 100%); /* W3C */
+    background: darken($bblue, 5%);//#eee; /* Old browsers */
+    //background: -moz-linear-gradient(top, rgba(0,0,0,.3) 0%, rgba(255,255,255,.3) 100%); /* FF3.6+ */
+    //background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,.3)), color-stop(100%,rgba(255,255,255,.3))); /* Chrome,Safari4+ */
+    //background: -webkit-linear-gradient(top, rgba(0,0,0,.3) 0%,rgba(255,255,255,.3) 100%); /* Chrome10+,Safari5.1+ */
+    //background: -o-linear-gradient(top, rgba(0,0,0,.3) 0%,rgba(255,255,255,.3) 100%); /* Opera11.10+ */
+    //background: -ms-linear-gradient(top, rgba(0,0,0,.3) 0%,rgba(255,255,255,.3) 100%); /* IE10+ */
+    //background: linear-gradient(top, rgba(0,0,0,.3) 0%,rgba(255,255,255,.3) 100%); /* W3C */
+    color: $white;
     border: 1px solid #888;
     border-bottom: 1px solid #aaa;
     border-right: 1px solid #aaa; }
@@ -504,6 +503,7 @@
 		color: #777;
 		margin: 0;
 		width: 565px;
+		height: 295px;
 		max-width: 100%;
 		display: block;
 		margin-bottom: 20px;
@@ -549,7 +549,7 @@
     /* Container */
     #simplemodal-container {
         @include rounded();
-        height:360px; 
+        height:600px; 
         width:600px; 
         color: #000; 
         background-color:#ffffff; 

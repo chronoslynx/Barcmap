@@ -30,10 +30,10 @@ javascript:
         br/
         = f.password_field :password_confirmation
       .actions
-        = f.submit 'Submit!'
+        = f.submit 'Submit', :style => 'height: 31px;'
         ' 
-        = link_to 'Cancel', @return_to, :class => 'button shifted'
+        = link_to 'Cancel','/', :class => 'button', :style => 'color: #ffffff; position: relative; bottom: 1px; left: 72px;'
     .ten.columns
-      .field
+      .field 
         = f.label :bio
         = f.text_area :bio

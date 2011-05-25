@@ -4,6 +4,7 @@ Barcmap::Application.routes.draw do
   match 'login' => "user_sessions#new",      :as => :login
   match 'logout' => "user_sessions#destroy", :as => :logout
   root :to => 'home#index'
+  match 'intro' => 'map#intro'
   match 'about' => 'home#about'
   match 'contact' => 'home#contact'
   match 'profile/:id' => 'users#show/:id'

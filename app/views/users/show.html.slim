@@ -4,11 +4,11 @@
 .row
   .eleven.columns
     p.lead
-      = @user.login
+      = @user.login + "!"
     p
       b Email: 
       = @user.email
-    = link_to 'Edit', edit_user_path(@user), :class => 'button'     
+    = link_to 'Edit', edit_user_path(@user), :class => 'button', :style =>'color: #ffffff;'
     /p
     /  b Crypted password:
     /  = @user.crypted_password
