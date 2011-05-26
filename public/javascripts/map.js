@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 26 May 2011 07:58:37 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 26 May 2011 09:33:06 GMT from
  * /Users/chronon/Dropbox/Class/Summer2011/CS 3750/project/barcmap/app/coffeescripts/map.coffee
  */
 
