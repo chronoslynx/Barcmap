@@ -175,6 +175,21 @@ body {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px; }
 
+#slider {
+  position: relative;
+  width: 400;
+  height: 300;
+  background: url(images/loading.gif) no-repeat 50% 50%; }
+
+#slider img {
+  position: absolute;
+  top: 0px;
+  left: 0px; }
+
+#slider a {
+  border: 0;
+  display: block; }
+
 /* #Typography
 ================================================== */
 .dengrave {

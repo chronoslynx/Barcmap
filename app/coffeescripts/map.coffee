@@ -2,6 +2,7 @@
     All the map image canvas logic and modal magic is in this file
     Some crazy ajax voodoo goin' on here mon'!
 ###
+###
 getNumericStyleProperty = (style, prop) ->
     return parseInt(style.getPropertyValue(prop),10)
     
@@ -26,9 +27,33 @@ element_position = (e) ->
         inner = false
     #}while (e == e.offsetParent)
     return { x: x, y: y }
-
-
+###
+locClickEvent = (e) ->
+    jQuery ($) ->
+        $.ajax {
+            url: '/locations/'+1,
+            type: 'GET',
+            dataType: "html",
+            success: (data) ->
+                $.modal data, {onOpen: (dialog) ->
+                	dialog.overlay.fadeIn 'slow', () ->
+                		dialog.container.slideDown 'medium', () ->
+                			dialog.data.fadeIn 'slow'
+                	    
+                    
+                }
+        }
+    
+circEvent = (e) ->
+    alert("Circle clicked!")
 window.onload = () ->
+    #Using raphaeljs drawing library:
+    map = Raphael document.getElementById "map", 320, 200
+    circle = map.circle 50, 40, 20
+    circle.id = 1
+    circle.attr "fill", "#000"
+    circle.click locClickEvent
+    ###
     c = document.getElementById "mapcan"
     t = c.getContext "2d"
     #t.drawImage(document.getElementById("map"), 0, 0)
@@ -65,6 +90,7 @@ window.onload = () ->
             }
                   
     , false
+    ###
 
 
 
