@@ -31,7 +31,7 @@ element_position = (e) ->
 locClickEvent = (e) ->
     jQuery ($) ->
         $.ajax {
-            url: '/locations/'+1,
+            url: '/locations/'+ 1,
             type: 'GET',
             dataType: "html",
             success: (data) ->
