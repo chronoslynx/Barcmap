@@ -9,15 +9,9 @@ To set up the application:
 ```
 git clone git://github.com/chronoslynx/Barcmap.git   
 cd barcmap && bundle install
-```    
-```    
 bundle install
-```
-Then
-```    
 rails server
 ```    
-
 
 And finally, navigate in your browser to 'http://localhost:3000'
 
