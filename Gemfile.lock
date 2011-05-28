@@ -65,6 +65,9 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    paperclip (2.3.8)
+      activerecord
+      activesupport
     polyglot (0.3.1)
     rack (1.2.2)
     rack-mount (0.6.14)
@@ -109,6 +112,7 @@ DEPENDENCIES
   barista
   barista_growl!
   formtastic
+  paperclip
   rails (= 3.0.7)
   rails3-generators
   rake

@@ -6,6 +6,10 @@ gem 'rake'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+
+#image attachment management
+gem "paperclip"
+
 #gem 'jquery-rails'
 
 # authentication framework

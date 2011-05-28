@@ -1,9 +1,11 @@
-javascript:
-  $(document).ready(function() {
-      $('input[type=text]:first').focus();
-  });
+/$(document).ready(function() {
+/    $('input[type=text]:first').focus();
+/});
+coffee:
+  $(document).ready () ->
+      $('input[type=text]:first').focus
 .row
-  = form_for(@user) do |f|
+  = form_for @user, :html => { :multipart => true } do |f|
     - if @user.errors.any?
       #error_explanation
         h2
@@ -29,11 +31,16 @@ javascript:
         = f.label :password_confirmation
         br/
         = f.password_field :password_confirmation
+      .field
+        strong Avatar:
+        br/
+        br/
+        = f.file_field :avatar
       .actions
         = f.submit 'Submit', :style => 'height: 31px;'
         ' 
         = link_to 'Cancel','/', :class => 'button', :style => 'color: #ffffff; position: relative; bottom: 1px; left: 72px;'
     .ten.columns
       .field 
-        = f.label :bio
-        = f.text_area :bio
+        = f.label :about
+        = f.text_area :about

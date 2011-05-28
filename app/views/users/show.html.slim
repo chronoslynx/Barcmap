@@ -3,12 +3,16 @@
     p#notice= notice
 .row
   .eleven.columns
-    p.lead
-      = @user.login + "!"
+    h1= @user.login + "!"
+    = image_tag @user.avatar.url(:thumb)
+
     p
-      b Email: 
-      = @user.email
-    = link_to 'Edit', edit_user_path(@user), :class => 'button', :style =>'color: #ffffff;'
+      /strong Email: 
+      /= @user.email
+
+      p.lead About:
+      = @user.about
+    = link_to 'Edit profile', edit_user_path(@user), :class => 'button', :style =>'color: #ffffff;'
     /p
     /  b Crypted password:
     /  = @user.crypted_password
@@ -19,5 +23,8 @@
     /  b Persistence token:
     /  = @user.persistence_token
   .five.columns
-    p.lead Bio:
-    = @user.bio
+    /unlocked locations will go here
+.row
+  .fifteen.columns.inset
+    /unlocked badges will go here
+
