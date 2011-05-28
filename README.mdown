@@ -7,20 +7,19 @@ Ruby 1.9.x and Rails 3.x (developed on Ruby 1.9.2-head and Rails 3.0.7)
 To set up the application:
 
 ```
-git clone git://github.com/chronoslynx/Barcmap.git
-```    
-```    
-cd barcmap
+git clone git://github.com/chronoslynx/Barcmap.git   
+cd barcmap && bundle install
 ```    
 ```    
 bundle install
 ```
+Then
 ```    
 rails server
 ```    
 
 
-Then navigate in your browser to 'http://localhost:3000'
+And finally, navigate in your browser to 'http://localhost:3000'
 
 Functionality:
 ----------------
