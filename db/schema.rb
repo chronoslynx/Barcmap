@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110528150510) do
+ActiveRecord::Schema.define(:version => 20110528150511) do
 
   create_table "badges", :force => true do |t|
     t.string   "name"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20110528150510) do
     t.string   "imageurl"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "avatar_file_name"
   end
 
   create_table "badges_users", :id => false, :force => true do |t|

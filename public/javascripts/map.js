@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 26 May 2011 12:01:37 GMT from
+/* DO NOT MODIFY. This file was compiled Sat, 28 May 2011 14:55:52 GMT from
  * /Users/chronon/Dropbox/Class/Summer2011/CS 3750/project/barcmap/app/coffeescripts/map.coffee
  */
 
@@ -36,7 +36,7 @@
   locClickEvent = function(e) {
     return jQuery(function($) {
       return $.ajax({
-        url: '/locations/' + 1,
+        url: '/locations/1',
         type: 'GET',
         dataType: "html",
         success: function(data) {

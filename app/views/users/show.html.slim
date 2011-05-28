@@ -1,5 +1,5 @@
 .row
-  .two.column.offset-by-seven
+  .two.column.offset-by-four
     p#notice= notice
 .row
   .eleven.columns
@@ -22,9 +22,12 @@
     /p
     /  b Persistence token:
     /  = @user.persistence_token
-  .five.columns
+  .five.columns.inset#profilelocs
+    p
+      | Eventually, A list of unlocked locations (or friends) could go here!
     /unlocked locations will go here
-.row
-  .fifteen.columns.inset
+  .fifteen.columns.inset style="position: relative; bottom: 100px;"
+    p
+      | In here will a go a table of unlocked badges, images then description
     /unlocked badges will go here
 
