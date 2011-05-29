@@ -26,11 +26,9 @@ gem "sass"
 gem "barista"
 gem 'barista_growl', :git => 'http://github.com/TrevorBurnham/barista_growl.git'
 #social networking integration
-#gem "ruby-openid"
-#gem "rack-openid", ">=0.2.1", :require => "rack/openid"
 gem "oauth"
-gem "authlogic-oauth"
-#gem "oauth2"
-#gem "authlogic-connect"
+#gem "authlogic-oauth"
+gem "oauth2"
+gem "authlogic-connect", '>=0.0.5.1'
 #gem 'facebooker'
 
