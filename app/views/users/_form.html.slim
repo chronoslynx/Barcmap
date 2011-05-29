@@ -5,6 +5,7 @@ coffee:
   $(document).ready () ->
       $('input[type=text]:first').focus
 .row
+
   = form_for @user, :html => { :multipart => true } do |f|
     - if @user.errors.any?
       #error_explanation

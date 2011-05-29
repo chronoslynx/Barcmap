@@ -45,6 +45,8 @@ GEM
       activesupport (= 3.0.7)
     activesupport (3.0.7)
     arel (2.0.10)
+    authlogic-oauth (1.0.8)
+      activesupport
     barista (1.0.0)
       coffee-script (~> 2.1.1)
     builder (2.1.2)
@@ -65,6 +67,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    oauth (0.4.4)
     paperclip (2.3.8)
       activerecord
       activesupport
@@ -109,9 +112,11 @@ PLATFORMS
 
 DEPENDENCIES
   authlogic!
+  authlogic-oauth
   barista
   barista_growl!
   formtastic
+  oauth
   paperclip
   rails (= 3.0.7)
   rails3-generators

@@ -1,6 +1,6 @@
 .sixteen.columns
   h1 Login
-
+  /input id="oauth_provider_twitter" name="oauth_provider" type="radio" value="twitter"
   = form_for @user_session, :url => {:action => "create"} do |f|
     div
       = f.label :login
