@@ -136,8 +136,7 @@ Devise.setup do |config|
   
   #config.omniauth :facebook, "APP_ID", "APP_SECRET"
   config.omniauth :facebook, FACEBOOK_APP_ID, FACEBOOK_APP_SECRET, :scope => FACEBOOK_APP_PERMISSIONS 
-#  config.omniauth :twitter, TWITTER_SECRET_KEY, TWITTER_CONSUMER_KEY
-  config.omniauth :twitter, TWITTER_CONSUMER_KEY, TWITTER_SECRET_KEY
+  config.omniauth :twitter, "5uTRlg0dGn96cw0AEZS5fA", "mkgwDqnW5Htm8PVg2IQHQmLfDlJYq214DXBtlDinJ4"
   config.omniauth :google_apps, OpenID::Store::Filesystem.new('/tmp'), :domain => 'gmail.com'
   #
   # config.warden do |manager|
