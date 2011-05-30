@@ -4,6 +4,7 @@ script src="http://platform.twitter.com/widgets.js" type="text/javascript"
   h1 Welcome!
   /example tweet button
   a href="http://twitter.com/share" class="twitter-share-button" data-url="localhost:3000" data-text="testing!" data-count="none"
+  link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook)
   .row
     ul class="tabs"
       li

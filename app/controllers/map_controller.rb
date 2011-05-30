@@ -1,6 +1,8 @@
 class MapController < ApplicationController
-  
-  before_filter :require_user
+  ### Devise
+  before_filter :authenticate_user!
+  ### Authlogic
+  #before_filter :require_user
   def index
     @locations = Location.all
   end

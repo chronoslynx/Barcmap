@@ -81,7 +81,16 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.16)
     multi_json (1.0.3)
+    multi_xml (0.2.2)
     multipart-post (1.1.2)
+    oa-core (0.2.6)
+    oa-oauth (0.2.6)
+      faraday (~> 0.6.1)
+      multi_json (~> 1.0.0)
+      multi_xml (~> 0.2.2)
+      oa-core (= 0.2.6)
+      oauth (~> 0.4.0)
+      oauth2 (~> 0.4.1)
     oauth (0.4.4)
     oauth2 (0.4.1)
       faraday (~> 0.6.1)
@@ -141,6 +150,7 @@ DEPENDENCIES
   barista_growl!
   devise
   formtastic
+  oa-oauth (= 0.2.6)
   oauth
   oauth2
   paperclip

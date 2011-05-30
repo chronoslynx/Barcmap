@@ -17,18 +17,22 @@ html.solid
            ' 
            = link_to "Map", '/map'
            ' 
-           - if current_user
+           - if user_signed_in?
             = link_to "Profile", "/users/#{current_user.id}"
            - else
             = link_to " New Here?", new_user_path 
   .container
     body.solid
       .container.insetbody
-        = yield
+      p class="notice"
+        = notice
+      p class="alert"
+        = alert
+      = yield
     footer.center
     .footerright
       .alignright
-        - if current_user
+        - if user_signed_in?
           = "Signed in as #{current_user.login}. Not you? "
           = link_to "Sign out", logout_path
         - else

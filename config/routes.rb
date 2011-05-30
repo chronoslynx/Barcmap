@@ -1,6 +1,8 @@
 Barcmap::Application.routes.draw do
-  resources :users, :user_sessions, :home, :map, :badges, :locations
-
+  resources :users, :home, :map, :badges, :locations
+  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'
   match 'login' => "user_sessions#new",      :as => :login
   match 'logout' => "user_sessions#destroy", :as => :logout
   root :to => 'home#index'

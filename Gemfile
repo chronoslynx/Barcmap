@@ -16,7 +16,7 @@ gem "paperclip"
 #gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
 gem "rails3-generators"
 gem "devise"
-
+gem "oa-oauth", '0.2.6', :require => "omniauth/oauth"
 # slim-lang HTML templating engine
 gem "slim", :require => "slim"
 gem "slim-rails"
