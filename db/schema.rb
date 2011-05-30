@@ -10,7 +10,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110529172531) do
+ActiveRecord::Schema.define(:version => 20110530101144) do
+
+  create_table "access_tokens", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "type",       :limit => 30
+    t.string   "key"
+    t.string   "token",      :limit => 1024
+    t.string   "secret"
+    t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "access_tokens", ["key"], :name => "index_access_tokens_on_key", :unique => true
+
+  create_table "authorizations", :force => true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "badges", :force => true do |t|
     t.string   "name"
@@ -43,16 +64,26 @@ ActiveRecord::Schema.define(:version => 20110529172531) do
     t.integer "location_id"
   end
 
+  create_table "sessions", :force => true do |t|
+    t.string   "session_id", :null => false
+    t.text     "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
+  add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
+
   create_table "users", :force => true do |t|
     t.string   "login"
-    t.string   "email",                                                                        :null => false
+    t.string   "email",             :default => "Email address"
     t.string   "crypted_password"
     t.string   "password_salt"
     t.string   "persistence_token",                                                            :null => false
     t.text     "about",             :default => "An new adventurer to the city of Barcelona!", :null => false
+    t.string   "avatar_file_name",  :default => "/images/anon.png"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "avatar_file_name"
     t.string   "oauth_token"
     t.string   "oauth_secret"
   end

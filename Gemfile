@@ -4,7 +4,7 @@ gem 'rails', '3.0.7'
 gem 'rake'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
+gem 'thin'
 gem 'sqlite3'
 
 #image attachment management
@@ -26,9 +26,7 @@ gem "sass"
 gem "barista"
 gem 'barista_growl', :git => 'http://github.com/TrevorBurnham/barista_growl.git'
 #social networking integration
-gem "oauth"
-#gem "authlogic-oauth"
-gem "oauth2"
-gem "authlogic-connect", '>=0.0.5.1'
+gem 'omniauth', '>0.1.6'
+
 #gem 'facebooker'
 

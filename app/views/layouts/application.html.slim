@@ -24,13 +24,14 @@ html.solid
   .container
     body.solid
       .container.insetbody
+        p.notification= notice
         = yield
     footer.center
     .footerright
       .alignright
         - if current_user
           = "Signed in as #{current_user.login}. Not you? "
-          = link_to "Sign out", logout_path
+          = link_to "Sign out", "/logout"
         - else
           = link_to "Sign in", new_user_session_path
           ' 

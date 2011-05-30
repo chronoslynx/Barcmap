@@ -1,4 +1,10 @@
 h1 New user
 /= oauth_register_button :value => "Register with twitter instead!"
 = render 'form'
+
+h1 Or:
+h3 Sign in with:
+= link_to image_tag("auth/google_64.png"), "/auth/open_id?openid_url=https://www.google.com/accounts/o8/id"
+- ["twitter","facebook"].each do |provider|
+  = link_to image_tag("auth/#{provider}_64.png"), "/auth/#{provider}"
 /= link_to 'Home', '/'

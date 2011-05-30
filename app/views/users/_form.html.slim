@@ -5,7 +5,6 @@ coffee:
   $(document).ready () ->
       $('input[type=text]:first').focus
 .row
-
   = form_for @user, :html => { :multipart => true } do |f|
     - if @user.errors.any?
       #error_explanation
@@ -45,3 +44,5 @@ coffee:
       .field 
         = f.label :about
         = f.text_area :about
+.row
+  = render :partial => "omniauth_connect" if current_user != nil && current_user.id == @user.id
