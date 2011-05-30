@@ -1,42 +1,156 @@
 class User < ActiveRecord::Base
-  acts_as_authentic do |c|
-    c.ignore_blank_passwords = true #ignoring passwords
-    c.validate_password_field = false #ignoring validations for password fields
-  end
-  attr_accessor :password_confirmation
-  has_many :authorizations, :dependent => :destroy
-  has_and_belongs_to_many :locations
-  has_and_belongs_to_many :badges
-  has_attached_file :avatar, :styles => {:thumb => "150x150#" }
+  include OmniAuthPopulator
+  include Sluggable
+
+  before_validation :generate_slug, :on => :create
   
-  #here we add required validations for a new record and pre-existing record
-    validate do |user|
-      if user.new_record? #adds validation if it is a new record
-        user.errors.add(:password, "is required") if user.password.blank?
-        user.errors.add(:password_confirmation, "is required") if user.password_confirmation.blank?
-        user.errors.add(:password, "Password and confirmation must match") if user.password != user.password_confirmation
-      elsif !(!user.new_record? && user.password.blank? && user.password_confirmation.blank?) #adds validation only if password or password_confirmation are modified
-        user.errors.add(:password, "is required") if user.password.blank?
-        user.errors.add(:password_confirmation, "is required") if user.password_confirmation.blank?
-        user.errors.add(:password, " and confirmation must match.") if user.password != user.password_confirmation
-        user.errors.add(:password, " and confirmation should be atleast 4 characters long.") if user.password.length < 4 || user.password_confirmation.length < 4
-      end
+  validates_uniqueness_of :slug
+  validates_length_of :slug, :minimum => 1
+
+  has_many :user_tokens do
+    def facebook
+      target.detect{|t| t.provider == 'facebook'}
     end
 
-    def self.create_from_hash(hash)
-      user = User.new(:username => hash['user_info']['name'].scan(/[a-zA-Z0-9_]/).to_s.downcase)
-      user.save(false) #create the user without performing validations. This is because most of the fields are not set.
-      user.reset_persistence_token! #set persistence_token else sessions will not be created
-      user
+    def twitter
+      target.detect{|t| t.provider == 'twitter'}
     end
-    
-    def self.create_with_omniauth(auth)
-      create! do |user|
-        user.provider = auth["provider"]
-        user.uid = auth["uid"]
-        user.name = auth["user_info"]["name"]
+  end
+
+  has_many :sharings
+
+  has_attached_file :photo,
+                    :styles => {
+                            :mini => "40x40#",
+                            :thumb => "80x80#",
+                            :small => "100x100#",
+                            :big => "150x150#"
+                    },
+                    :default_url => "/images/user_photos/missing_:style.png"
+
+  # Include default devise modules. Others available are:
+  # :token_authenticatable, :confirmable, :lockable and :timeoutable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :omniauthable, :validatable #:flexible_devise_validatable
+
+  # Setup accessible (or protected) attributes for your model
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :slug
+
+  def self.new_with_session(params, session)
+    super.tap do |user|
+      if data = session[:omniauth]
+        user.user_tokens.build(:provider => data['provider'], :uid => data['uid'])
       end
     end
+  end
 
-    
+  def slug_source
+    :raw_slug_text
+  end
+
+  def slug_scope
+    []
+  end
+
+  def raw_slug_text
+    return slug unless slug.nil?
+    return name unless name.blank?
+    return 'user'
+  end
+
+  def to_param
+    slug
+  end
+
+  def apply_omniauth(omniauth)
+    self.omniauth = omniauth
+    user_tokens.build(:provider => omniauth['provider'], :uid => omniauth['uid'], :omniauth => omniauth)
+
+    populate_photo_from_url(omniauth['user_info']['image']) unless photo.exists? || omniauth['user_info']['image'].blank?
+  end
+
+  def populate_from_twitter(omni)
+    self.name = omni['user_info']['name'] if self.name.blank?
+  end
+
+  def populate_from_google_apps(omni)
+    self.name = omni['user_info']['name'] if self.name.blank?
+  end
+
+  def populate_from_facebook(omni)
+    self.name = omni['user_info']['name'] if self.name.blank?
+    self.email = omni['user_info']['email'] if self.email.blank?
+  end
+
+#allows for account creation from twitter & fb
+#allows saves w/o password
+  def password_required?
+    (!persisted? && user_tokens.empty?) || password.present? || password_confirmation.present?
+  end
+
+#allows for account creation from twitter
+  def email_required?
+    user_tokens.empty?
+  end
+
+  def remember_me
+    super.nil? ? false : true
+  end
+
+  def tweet!(message, url=DEFAULT_SHARE_URL)
+    twitter_client.update truncated_message_with_url(message, url)
+  end
+
+  def fb_post!(message, name=DEFAULT_FB_POST_NAME,
+          description="TODO", url=DEFAULT_SHARE_URL, img=DEFAULT_FB_SHARE_IMAGE)
+    options = {'access_token' => user_tokens.facebook.token,
+               'message' => message,
+               'link' => url,
+               'picture' => img,
+               'name' => name,
+               'caption' => url,
+               'description' => description
+    }
+    RestClient.post(URI.escape("https://graph.facebook.com/me/feed/"), options)
+  end
+
+  def connected_to?(provider)
+    user_tokens.detect{|t| t.provider == provider.to_s} != nil
+  end
+
+  def display_name
+    name || email
+  end
+
+  private
+
+  def populate_photo_from_url(image_url)
+    require 'open-uri'
+    io = open(URI.parse(image_url))
+
+    def io.original_filename;
+      base_uri.path.split('/').last;
+    end
+
+    self.photo = io.original_filename.blank? ? nil : io
+    #todo for now throw, not sire the error cases
+  end
+
+  def twitter_client
+    client = TwitterOAuth::Client.new(
+            :consumer_key => ::TWITTER_CONSUMER_KEY,
+            :consumer_secret => ::TWITTER_SECRET_KEY,
+            :token => user_tokens.twitter.token,
+            :secret => user_tokens.twitter.secret
+    )
+  end
+
+  def truncated_message_with_url(message="", url="", length=140)
+    if message.size + url.size > 140
+      share = message[0..(136-url.size)] + "..." + url
+    else
+      share = message + " " + url
+    end
+    share
+  end
 end

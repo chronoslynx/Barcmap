@@ -1,0 +1,11 @@
+h2 Sign up with
+= render :partial => "devise/shared/social"
+h2 The Old Fashioned Way
+= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :multipart => true }) do |f|
+  = devise_error_messages!
+  = f.input :name, :label => "Name"
+  = f.input :email, :label => "Email*"
+  = f.input :password, :label => "Password*"
+  = f.input :password_confirmation, :label => "Password Confirmation*"
+  = f.input :photo, :label => "Profile Photo"
+  p= f.submit "Sign up"

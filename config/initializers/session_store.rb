@@ -1,8 +1,8 @@
 # Be sure to restart your server when you modify this file.
 
-Barcmap::Application.config.session_store :cookie_store, :key => '_barcmap_session'
+OmniauthDeviseExample::Application.config.session_store :cookie_store, :key => '_omniauth-devise-example_session'
 
 # Use the database for sessions instead of the cookie-based default,
 # which shouldn't be used to store highly confidential information
-# (create the session table with "rails generate session_migration")
-# Barcmap::Application.config.session_store :active_record_store
+# (create the session table with "rake db:sessions:create")
+# OmniauthDeviseExample::Application.config.session_store :active_record_store

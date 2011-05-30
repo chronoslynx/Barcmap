@@ -1,0 +1,25 @@
+h1 Share something to your networks
+- if !current_user.nil?
+  .sharing_form
+    h2 Post to connected networks!
+    = render :partial => 'form'
+- else
+  .sharing_signup_call_to_action
+    = link_to "Sign up", new_user_registration_path
+    | or
+    | \#{link_to "sign in", new_user_session_path} to share.
+    | \#{render :partial => "devise/shared/social_unconnected"}
+h2 What others have shared
+- if @sharings.empty?
+  p Nobody has shared yet. Be the first!
+- @sharings.each do |sharing|
+  .sharing style="clear:both;"
+    = link_to image_tag(sharing.user.photo.url(:mini), :class => 'share_image'), profile_path(sharing.user)
+    .share_text
+      = sharing.content
+      br/
+      br/
+      = sharing.created_at.strftime("%m/%d/%Y %I:%M%p GMT")
+      | #{link_to "permalink", sharing_path(sharing)} \
+      a.twitter-share-button data-count="horizontal" data-text=(sharing.content data-url=sharing_url(sharing))href="http://twitter.com/share"
+      fb:like action="like" font="verdana" href=(sharing_url(sharing))layout="button_count" ref="unique_tracking_code_per_referrer_goes_here" show_faces="false" width="10"

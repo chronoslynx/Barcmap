@@ -1,32 +1,22 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.7'
 gem 'rake'
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-gem 'thin'
-gem 'sqlite3'
-
-#image attachment management
-gem "paperclip"
-
-#gem 'jquery-rails'
-
-# authentication framework
-gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
-gem "rails3-generators"
-
-# slim-lang HTML templating engine
-gem "slim", :require => "slim"
-gem "slim-rails"
-
-gem "formtastic"
+gem 'rails', '3.0.5'
+gem 'sqlite3-ruby', :require => 'sqlite3'
+gem 'devise', :git => 'git://github.com/plataformatec/devise', :branch => 'master'
+gem 'omniauth', '0.2.0'
+gem 'paperclip'
+gem "simple_form", "~> 1.2.2"
+gem 'twitter_oauth', '0.4.3'
+gem "rest-client", "1.6.1", :require => "restclient"
+gem "sluggable"
+gem "slim"
 gem "sass"
 #coffeescript support
 gem "barista"
-gem 'barista_growl', :git => 'http://github.com/TrevorBurnham/barista_growl.git'
-#social networking integration
-gem 'omniauth', '>0.1.6'
 
-#gem 'facebooker'
+group :development, :test do
+ gem 'rspec-rails'
+ gem 'fixjour'
+end
 

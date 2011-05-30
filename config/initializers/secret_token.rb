@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Barcmap::Application.config.secret_token = 'd6a173fe1f9284ee4ffb8b77efa3d07c5ccea0826a6597ab5362f9348acee077bc38d623afec4c39c7d7e0a3bb68af28c6445274408a6be3d91d1740eb3b6d78'
+OmniauthDeviseExample::Application.config.secret_token = '384ed9ce6c937b2f8b25cbb076196b96bbffb6dcb12008a27a13e3b48d62abad1a68ff35fad114b08d706886ac74b1cad0d7e6a527cb930280e73a654abc316e'

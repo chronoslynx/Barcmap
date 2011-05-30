@@ -1,0 +1,5 @@
+div
+  ul#social-icons
+    - connected_providers_for(current_user).each do |provider|
+      li= image_tag("social-icons/#{provider}_32.png", :alt => "Sign in with # provider.to_s.titleize
+  .clear

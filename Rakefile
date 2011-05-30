@@ -4,4 +4,4 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
-Barcmap::Application.load_tasks
+OmniauthDeviseExample::Application.load_tasks

@@ -1,20 +1,7 @@
-Barcmap::Application.routes.draw do |map|
-  map.resources :users, :user_sessions, :home, :map, :badges, :locations, :authorizations
-
-  #match 'login' => "user_sessions#new",      :as => :login
-  #match 'logout' => "user_sessions#destroy", :as => :logout
-  map.root :controller => 'home', :action => 'index'
-  match 'intro' => 'map#intro'
-  match 'about' => 'home#about'
-  match 'contact' => 'home#contact'
-  map.signup 'signup', :controller => 'users', :action => 'new'
-  map.signin 'login', :controller => 'user_sessions', :action => 'new'
-  map.signout 'logout', :controller => 'user_sessions', :action => 'destroy'
-  map.callback "/auth/:provider/callback", :controller => "authorizations", :action => "create"
-  map.failure "/auth/failure", :controller => "authorizations", :action => "failure"
-
-
-  #match 'profile/:id' => 'users#show/:id'
+OmniauthDeviseExample::Application.routes.draw do
+  resources :sharings
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :registrations => 'registrations'}
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -64,13 +51,13 @@ Barcmap::Application.routes.draw do |map|
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+  root :to => "sharings#index"
 
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
-   map.connect ':controller/:action/:id'
-   map.connect ':controller/:action/:id.:format'
+
+  match '/:id', :controller => 'profiles', :action => 'show', :as => 'profile', :via => :get
 end
