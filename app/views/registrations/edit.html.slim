@@ -9,13 +9,11 @@ br/
   = f.input :slug, :label => "Personal URL"
   br/
   h3 Password
-  = f.input :password, :label => "Password",              \
-    hint => "leave blank if you don't want to change it" |:
+  = f.input :password, :label => "Password", :hint => "leave blank if you don't want to change it"
   = f.input :password_confirmation, :label => "Password Confirmation"
-  = f.input :current_password, :label => "Current Password",              \
-    hint => "we need your current password to confirm a password change" |:
+  = f.input :current_password, :label => "Current Password", :hint => "we need your current password to confirm a password change"
   = f.input :photo
   p= f.submit "Update"
 br/
 br/
-= render :partial => "devise/shared/social_connect_and_unconnect"
+== render :partial => "devise/shared/social_connect_and_unconnect"

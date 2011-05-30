@@ -8,20 +8,20 @@ html
     = stylesheet_link_tag 'forms'
     = javascript_include_tag :defaults
     = csrf_meta_tag
-    meta content=(@page_title || DEFAULT_PAGE_TITLE)property="title"
-    meta content=(@page_description || DEFAULT_PAGE_DESCRIPTION)property="description"
+    meta content=(@page_title || DEFAULT_PAGE_TITLE) property="title"
+    meta content=(@page_description || DEFAULT_PAGE_DESCRIPTION) property="description"
     = content_for :page_specific_head
   body
     .page_content
       #user_nav
-        = link_to 'Home', '/'
+        = link_to 'Home ', '/'
         - if user_signed_in?
           = link_to 'Profile', profile_path(current_user)
           = link_to 'Edit Profile', edit_user_registration_path(current_user)
           = link_to "Sign out", destroy_user_session_path
         - else
-          = link_to "Sign up", new_user_registration_path
-          = link_to "sign in", new_user_session_path
+          = link_to "Sign up ", new_user_registration_path
+          = link_to "Sign in", new_user_session_path
       h1.site-title Devise/OmniAuth demo
       = raw notice_html
       = raw alert_html

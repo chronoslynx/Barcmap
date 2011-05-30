@@ -17,6 +17,6 @@ h1
     br/
     = @sharing.created_at.strftime("%m/%d/%Y %I:%M%p GMT")
     | #{link_to "permalink", sharing_path(@sharing)} \
-    a.twitter-share-button data-count="horizontal" data-text=(@sharing.content data-url=sharing_url(@sharing))href="http://twitter.com/share"
-    fb:like action="like" font="verdana" href=(sharing_url(@sharing))layout="button_count" ref="unique_tracking_code_per_referrer_goes_here" show_faces="false" width="10"
+    a.twitter-share-button data-count="horizontal" data-text=(@sharing.content data-url=sharing_url(@sharing)) href="http://twitter.com/share"
+    fb:like action="like" font="verdana" href=(sharing_url(@sharing)) layout="button_count" ref="unique_tracking_code_per_referrer_goes_here" show_faces="false" width="10"
 = link_to "Share something yourself", new_sharing_path
