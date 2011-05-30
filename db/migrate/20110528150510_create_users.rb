@@ -1,26 +1,13 @@
 class CreateUsers < ActiveRecord::Migration
   def self.up
     create_table :users do |t|
+      ### Authlogic
       t.string    :login,               :default => "Username", :null => false
       t.string    :email,               :default => "Email address", :null => false
       t.string    :crypted_password,    :null => false
       t.string    :password_salt,       :null => false
       t.string    :persistence_token,   :null => false
       t.text      :about,               :default => "An new adventurer to the city of Barcelona!", :null => false 
-      #authlogic connect
-      t.integer :active_token_id
-      #Figure out how to store data on unlocked badges
-      #can we do arrays? or do we have to store each badge independantly as a bit?
-      #t.string    :single_access_token, :null => false                # optional, see Authlogic::Session::Params
-      #t.string    :perishable_token,    :null => false                # optional, see Authlogic::Session::Perishability
-      # magic fields (all optional, see Authlogic::Session::MagicColumns)
-      #t.integer   :login_count,         :null => false, :default => 0
-      #t.integer   :failed_login_count,  :null => false, :default => 0
-      #t.datetime  :last_request_at
-      #t.datetime  :current_login_at
-      #t.datetime  :last_login_at
-      #t.string    :current_login_ip
-      #t.string    :last_login_ip
       t.timestamps
     end
 
