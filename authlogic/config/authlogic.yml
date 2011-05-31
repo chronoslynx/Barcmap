@@ -1,9 +1,0 @@
-connect:
-  twitter:
-    key: "16289061-m3yBaM8O9z8cWqOwsSd79aPXLGfHvj1gckird0C1J"
-    secret: "NJTiwluGCRfvvcrkuZOqqw4hQPU1Djq0EhWxfO3U"
-    label: "Twitter"
-  #facebook:
-  #  key: "my_key"
-  #  secret: "my_secret"
-  #  label: "Facebook"
