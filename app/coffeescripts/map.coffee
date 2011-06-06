@@ -1,6 +1,9 @@
 ###
     All the map image canvas logic and modal magic is in this file
     Some crazy ajax voodoo goin' on here mon'!
+    
+    TODO: Swap this to use NyroModal, or a custom popup
+         FUCK simplemodal
 ###
 locClickEvent = (e) ->
     jQuery ($) ->
