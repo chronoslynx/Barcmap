@@ -14,7 +14,7 @@ locClickEvent = (data) ->
                 		dialog.container.slideDown 'medium', () ->
                 			dialog.data.fadeIn 'slow'         
                 }
-        } 
+        }    
 window.onload = () ->
     #Using raphaeljs drawing library:
     map = Raphael document.getElementById "map", 320, 200
@@ -22,4 +22,3 @@ window.onload = () ->
     circle.attr "fill", "#000"
     
     circle.node.onclick = locClickEvent #locClickEvent
-    return null

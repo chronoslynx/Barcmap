@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Mon, 06 Jun 2011 12:16:25 GMT from
+/* DO NOT MODIFY. This file was compiled Mon, 06 Jun 2011 20:25:02 GMT from
  * /Users/chronon/Dropbox/Class/Summer2011/CS 3750/project/barcmap/app/coffeescripts/map.coffee
  */
 
@@ -32,7 +32,6 @@
     map = Raphael(document.getElementById("map", 320, 200));
     circle = map.circle(50, 40, 20);
     circle.attr("fill", "#000");
-    circle.node.onclick = locClickEvent;
-    return null;
+    return circle.node.onclick = locClickEvent;
   };
 }).call(this);

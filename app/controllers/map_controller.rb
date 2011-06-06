@@ -2,7 +2,7 @@ class MapController < ApplicationController
   before_filter :authenticate_user!
   
   def index
-    @locations = Location.all
+    #@locations = Location.all
   end
   
   def intro
