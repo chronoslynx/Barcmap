@@ -2,7 +2,7 @@
     All the map image canvas logic and modal magic is in this file
     Some crazy ajax voodoo goin' on here mon'!
 ###
-locClickEvent = (data) ->
+locClickEvent = (e) ->
     jQuery ($) ->
         $.ajax {
             url: '/locations/'+ 1,
