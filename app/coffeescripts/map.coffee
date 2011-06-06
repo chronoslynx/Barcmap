@@ -19,9 +19,12 @@ locClickEvent = (e) ->
                 }
         }    
 window.onload = () ->
-    #Using raphaeljs drawing library:
-    map = Raphael document.getElementById "map", 320, 200
-    circle = map.circle 50, 40, 20
-    circle.attr "fill", "#000"
-    
-    circle.node.onclick = locClickEvent #locClickEvent
+    jQuery ($) ->
+        #Using raphaeljs drawing library:
+        map = Raphael document.getElementById "map", 320, 200
+        circle = map.circle 50, 40, 20
+        circle.attr "fill", "#000"
+        # not working :
+        circle.node.click (e) ->
+            e.preventDefault()
+            $.nmManual '/locations/1'
