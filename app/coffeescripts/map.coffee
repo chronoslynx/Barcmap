@@ -27,4 +27,4 @@ window.onload = () ->
         # not working :
         circle.node.click (e) ->
             e.preventDefault()
-            $.nmManual '/locations/1'
+            $.nmManual 'locations/1'

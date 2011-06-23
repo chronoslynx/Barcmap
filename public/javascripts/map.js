@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Mon, 06 Jun 2011 22:03:01 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 23 Jun 2011 08:45:12 GMT from
  * /Users/chronon/Dropbox/Class/Summer2011/CS 3750/project/barcmap/app/coffeescripts/map.coffee
  */
 
@@ -38,7 +38,7 @@
       circle.attr("fill", "#000");
       return circle.node.click(function(e) {
         e.preventDefault();
-        $.nmManual('/locations/1');
+        return $.nmManual('locations/1');
       });
     });
   };
