@@ -54,29 +54,18 @@ table {
 ==================================================*/
 /* #Basic Styles
 ================================================== */
-.stripe {
-  background-image: 'images/backgroundStrip.png';
-  background-repeat: no-repeat; }
-
 header {
-  padding: 20px;
+  padding: 5px;
   background: white;
-  margin-bottom: 40px;
-  margin-left: auto;
-  margin-right: auto;
-  -webkit-box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.03) inset, 0 0 0 1px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.03) inset, 0 0 0 1px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.03) inset, 0 0 0 1px rgba(0, 0, 0, 0.15); }
+  text-align: right; }
 
 footer {
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #c3c7c7;
+  background: white;
   margin-left: auto;
   margin-right: auto; }
 
 body {
-  background: #e6ebea;
+  background: #3399cc;
   font: 14px/21px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #424242;
   -webkit-font-smoothing: antialiased;
@@ -86,69 +75,40 @@ body {
 .container {
   overfow: auto; }
 
-.foot {
-  font-size: 0.75em;
-  font-style: italic;
-  color: #c3c7c7; }
+.leftindex {
+  border-radius: 15px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border: 5px solid #979797;
+  height: 390px; }
 
-.gradLine {
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: #e6ebea;
-  -moz-border-bottom-colors: #dddddd #e6ebea #f5f5f5; }
-
-.line {
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: black;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #dddddd;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-bottom-color: #f5f5f5;
-  margin-left: auto;
-  margin-right: auto; }
-
-.center {
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 960px; }
-
-.inset {
-  padding: 30px;
-  border: 1px solid #c3c7c7;
-  background: #f5f5f5; }
-
-.insetbody {
-  padding: 60px;
+.bottombar {
   background: white;
-  -webkit-box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.03) inset, 0 0 0 1px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.03) inset, 0 0 0 1px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.03) inset, 0 0 0 1px rgba(0, 0, 0, 0.15); }
+  margin-top: 60px;
+  height: 130px; }
 
-.roundinset {
-  border-radius: 3px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  position: relative;
-  top: 103px;
-  padding: 30px;
-  border: 1px solid #c3c7c7;
-  background: #f5f5f5; }
+.leftcon {
+  display: inline-block; }
 
-#clear {
+.cencon {
+  display: inline-block; }
+
+.rightcon {
+  display: inline-block; }
+
+.logo {
+  float: left; }
+
+.content {
+  border-radius: 15px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  height: 400px;
+  background: #363636;
+  color: #979797; }
+
+.clear {
   clear: both; }
-
-#maptasks {
-  position: relative;
-  left: 10px;
-  padding: 10px;
-  border: 1px solid #dddddd;
-  background: #f5f5f5;
-  height: 300px;
-  width: 880px; }
 
 /* The canvas containing the map */
 #notice {
@@ -156,37 +116,16 @@ body {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px; }
 
-#slider {
-  position: relative;
-  width: 400;
-  height: 300;
-  background: url(images/loading.gif) no-repeat 50% 50%; }
-
-#slider img {
-  position: absolute;
-  top: 0px;
-  left: 0px; }
-
-#slider a {
-  border: 0;
-  display: block; }
+.vert {
+  -moz-transform: rotate(270deg);
+  -moz-transform-origin: 50% 50%;
+  -webkit-transform: rotate(270deg);
+  -webkit-transform-origin: 50% 50%; }
 
 #profilelocs {
   float: right;
   position: relative;
   bottom: 310px; }
-
-.page_content {
-  width: 960px;
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
-  margin: 0 auto -45px;
-  /* the bottom margin is the negative value of the footer's height */
-  background: white;
-  border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc;
-  padding: 10px 20px 0 20px; }
 
 ul#social-icons li {
   display: block;
@@ -238,11 +177,10 @@ div.sharing_form {
 
 /* #Typography
 ================================================== */
-.dengrave {
-  text-shadow: 0px -1px 0px #374683; }
-
-.lengrave {
-  text-shadow: -1px 1px 0px #c3c7c7; }
+.foot {
+  font-size: 0.75em;
+  font-style: italic;
+  color: #363636; }
 
 .job {
   font-size: 0.875em;
@@ -252,12 +190,22 @@ div.sharing_form {
 .title {
   font-style: italic; }
 
+.tall {
+  font-size: 72px; }
+
 .usernav {
-  float: left;
-  position: relative;
   padding: 10px;
-  bottom: 70px;
-  font-size: 12px; }
+  background: #fb9c26;
+  text-align: right;
+  font-size: 24px;
+  margin-bottom: 60px; }
+
+.usernav a {
+  color: white;
+  text-decoration: none; }
+
+.usernav a:hover, a:focus {
+  color: #ffbc00; }
 
 h1, h2, h3, h4, h5, h6 {
   color: #424242;
@@ -447,6 +395,37 @@ button:active {
   padding-right: 0 !important;
   text-align: center; }
 
+/* Vertical Tabs
+================================================== */
+.ui-tabs-vertical {
+  width: 55em; }
+
+.ui-tabs-vertical .ui-tabs-nav {
+  padding: .2em .1em .2em .2em;
+  float: left;
+  width: 12em; }
+
+.ui-tabs-vertical .ui-tabs-nav li {
+  clear: left;
+  width: 100%;
+  border-bottom-width: 1px !important;
+  border-right-width: 0 !important;
+  margin: 0 -1px 0.2em 0; }
+
+.ui-tabs-vertical .ui-tabs-nav li a {
+  display: block; }
+
+.ui-tabs-vertical .ui-tabs-nav li.ui-tabs-selected {
+  padding-bottom: 0;
+  padding-right: .1em;
+  border-right-width: 1px;
+  border-right-width: 1px; }
+
+.ui-tabs-vertical .ui-tabs-panel {
+  padding: 1em;
+  float: right;
+  width: 40em; }
+
 /* #Tabs (activate in app.js)
 ================================================== */
 ul.tabs {
@@ -628,7 +607,7 @@ label span {
   border: 1px solid #f5f5f5;
   padding: 12px; }
   #simplemodal-container a {
-    color: #0a648b; }
+    color: #3399cc; }
   #simplemodal-container a.modalCloseImg {
     background: url("../../images/close.png") no-repeat;
     width: 36px;
@@ -650,7 +629,7 @@ label span {
     margin-bottom: 12px;
     padding: 4px 6px 6px; }
   #simplemodal-container h3 {
-    color: #fa1a39; }
+    color: #ff3b33; }
 
 /* #Misc
 ================================================== */

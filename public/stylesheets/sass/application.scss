@@ -43,24 +43,19 @@
 
 /* #Colors
 ==================================================*/
-    $red:     #fa1a39;
-    $orange:  #ff881a;
-    $lorange: lighten($orange, 5%);
-    $dorange: darken($orange, 5%);
-    $blue:    #0a648b;
-    $bblue:   #0093ca;//lighten($blue, 15%);
-    $teal:    #8ac8d4;
-    $dteal:   darken($teal, 20%);
-    $green:   #2b9b08;
-    $gowalla: #97ca00;
+    $red:     #ff3b33;
+    $orange:  #fb9c26;
+    $dorange: #db8418;
+    $blue:    #3399cc;
+    $bblue:   #0093ca;
     $yellow:  #ffbc00;
+    $green:   #05c54c;
+    $purple:  #bf6de4;
     $lgrey:   #f5f5f5;
-    $dgrey:   #ddd;
-    $bgrey:   #c3c7c7;
+    $tgrey:   #979797;
+    $dgrey:   #363636;
     $white:   #ffffff;
     $grey:    #e6ebea;//#d4e3eb;//
-    $tan:     #f8e4bf;
-    $brown:   #8b4914;
     $black:   #000000;
     $text:    #424242;
     .solid { background: $grey; }
@@ -94,33 +89,20 @@
     }
 /* #Basic Styles
 ================================================== */
-    .stripe {
-        background-image: 'images/backgroundStrip.png';
-        background-repeat: no-repeat;
-    }
     header {
-        padding: 20px;
+        padding: 5px;
         background:$white;
-        margin: {
-            bottom: 40px;
-            left:  auto;
-            right: auto;
-        }
-        -webkit-box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.03) inset, 0 0 0 1px rgba(0,0,0,0.15); 
-    	-moz-box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.03) inset, 0 0 0 1px rgba(0,0,0,0.15); 
-    	box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.03) inset, 0 0 0 1px rgba(0,0,0,0.15);
+        text-align: right;
     }
     footer {
-        border-top-style: solid; 
-        border-top-width: 1px;
-        border-top-color: $bgrey;
+        background: white;
         margin: {
             left:  auto;
             right: auto;
         }
     }
 	body { 
-		background: $grey;
+		background: $blue;
 		font: 14px/21px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		color: $text; 
 		-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
@@ -129,99 +111,45 @@
     .container {
         overfow: auto;
     }
-    .foot {
-        font: {
-            size: 0.75em;
-            style: italic;
-        }
-        color: $bgrey;
-        
+    .leftindex {
+        @include rounded(15px);
+        border: 5px solid $tgrey;
+        height: 390px;
     }
-    .gradLine {
-        border-bottom: {
-            width: 1px;
-            style: solid;
-            color: $grey;
-        }
-        -moz-border-bottom-colors: $dgrey $grey $lgrey;
+    .bottombar {
+        background: $white;
+        margin-top: 60px;
+        height: 130px;
     }
-    .line {
-        border-top-style: solid; 
-        border-top-width: 1px;
-        border-top-color: $black;
-        border: {
-            top: {
-                style: solid;
-                width: 1px;
-                color: $dgrey;
-            }
-            bottom: {
-                style: solid;
-                width: 1px;
-                color: $lgrey;
-            }
-        }
-        margin: {
-            left:  auto;
-            right: auto;
-        }
+    .leftcon {
+        display: inline-block;
     }
-    .center {
-        margin-top: 20px;
-        margin-left: auto;   
-        margin-right: auto;  
-        width: 960px;
+    .cencon {
+        display: inline-block;
     }
-    .inset {
-    	padding:30px;
-    	border:1px solid $bgrey;
-    	background: $lgrey;
+    .rightcon {
+        display: inline-block;
     }
-    .insetbody {
-    	padding:60px;
-    	background: $white;
-    	-webkit-box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.03) inset, 0 0 0 1px rgba(0,0,0,0.15); 
-    	-moz-box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.03) inset, 0 0 0 1px rgba(0,0,0,0.15); 
-    	box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.03) inset, 0 0 0 1px rgba(0,0,0,0.15);
+    .logo {
+        float: left;
     }
-    .roundinset {
-        @include rounded();
-        position: relative;
-        top: 103px;
-    	padding:30px;
-    	border:1px solid $bgrey;
-    	background: $lgrey;
+    .content {
+        @include rounded(15px);
+        height: 400px;
+    	background: $dgrey;
+    	color: $tgrey;
     }
-    #clear {clear: both; }
-    #maptasks {
-        position: relative;
-        left: 10px;
-        padding: 10px;
-        border: 1px solid $dgrey;
-        background: $lgrey;
-        height: 300px;
-        width: 880px;
-    }
+    .clear {clear: both; }
     /* The canvas containing the map */
     #mapcan { }
     #notice {
         @include rounded();
     }
-    #slider {
-        position: relative;
-        width: 400;
-        height: 300;
-        background:url(images/loading.gif) no-repeat 50% 50%;
-    }
-    #slider img {
-        position:absolute;
-        top:0px;
-        left:0px;
-        //display:none;
-    }
-    #slider a {
-        border:0;
-        display:block;
+    .vert {
+        -moz-transform: rotate(270deg);
+        -moz-transform-origin: 50% 50%;
+        -webkit-transform: rotate(270deg);
+        -webkit-transform-origin: 50% 50%;
     }
     #social-icons {
     }
@@ -230,35 +158,19 @@
       position: relative;
       bottom: 310px;
     }
-    .page_content {
-        width: 960px;
-        min-height: 100%;
-        height: auto !important;
-        height: 100%;
-        margin: 0 auto -45px; /* the bottom margin is the negative value of the footer's height */
-        background: white;
-        border-left: 1px solid #ccc;
-        border-right: 1px solid #ccc;
-        padding: 10px 20px 0 20px;
-    }
-
     ul#social-icons li {
      display: block;
      float: left;
-
     }
-
     .spacer {
         margin: 10px 0;
         font-size: 16px;
         font-style:italic;
     }
-
     .forgot-password {
         margin-top: 10px;
         clear: both;
     }
-
     div.notice, div.alert{
         padding: 20px 20px;
         width: 600px;
@@ -271,22 +183,18 @@
     div.notice {
             background-color:aliceblue;
     }
-
     div.alert {
         background-color:lightsalmon;
     }
-
     div.share_text {
         float: left;
         margin: 0 0 0 10px;
         width: 600px;
     }
-
     div.sharing {
         padding-bottom: 40px;
         overflow: hidden;
     }
-
     .share_image {
         float: left;
     }
@@ -295,20 +203,18 @@
         padding: 15px;
         margin: 25px 0;
     }
-
     .sharing_signup_call_to_action {
         padding: 50px 0;
         font-size: 28px;
     }
 /* #Typography
 ================================================== */
-    .dengrave {
-        //light text, dark background
-        text-shadow: 0px -1px 0px #374683;
-    }
-    .lengrave {
-        //dark text on light background
-        text-shadow: -1px 1px 0px $bgrey;//lighten($lorange, 10%);
+    .foot {
+        font: {
+            size: 0.75em;
+            style: italic;
+        }
+        color: $dgrey;   
     }
     .job {
         font: {
@@ -320,14 +226,21 @@
     .title {
         font-style: italic;
     }
-    .usernav {
-        float: left;
-        position: relative;
-        padding: 10px;
-        bottom: 70px;
-        font-size: 12px;
+    .tall {
+        font-size: 72px;
     }
-    
+    .usernav {
+        padding: 10px;
+        background: $orange;
+        text-align: right;
+        font-size: 24px;
+        margin-bottom: 60px;
+    }
+    .usernav a {
+        color: $white;
+        text-decoration: none;
+    }
+    .usernav a:hover, a:focus { color: $yellow; }
 	h1, h2, h3, h4, h5, h6 { 
 		color: $text;//#181818; 
 		font-family: "Georgia", "Times New Roman", Helvetica, Arial, sans-serif;
@@ -444,7 +357,14 @@
 		padding-right: 0 !important;
 		text-align: center; }
 	
-	
+/* Vertical Tabs
+================================================== */
+    .ui-tabs-vertical { width: 55em; }
+    .ui-tabs-vertical .ui-tabs-nav { padding: .2em .1em .2em .2em; float: left; width: 12em; }
+    .ui-tabs-vertical .ui-tabs-nav li { clear: left; width: 100%; border-bottom-width: 1px !important; border-right-width: 0 !important; margin: 0 -1px .2em 0; }
+    .ui-tabs-vertical .ui-tabs-nav li a { display:block; }
+    .ui-tabs-vertical .ui-tabs-nav li.ui-tabs-selected { padding-bottom: 0; padding-right: .1em; border-right-width: 1px; border-right-width: 1px; }
+    .ui-tabs-vertical .ui-tabs-panel { padding: 1em; float: right; width: 40em;}	
 /* #Tabs (activate in app.js)
 ================================================== */
 	ul.tabs { 
