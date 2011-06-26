@@ -16,3 +16,10 @@ div
   br/
   | email: #{@user.email}
   br/
+br/
+div
+  | Locations:
+  br/
+  - @user.locations.each do |loc|
+    = @loc.name
+    br/

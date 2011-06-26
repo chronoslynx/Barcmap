@@ -8,7 +8,6 @@ html.solid
     meta content=(@page_title || DEFAULT_PAGE_TITLE) property="title"
     meta content=(@page_description || DEFAULT_PAGE_DESCRIPTION) property="description"
     = content_for :page_specific_head
-  
   body.solid
     header
       p Piñata bull
@@ -22,9 +21,9 @@ html.solid
       = link_to "Map", '/map'
       ' 
       - if user_signed_in?
-        = link_to 'Profile ', profile_path(current_user)
+        = link_to 'Profile', profile_path(current_user)
         ' 
-        = link_to 'Edit Profile ', edit_user_registration_path(current_user)
+        = link_to 'Edit Profile', edit_user_registration_path(current_user)
         ' 
         = link_to "Sign out", destroy_user_session_path
       - else
@@ -36,30 +35,21 @@ html.solid
       = raw alert_html
       = yield
     footer.center
-      .footerright
-        .alignright
-          - if user_signed_in?
-            = link_to 'Profile ', profile_path(current_user)
-            = link_to 'Edit Profile ', edit_user_registration_path(current_user)
-            = link_to "Sign out", destroy_user_session_path
-          - else
-            = link_to "Sign up ", new_user_registration_path
-            = link_to "Sign in", new_user_session_path
-      .footerleft
-        .alignleft
-          = link_to "Home", '/'
-          '  
-          = link_to "About", '/about' 
-          '   
-          = link_to "Contact", '/contact'
-          ' 
-          = link_to "Map", '/map'
-          ' 
-          = link_to "Users", '/users'
-          ' 
-          = link_to "Locations", '/locations'
-          ' 
-          = link_to "Badges", '/badges'
+      p.foot Site built in Ruby on Rails by Tim Swihart, Kaitlin Powell, Jessica and Jamie Crabb
+      /.footerleft
+      /= link_to "Home", '/'
+      /'  
+      /= link_to "About", '/about' 
+      /'   
+      /= link_to "Contact", '/contact'
+      /' 
+      /= link_to "Map", '/map'
+      /' 
+      /= link_to "Users", '/users'
+      /' 
+      /= link_to "Locations", '/locations'
+      /' 
+      /= link_to "Badges", '/badges'
   script src="http://platform.twitter.com/widgets.js" type="text/javascript"
   script src="http://connect.facebook.net/en_US/all.js#xfbml=1"
 

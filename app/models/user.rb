@@ -16,9 +16,8 @@ class User < ActiveRecord::Base
       target.detect{|t| t.provider == 'twitter'}
     end
   end
-
-  has_many :sharings
-
+  has_and_belongs_to_many :locations
+  has_and_belongs_to_many :badges
   has_attached_file :photo,
                     :styles => {
                             :mini => "40x40#",

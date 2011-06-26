@@ -69,19 +69,9 @@ header {
   box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.03) inset, 0 0 0 1px rgba(0, 0, 0, 0.15); }
 
 footer {
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  -moz-border-bottom-left-radius: 5px;
-  -moz-border-bottom-right-radius: 5px;
-  -webkit-border-bottom-left-radius: 5px;
-  -webkit-border-bottom-right-radius: 5px;
-  background-color: #f5f5f5;
   border-top-style: solid;
   border-top-width: 1px;
   border-top-color: #c3c7c7;
-  border-radius: 3px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
   margin-left: auto;
   margin-right: auto; }
 
@@ -95,6 +85,11 @@ body {
 
 .container {
   overfow: auto; }
+
+.foot {
+  font-size: 0.75em;
+  font-style: italic;
+  color: #c3c7c7; }
 
 .gradLine {
   border-bottom-width: 1px;
@@ -114,16 +109,6 @@ body {
   border-bottom-color: #f5f5f5;
   margin-left: auto;
   margin-right: auto; }
-
-.alignleft {
-  float: left;
-  position: relative;
-  left: 150px; }
-
-.alignright {
-  float: right;
-  position: relative;
-  right: 150px; }
 
 .center {
   margin-top: 20px;
@@ -259,28 +244,6 @@ div.sharing_form {
 .lengrave {
   text-shadow: -1px 1px 0px #c3c7c7; }
 
-.footerleft {
-  position: relative;
-  right: 62px;
-  font-size: 0.75em;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  -moz-border-bottom-left-radius: 5px;
-  -moz-border-bottom-right-radius: 5px;
-  -webkit-border-bottom-left-radius: 5px;
-  -webkit-border-bottom-right-radius: 5px; }
-
-.footerright {
-  position: relative;
-  left: 60px;
-  font-size: 0.75em;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  -moz-border-bottom-left-radius: 5px;
-  -moz-border-bottom-right-radius: 5px;
-  -webkit-border-bottom-left-radius: 5px;
-  -webkit-border-bottom-right-radius: 5px; }
-
 .job {
   font-size: 0.875em;
   font-style: italic;
@@ -355,29 +318,6 @@ strong {
 
 small {
   font-size: 80%; }
-
-/*	Blockquotes  */
-blockquote, blockquote p {
-  font-size: 17px;
-  line-height: 24px;
-  color: #777;
-  font-style: italic; }
-
-blockquote {
-  margin: 0 0 20px;
-  padding: 9px 20px 0 19px;
-  border-left: 1px solid #ddd; }
-
-blockquote cite {
-  display: block;
-  font-size: 12px;
-  color: #555; }
-
-blockquote cite:before {
-  content: "\2014 \0020"; }
-
-blockquote cite a, blockquote cite a:visited, blockquote cite a:visited {
-  color: #555; }
 
 hr {
   border: solid #ddd;
