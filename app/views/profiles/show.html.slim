@@ -9,7 +9,7 @@ h1
 /br/
 /= image_tag @user.photo.url(:small)
 /br/
-= image_tag @user.photo.url(:big)
+= image_tag @user.photo.url
 br/
 div
   | Name: #{@user.name}
@@ -23,3 +23,4 @@ div
   - @user.locations.each do |loc|
     = @loc.name
     br/
+= link_to 'Edit Profile', edit_user_registration_path(current_user), :style=>'color: #0093ca;'

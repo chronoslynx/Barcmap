@@ -80,7 +80,8 @@ body {
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
   border: 5px solid #979797;
-  height: 390px; }
+  padding: 10px;
+  height: 470px; }
 
 .bottombar {
   background: white;
@@ -97,15 +98,19 @@ body {
   display: inline-block; }
 
 .logo {
-  float: left; }
+  float: left;
+  position: relative;
+  bottom: 30px;
+  margin-bottom: -60px; }
 
 .content {
   border-radius: 15px;
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
-  height: 400px;
+  padding: 50px;
   background: #363636;
-  color: #979797; }
+  color: #979797;
+  min-height: 480px; }
 
 .clear {
   clear: both; }
@@ -174,6 +179,9 @@ div.sharing_form {
 .sharing_signup_call_to_action {
   padding: 50px 0;
   font-size: 28px; }
+
+.signin {
+  margin: 20px; }
 
 /* #Typography
 ================================================== */
@@ -432,7 +440,9 @@ ul.tabs {
   display: block;
   margin: 0 0 20px 0;
   padding: 0;
-  border-bottom: solid 1px #ddd; }
+  position: relative;
+  right: 20px;
+  top: 20px; }
 
 ul.tabs li {
   display: block;

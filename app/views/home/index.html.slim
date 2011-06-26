@@ -4,29 +4,22 @@ script src="http://platform.twitter.com/widgets.js" type="text/javascript"
   /example tweet button
   /a href="http://twitter.com/share" class="twitter-share-button" data-url="localhost:3000" data-text="testing!" data-count="none"
   .nine.columns.leftindex
-    h2 Become an
-    h1.tall ADVENTURER.
+    ul.tabs-content
+      li#exploreTab.active
+        h2 Become an
+        h1.tall ADVENTURER.
+      li#unlockTab
+        |Proin pharetra metus ac orci lacinia ultrices.
+      li#socialTab
+        |Integer eget porttitor diam. Sed nec mattis mi.
   .six.columns
-    javascript:
-      window.onload = function() {
-        return jQuery(function($) {
-          $(function() {
-        		$("#tabs").tabs().addClass('ui-tabs-vertical ui-helper-clearfix');
-        		$("#tabs li").removeClass('ui-corner-top').addClass('ui-corner-left');
-        	});
-      	});
-      }).call(this);
-    ul#tabs
+    ul.tabs
       li
-        a href='#tabs-1' class="active" Explore
+        a href='#explore' class="active" Explore
+    ul.tabs
       li
-        a href='#tabs-2' Unlock
+        a href='#unlock' Unlock
+    ul.tabs  
       li
-        a href='#tabs-3' Get Social
-    /ul class="tabs-content"
-    #tabs-1
-      |Lorem ipsum dolor sit amet
-    #tabs-2
-      |Proin pharetra metus ac orci lacinia ultrices.
-    #tabs-3
-      |Integer eget porttitor diam. Sed nec mattis mi.
+        a href='#social' Get Social
+    

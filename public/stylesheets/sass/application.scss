@@ -114,7 +114,8 @@
     .leftindex {
         @include rounded(15px);
         border: 5px solid $tgrey;
-        height: 390px;
+        padding: 10px;
+        height: 470px;
     }
     .bottombar {
         background: $white;
@@ -132,12 +133,17 @@
     }
     .logo {
         float: left;
+        position: relative;
+        bottom: 30px;
+        margin-bottom: -60px;
     }
     .content {
         @include rounded(15px);
-        height: 400px;
+        //height: 400px;
+        padding: 50px;
     	background: $dgrey;
     	color: $tgrey;
+    	min-height: 480px;
     }
     .clear {clear: both; }
     /* The canvas containing the map */
@@ -152,6 +158,7 @@
         -webkit-transform-origin: 50% 50%;
     }
     #social-icons {
+        
     }
     #profilelocs {
       float: right;
@@ -206,6 +213,9 @@
     .sharing_signup_call_to_action {
         padding: 50px 0;
         font-size: 28px;
+    }
+    .signin {
+        margin: 20px;
     }
 /* #Typography
 ================================================== */
@@ -371,7 +381,11 @@
 		display: block;
 		margin: 0 0 20px 0;
 		padding: 0;
-		border-bottom: solid 1px #ddd; }
+		position: relative;
+		right: 20px;
+		top: 20px;
+		//border-bottom: solid 1px #ddd; 
+	}
 	ul.tabs li { 
 		display: block;
 		width: auto;
