@@ -18,16 +18,15 @@ And finally, navigate in your browser to 'http://localhost:3000'
 Functionality:
 ----------------
   - Account Creation and Management
-    + email, username, encrypted password, "about" section, profile image (thanks to [Paperclip](https://github.com/thoughtbot/paperclip))
-    + will keep track of unlocked locations and earned badges (using SQLite database)
+    + email, username, encrypted password, short bio, link to social networking services
+    + TODO: keep track of unlocked locations and earned badges (using SQLite database)
   - Exploration/Game functionality
-    + HTML5 canvas based Map of Barcelona
+    + svg based Map of Barcelona
     + each location signified by an icon
-      - something different for locked and unlocked (padlock for locked locations)
+      - something different for locked and unlocked (padlock for locked locations?)
     + QR codes scattered about city
       - each one unlocks a new area on the map (updates the map accordingly) or a badge
-    + Badges/Trophies/Achievements to share with friends
+    + Badges to share with friends
   - Social Functionality/Integration
-    + link to twitter/facebook
-    + have friends and track what they earn in app?
+    + link to twitter/facebook/gmail
     
