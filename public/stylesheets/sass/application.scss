@@ -88,6 +88,14 @@
             bottom-right-radius: $radius;
             top-right-radius: $radius;
         }
+        -moz-border: {
+            bottom-right-radius: $radius;
+            top-right-radius: $radius;
+        }
+        -webkit-border: {
+            bottom-right-radius: $radius;
+            top-right-radius: $radius;
+        }
     }
     @mixin shadow($start, $end){
         -webkit-box-shadow: 0 0 0 4px $start inset, 0 0 0 1px $end; 
