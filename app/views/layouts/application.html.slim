@@ -29,9 +29,9 @@ html
       = link_to "Contact", '/contact'
       ' 
       = link_to "Map", '/map'
+    = raw notice_html
+    = raw alert_html
     .container.content
-        = raw notice_html
-        = raw alert_html
         = yield
     .bottombar
       .barcon

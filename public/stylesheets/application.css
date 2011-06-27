@@ -47,9 +47,6 @@ table {
 
 /* #Colors
 ==================================================*/
-.solid {
-  background: #e6ebea; }
-
 /* #Mixins
 ==================================================*/
 /* #Basic Styles
@@ -88,9 +85,12 @@ body {
   min-height: 480px; }
 
 div.alert {
-  background-color: lightsalmon; }
+  background-color: #ff1e28; }
 
 div.notice, div.alert {
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
   padding: 20px 20px;
   width: 600px;
   font-size: 20px;
@@ -99,7 +99,7 @@ div.notice, div.alert {
   color: black; }
 
 div.notice {
-  background-color: aliceblue; }
+  background-color: #00ff88; }
 
 div.share_text {
   float: left;
@@ -272,7 +272,7 @@ strong {
   text-decoration: none; }
 
 .usernav a:hover, a:focus {
-  color: #ffbc00; }
+  color: #fdfd5c; }
 
 /* #Links
 ================================================== */
@@ -354,7 +354,7 @@ img {
 ================================================== */
 a.button, #user_submit, #user_session_submit,
 button {
-  background: #0093ca;
+  background: #3399cc;
   border: 1px solid #aaa;
   border-top: 1px solid #ccc;
   border-left: 1px solid #ccc;
@@ -367,7 +367,7 @@ button {
   font-size: 11px;
   font-weight: bold;
   text-decoration: none;
-  text-shadow: 0 1px #005b7e;
+  text-shadow: 0 1px #246b8f;
   cursor: pointer;
   margin-bottom: 20px;
   line-height: 21px;
@@ -376,14 +376,14 @@ button {
 a.button:hover,
 button:hover {
   color: white;
-  background: #0093ca;
+  background: #3399cc;
   border: 1px solid #888;
   border-top: 1px solid #aaa;
   border-left: 1px solid #aaa; }
 
 a.button:active,
 button:active {
-  background: #0080b1;
+  background: #2e8ab8;
   color: white;
   border: 1px solid #888;
   border-bottom: 1px solid #aaa;

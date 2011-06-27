@@ -43,22 +43,20 @@
 
 /* #Colors
 ==================================================*/
-    $red:     #ff3b33;
+    $red:     #ff1e28;
     $orange:  #fb9c26;
     $dorange: #db8418;
+    $yellow:  #fdfd5c;
+    $green:   #00ff88;
     $blue:    #3399cc;
-    $bblue:   #0093ca;
-    $yellow:  #ffbc00;
-    $green:   #05c54c;
-    $purple:  #bf6de4;
+    $purple:  #c570de;
+    $white:   #ffffff;
     $lgrey:   #f5f5f5;
+    $grey:    #e6ebea;//#d4e3eb;//
     $tgrey:   #979797;
     $dgrey:   #363636;
-    $white:   #ffffff;
-    $grey:    #e6ebea;//#d4e3eb;//
     $black:   #000000;
     $text:    #424242;
-    .solid { background: $grey; }
 /* #Mixins
 ==================================================*/
 
@@ -135,9 +133,10 @@
     	min-height: 480px;
     }
     div.alert {
-        background-color:lightsalmon;
+        background-color:$red;
     }
     div.notice, div.alert{
+        @include rounded(3px);
         padding: 20px 20px;
         width: 600px;
         font-size: 20px;
@@ -146,7 +145,7 @@
         color: black;
     }
     div.notice {
-            background-color:aliceblue;
+            background-color:$green;
     }
     div.share_text {
         float: left;
@@ -328,7 +327,7 @@
 ================================================== */
 	a.button, #user_submit, #user_session_submit, 
 	button {
-	  background: $bblue;//#eee; /* Old browsers */
+	  background: $blue;//#eee; /* Old browsers */
 	  border: 1px solid #aaa;
 	  border-top: 1px solid #ccc;
 	  border-left: 1px solid #ccc;
@@ -341,7 +340,7 @@
 	  font-size: 11px;
 	  font-weight: bold;
 	  text-decoration: none;
-	  text-shadow: 0 1px darken($bblue, 15%);//rgba(255, 255, 255, .75);
+	  text-shadow: 0 1px darken($blue, 15%);//rgba(255, 255, 255, .75);
 	  cursor: pointer;
 	  margin-bottom: 20px;
 	  line-height: 21px;
@@ -350,14 +349,14 @@
 	a.button:hover, 
 	button:hover {
 		color: $white;//#222;
-		background: $bblue;//#eee; /* Old browsers */
+		background: $blue;//#eee; /* Old browsers */
 	    border: 1px solid #888;
 	    border-top: 1px solid #aaa;
 	    border-left: 1px solid #aaa; }
 	  
   a.button:active, 
   button:active {
-    background: darken($bblue, 5%);//#eee; /* Old browsers */
+    background: darken($blue, 5%);//#eee; /* Old browsers */
     color: $white;
     border: 1px solid #888;
     border-bottom: 1px solid #aaa;
