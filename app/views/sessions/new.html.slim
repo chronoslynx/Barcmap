@@ -1,10 +1,11 @@
-h2 Sign in
-= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-  = f.input :email, :label => "Email*"
-  = f.input :password, :label => "Password*"
-  - if devise_mapping.rememberable?
-    = f.input :remember_me, :label => "Always keep me logged in", :as => :boolean
-  p= f.submit "Sign in"
-h2 Sign in with
-= render :partial => "devise/shared/social"
-= render :partial => "devise/shared/forgot_password"
+.register
+  h2 Sign in
+  = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+    = f.input :email, :label => "Email*"
+    = f.input :password, :label => "Password*"
+    - if devise_mapping.rememberable?
+      = f.input :remember_me, :label => "Always keep me logged in", :as => :boolean
+    p= f.submit "Sign in"
+  h2 Sign in with
+  = render :partial => "devise/shared/social"
+  = render :partial => "devise/shared/forgot_password"

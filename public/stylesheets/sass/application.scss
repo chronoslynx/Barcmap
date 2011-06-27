@@ -106,6 +106,9 @@
 ================================================== */
     .barcon {
         display: inline-block;
+        margin-left: 10%;
+        width: 23.3%;
+        //padding: 10px;
     }
 	body { 
 		background: $blue;
@@ -192,6 +195,11 @@
       float: right;
       position: relative;
       bottom: 310px;
+    }
+    .register {
+        @include rounded(15px);
+        padding: 10px;
+        background: $white;
     }
     .signin {
         margin: 20px;

@@ -55,7 +55,9 @@ table {
 /* #Basic Styles
 ================================================== */
 .barcon {
-  display: inline-block; }
+  display: inline-block;
+  margin-left: 10%;
+  width: 23.3%; }
 
 body {
   background: #3399cc;
@@ -147,6 +149,13 @@ header {
   float: right;
   position: relative;
   bottom: 310px; }
+
+.register {
+  border-radius: 15px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  padding: 10px;
+  background: white; }
 
 .signin {
   margin: 20px; }
@@ -407,6 +416,10 @@ ul.tabs li {
 ul.tabs li a {
   border-bottom-right-radius: 15px;
   border-top-right-radius: 15px;
+  -moz-border-bottom-right-radius: 15px;
+  -moz-border-top-right-radius: 15px;
+  -webkit-border-bottom-right-radius: 15px;
+  -webkit-border-top-right-radius: 15px;
   display: block;
   text-decoration: none;
   width: auto;
@@ -423,6 +436,10 @@ ul.tabs li a {
 ul.tabs li a.active {
   border-bottom-right-radius: 15px;
   border-top-right-radius: 15px;
+  -moz-border-bottom-right-radius: 15px;
+  -moz-border-top-right-radius: 15px;
+  -webkit-border-bottom-right-radius: 15px;
+  -webkit-border-top-right-radius: 15px;
   background: #fff;
   height: 80px;
   position: relative;

@@ -30,16 +30,16 @@ html
       ' 
       = link_to "Map", '/map'
     .container.content
-      = raw notice_html
-      = raw alert_html
-      = yield
+        = raw notice_html
+        = raw alert_html
+        = yield
     .bottombar
-      .leftcon
-        
-      .cencon
-      
-      .rightcon
-        
+      .barcon
+        p Next location!
+      .barcon
+        p Recent Badge!
+      .barcon
+        p Try something new!
     footer
       p.foot Site built in Ruby on Rails by Tim Swihart, Kaitlin Powell, Jessica and Jamie Crabb
       script src="http://connect.facebook.net/en_US/all.js#xfbml=1"
