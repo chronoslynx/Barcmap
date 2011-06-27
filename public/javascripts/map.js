@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 23 Jun 2011 08:45:12 GMT from
+/* DO NOT MODIFY. This file was compiled Mon, 27 Jun 2011 12:06:03 GMT from
  * /Users/chronon/Dropbox/Class/Summer2011/CS 3750/project/barcmap/app/coffeescripts/map.coffee
  */
 
@@ -7,39 +7,38 @@
       All the map image canvas logic and modal magic is in this file
       Some crazy ajax voodoo goin' on here mon'!
       
-      TODO: Swap this to use NyroModal, or a custom popup
-           FUCK simplemodal
-  */  var locClickEvent;
-  locClickEvent = function(e) {
+      Uses Jquery.Fancybox for the ajax modal popups.
+      Hooray!
+  */  window.onload = function() {
     return jQuery(function($) {
-      return $.ajax({
-        url: '/locations/' + 1,
-        type: 'GET',
-        dataType: "html",
-        success: function(data) {
-          return $.modal(data, {
-            onOpen: function(dialog) {
-              return dialog.overlay.fadeIn('slow', function() {
-                return dialog.container.slideDown('medium', function() {
-                  return dialog.data.fadeIn('slow');
-                });
-              });
-            }
-          });
-        }
-      });
-    });
-  };
-  window.onload = function() {
-    return jQuery(function($) {
-      var circle, map;
+      var circle, circle2, map;
       map = Raphael(document.getElementById("map", 320, 200));
       circle = map.circle(50, 40, 20);
       circle.attr("fill", "#000");
-      return circle.node.click(function(e) {
-        e.preventDefault();
-        return $.nmManual('locations/1');
-      });
+      circle2 = map.circle(100, 200, 40);
+      circle2.attr("fill", "#fb3");
+      circle.node.onclick = function(e) {
+        return $.fancybox({
+          'href': '/locations/1',
+          'width': '400px',
+          'height': '400px',
+          'autoScale': false,
+          'type': 'ajax',
+          'transitionIn': 'fade',
+          'transitionOut': 'fade'
+        });
+      };
+      return circle2.node.onclick = function(e) {
+        return $.fancybox({
+          'href': '/locations/2',
+          'width': '400px',
+          'height': '400px',
+          'autoScale': false,
+          'type': 'ajax',
+          'transitionIn': 'fade',
+          'transitionOut': 'fade'
+        });
+      };
     });
   };
 }).call(this);
