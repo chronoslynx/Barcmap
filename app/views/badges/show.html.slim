@@ -11,7 +11,7 @@ p
   = @badge.id
 p
   b Icon:
-  = image_tag @badge.icon.url(:thumb)
+  /= image_tag @badge.icon.url(:thumb)
 
 = link_to 'Edit', edit_badge_path(@badge)
 '|

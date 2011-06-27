@@ -17,10 +17,18 @@ div
   | email: #{@user.email}
   br/
 br/
-div
-  | Locations:
+div.locations
+  p Locations:
   br/
-  - @user.locations.each do |loc|
-    = @loc.name
-    br/
+  ul
+    - @user.locations.each do |loc|
+      li
+        p= loc.name
+div.badges
+  p Badges:
+  br/
+  ul
+    - @user.badges.each do |badge|
+      li
+        p= badge.name
 = link_to 'Edit Profile', edit_user_registration_path(current_user), :style=>'color: #0093ca;'
