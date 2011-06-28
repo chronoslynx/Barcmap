@@ -1,5 +1,6 @@
 source 'http://rubygems.org'
 
+gem 'asset_hat'
 gem 'rake'
 gem 'rails', '3.0.5'
 gem 'sqlite3-ruby', :require => 'sqlite3'
@@ -12,6 +13,7 @@ gem "rest-client", "1.6.1", :require => "restclient"
 gem "sluggable"
 gem "slim"
 gem "sass"
+gem "thin"
 #coffeescript support
 gem "barista"
 

@@ -1,9 +1,10 @@
 ! doctype html
 html
   head
-    title Barcmap
-    = stylesheet_link_tag 'application', 'layout', 'skeleton'
-    = javascript_include_tag 'jquery-1.5.1.min', 'app'
+    title Barcelona Adventurer
+    = include_css :bundle => 'application'
+    = include_js  :jquery, :bundle => 'plugins'
+    = javascript_include_tag "map"
     = csrf_meta_tag
     meta content=(@page_title || DEFAULT_PAGE_TITLE) property="title"
     meta content=(@page_description || DEFAULT_PAGE_DESCRIPTION) property="description"
