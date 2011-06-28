@@ -3,6 +3,10 @@ class MapController < ApplicationController
   
   def index
     #@locations = Location.all
+    @locids = []
+    current_user.locations.each do |loc|
+      @locids << loc.id
+    end
   end
   
   def intro

@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Mon, 27 Jun 2011 12:06:03 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 28 Jun 2011 08:15:35 GMT from
  * /Users/chronon/Dropbox/Class/Summer2011/CS 3750/project/barcmap/app/coffeescripts/map.coffee
  */
 
@@ -11,11 +11,12 @@
       Hooray!
   */  window.onload = function() {
     return jQuery(function($) {
-      var circle, circle2, map;
-      map = Raphael(document.getElementById("map", 320, 200));
-      circle = map.circle(50, 40, 20);
+      var can, circle, circle2, map;
+      can = Raphael(document.getElementById("map", 700, 400));
+      map = can.image("/images/map.jpg", 0, 0, 700, 400);
+      circle = can.circle(50, 40, 20);
       circle.attr("fill", "#000");
-      circle2 = map.circle(100, 200, 40);
+      circle2 = can.circle(100, 200, 40);
       circle2.attr("fill", "#fb3");
       circle.node.onclick = function(e) {
         return $.fancybox({

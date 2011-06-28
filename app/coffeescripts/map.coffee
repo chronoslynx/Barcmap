@@ -4,14 +4,18 @@
     
     Uses Jquery.Fancybox for the ajax modal popups.
     Hooray!
-###   
+###    
 window.onload = () ->
     jQuery ($) ->
+        # this gets the user object from ruby to javascript
+        #ids = $.parseJSON( $('#map').attr('data') )
         #Using raphaeljs drawing library:
-        map = Raphael document.getElementById "map", 320, 200
-        circle = map.circle 50, 40, 20
+        can = Raphael document.getElementById "map", 700, 400
+        #setup(id, "50", "40") for id in ids
+        map = can.image("/images/map.jpg", 0, 0, 700, 400)
+        circle = can.circle 50, 40, 20
         circle.attr "fill", "#000"
-        circle2 = map.circle 100, 200, 40
+        circle2 = can.circle 100, 200, 40
         circle2.attr "fill", "#fb3"
         circle.node.onclick = (e) ->
             $.fancybox {
@@ -33,3 +37,4 @@ window.onload = () ->
                 'transitionIn' : 'fade',
                 'transitionOut' : 'fade'
             }
+        

@@ -138,6 +138,7 @@
         background: $white;
         border: 1px solid darken($blue, 10%);
         padding: 10px;
+        margin: 20px 20px 0 20px;
     }
     .clear {clear: both; }
     .container {
@@ -146,10 +147,10 @@
     .content {
         @include rounded(15px);
         //height: 400px;
-        padding: 50px;
+       // padding: 50px;
     	background: $dgrey;
     	color: $tgrey;
-    	min-height: 480px;
+    	min-height: 500px;
     }
     .forgot-password {
         margin-top: 10px;
@@ -185,7 +186,10 @@
         margin-bottom: -60px;
     }
     /* The canvas containing the map */
-    #mapcan { }
+    #map {
+        margin-left: auto; 
+        margin-right: auto;
+    }
     #notice {
         @include rounded();
     }

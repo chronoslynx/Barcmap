@@ -32,7 +32,7 @@ html
     = raw notice_html
     = raw alert_html
     .container.content
-        = yield
+      = yield
     .bottombar
       .barcon
         p Next location!
@@ -41,6 +41,11 @@ html
       .barcon
         p Try something new!
     footer
-      p.foot Site built in Ruby on Rails by Tim Swihart, Kaitlin Powell, Jessica and Jamie Crabb
-      script src="http://connect.facebook.net/en_US/all.js#xfbml=1"
+      p.foot 
+        ' Site built in Ruby on Rails by Tim Swihart, Kaitlin Powell, Jessica and Jamie Crabb.
+        ' Ignore these links, they are for dev purposes
+        a href='/locations' Locations
+        ' 
+        a href='/badges' Badges
+      /script src="http://connect.facebook.net/en_US/all.js#xfbml=1"
 

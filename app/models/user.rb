@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
                             :small => "100x100#",
                             :big => "150x150#"
                     },
-                    :default_url => "/images/user_photos/missing_:style.png"
+                    :default_url => "/images/anon.png"
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable
