@@ -1,7 +1,6 @@
 Barcelona Adventure
-==========
 Setup
-----------
+-------------------
 Requirements:
 Ruby 1.9.x and Rails 3.x (developed on Ruby 1.9.2-head and Rails 3.0.7)
 To set up the application:
@@ -13,21 +12,26 @@ bundle install
 rails s
 ```    
 
-Or, alternatively, you can use `thin server` or whichever other server you wish
+Or, alternatively, you can use `thin server` or whichever other server you wish.
+
 And finally, navigate in your browser to 'http://localhost:3000'
 
 Functionality:
-----------------
+-------------------
   - Account Creation and Management
-    + email, username, encrypted password, short bio, link to social networking services
-    + TODO: keep track of unlocked locations and earned badges (using SQLite database)
+    + Link to existing single-sign-on services or create an account specific to this site
+    + Keeps track of unlocked badges and Locations
   - Exploration/Game functionality
-    + svg based Map of Barcelona
+    + Map of Barcelona
     + each location signified by an icon
       - something different for locked and unlocked (padlock for locked locations?)
     + QR codes scattered about city
       - each one unlocks a new area on the map (updates the map accordingly) or a badge
     + Badges to share with friends
   - Social Functionality/Integration
-    + link to twitter/facebook/gmail
+    + Link to Twitter(working)/Facebook(needs API key)/gmail(not working)
     
+Todo:
+-------------------
+  - Get map to display unlocked vs locked locations
+  - fix layout of Contact, Show(location), addLoc, addBadge, and Badge show
