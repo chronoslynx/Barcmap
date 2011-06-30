@@ -1,2 +1,10 @@
-h1 Added location:
-h1=@loc.name
+script src="http://platform.twitter.com/widgets.js" type="text/javascript"
+.row
+  .cleancontent
+    h1 
+      |Location Unlocked! 
+      = image_tag "/images/unlocked.png", :class => "unlocked"
+    h2=@loc.name + "!"
+    h4=@loc.description
+    p Share this to twitter!
+    a href="http://twitter.com/share" class="twitter-share-button" data-text="#{current_user.name} just unlocked the #{@loc.name} location on Barcelona Adventurer!" data-count="none"

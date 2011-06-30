@@ -66,6 +66,7 @@ table {
 .barcon {
   display: inline-block;
   margin-left: 10%;
+  margin-top: 10px;
   width: 23.3%; }
 
 body {
@@ -79,7 +80,11 @@ body {
 .bottombar {
   background: white;
   margin-top: 60px;
-  height: 130px; }
+  border-top: 1px solid #e6ebea;
+  border-bottom: 1px solid #e6ebea; }
+
+.bottompic {
+  float: left; }
 
 .cleancontent {
   border-radius: 15px;
@@ -93,16 +98,12 @@ body {
 .clear {
   clear: both; }
 
-.container {
-  overfow: auto; }
-
 .content {
   border-radius: 15px;
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
   background: #363636;
-  color: #979797;
-  min-height: 500px; }
+  color: #979797; }
 
 .forgot-password {
   margin-top: 10px;
@@ -126,8 +127,11 @@ header {
   border-radius: 15px;
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
+  margin: 20px;
   background: white;
-  border: 5px solid #979797;
+  border-top: 1px solid #979797;
+  border-left: 1px solid #979797;
+  border-bottom: 1px solid #979797;
   padding: 10px;
   height: 470px; }
 
@@ -139,8 +143,20 @@ header {
 
 /* The canvas containing the map */
 #map {
-  margin-left: auto;
-  margin-right: auto; }
+  margin-top: 15px;
+  margin-left: 8px;
+  height: 400px; }
+
+.mapmodal {
+  max-width: 800px; }
+
+#mtitle {
+  border-radius: 15px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  background: #ff1e28;
+  text-align: center;
+  margin: 15px; }
 
 #notice {
   border-radius: 3px;
@@ -186,15 +202,20 @@ header {
   font-size: 16px;
   font-style: italic; }
 
+ul#social-icons li {
+  display: block;
+  float: left; }
+
+.unlocked {
+  display: inline-block;
+  position: relative;
+  top: 20px; }
+
 .vert {
   -moz-transform: rotate(270deg);
   -moz-transform-origin: 50% 50%;
   -webkit-transform: rotate(270deg);
   -webkit-transform-origin: 50% 50%; }
-
-ul#social-icons li {
-  display: block;
-  float: left; }
 
 /* #Typography
 ================================================== */
@@ -284,6 +305,8 @@ strong {
 .usernav {
   padding: 10px;
   background: #fb9c26;
+  border-top: 1px solid #db8418;
+  border-bottom: 1px solid #246b8f;
   text-align: right;
   font-size: 24px;
   margin-bottom: 60px; }
@@ -450,7 +473,7 @@ ul.tabs li a {
   padding: 0px 20px;
   line-height: 30px;
   border: solid 1px #ddd;
-  border-width: 1px 0 0 1px;
+  border-width: 1px 0 0 0px;
   margin: 0;
   background: #f5f5f5;
   font-size: 13px; }
@@ -462,7 +485,7 @@ ul.tabs li a.active {
   -moz-border-top-right-radius: 15px;
   -webkit-border-bottom-right-radius: 15px;
   -webkit-border-top-right-radius: 15px;
-  background: #f5f5f5;
+  background: #fff;
   height: 80px;
   position: relative;
   border-right-width: 1px;

@@ -1,39 +1,23 @@
 /script type='text/javascript' src='http://maps.google.com/maps/api/js?sensor=false'
-  
-p#notice = notice
+.mapmodal
+  p#notice = notice
+  p
+    h1= @location.name
+  p
+    img src='/#{{@location.mapurl}}'
 
-#slider
-  /img src='/images/rails.png'
-  /img src='/images/arc.jpg'
-.nivo-html-caption#htmlcaption
-  p This is a caption!
-#map
-p
-  b Name:
-  = @location.name
-p
-  img src='/#{@location.mapurl}'
-  br/
-  b Mapurl:
-  = @location.mapurl
-p
-  b Description:
-  = @location.description
-p
-  b Tips:
-  = @location.tips
-p
-  b Nearby:
-  = @location.nearby
-/p
-/  b Uid:
-/  = @location.uid
-/p
-/  b Y position on canvas:
-/  = @location.ypos
-/  b X position on canvas
-/  = @location.xpos
+  p
+    h6 = @location.description
+  - if current_user.locations.exists?(@location.id)
+    p
+      h5 Tips:
+      p= @location.tips
+    p
+      h5 Nearby:
+      p= @location.nearby
+  - else
+    h6 {Find the QR code corresponding to this location to unlock it and view more info!}
 
-= link_to 'Edit', edit_location_path(@location)
-'|
-= link_to 'Back', locations_path
+  = link_to 'Edit', edit_location_path(@location)
+  '|
+  = link_to 'Back', locations_path

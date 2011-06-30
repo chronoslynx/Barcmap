@@ -1,9 +1,12 @@
+= javascript_include_tag "map"
 .row
-  .twelve.columns
+  .eleven.columns
     #map data='#{@locids.to_json}'
-  .four.columns
+  .five.columns
     #mapheader
-      h1 MAP BITCHES
+      h1#mtitle YOUR MAP
     #mapinfo
       .cleancontent
-        p shit will go here!
+        p 
+          |This will, at some point in the future, display useful information about your map. 
+          |Currently, it just fills in empty space!

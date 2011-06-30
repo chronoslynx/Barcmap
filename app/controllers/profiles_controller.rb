@@ -10,7 +10,7 @@ class ProfilesController < ApplicationController
   def addLoc
       @loc = Location.find(params[:id])
       @user = current_user
-      if not @user.locations.exists?(params[:id])
+      if not @user.locations.exists?(:id => params[:id])
         @user.locations << @loc
       else
         redirect_to '/'
@@ -20,7 +20,7 @@ class ProfilesController < ApplicationController
   def addBadge
     @badge = Badge.find(params[:id])
     @user = current_user
-    if not @user.badges.exists?(params[:id])
+    if not @user.badges.exists?(:id => params[:id])
       @user.badges << @badge
     else
       redirect_to '/'

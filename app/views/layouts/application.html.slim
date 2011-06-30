@@ -4,7 +4,6 @@ html
     title Barcelona Adventurer
     = include_css :bundle => 'application'
     = include_js  :jquery, :bundle => 'plugins'
-    = javascript_include_tag "map"
     = csrf_meta_tag
     meta content=(@page_title || DEFAULT_PAGE_TITLE) property="title"
     meta content=(@page_description || DEFAULT_PAGE_DESCRIPTION) property="description"
@@ -36,17 +35,23 @@ html
       = yield
     .bottombar
       .barcon
-        p Next location!
+        .one.column
+          - if user_signed_in?
+            = image_tag current_user.photo.url(:small)
+          - else
+            = image_tag "/images/anon.jpg"
+        .two.column
+          h3.btitle Adventurer
+          - if user_signed_in?
+            h4= current_user.name
+            = link_to "View profile", profile_path(current_user), :style=>'color: #0093ca; text-decoration: none;'
+          - else
+            h4 Could this be you?
+            = link_to "Join!", "/users/sign_up"
       .barcon
         p Recent Badge!
       .barcon
         p Try something new!
-    footer
-      p.foot 
-        ' Site built in Ruby on Rails by Tim Swihart, Kaitlin Powell, Jessica and Jamie Crabb.
-        ' Ignore these links, they are for dev purposes
-        a href='/locations' Locations
-        ' 
-        a href='/badges' Badges
+    
       /script src="http://connect.facebook.net/en_US/all.js#xfbml=1"
 

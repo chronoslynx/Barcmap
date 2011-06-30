@@ -1,2 +1,10 @@
-h1 Added Badge:
-h1=@badge.name
+script src="http://platform.twitter.com/widgets.js" type="text/javascript"
+.row
+  .cleancontent
+    h1 
+      |Badge Unlocked! 
+      = image_tag "/images/unlocked.png", :class => "unlocked"
+    h1=@badge.name + "!"
+    h4=@badge.description
+    p Share this to twitter!
+    a href="http://twitter.com/share" class="twitter-share-button" data-text="#{current_user.name} just unlocked the #{@badge.name} badge on Barcelona Adventurer!" data-count="none"

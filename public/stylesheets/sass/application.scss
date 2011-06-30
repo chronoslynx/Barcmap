@@ -118,6 +118,7 @@
     .barcon {
         display: inline-block;
         margin-left: 10%;
+        margin-top: 10px;
         width: 23.3%;
         //padding: 10px;
     }
@@ -131,7 +132,16 @@
     .bottombar {
         background: $white;
         margin-top: 60px;
-        height: 130px;
+        border-top: 1px solid $grey;
+        border-bottom: 1px solid $grey;
+        //height: 130px;
+    }
+    .bottompic {
+        float: left;
+        //display: inline-block;
+    }
+    .btitle {
+        
     }
     .cleancontent {
         @include rounded(15px);
@@ -142,15 +152,12 @@
     }
     .clear {clear: both; }
     .container {
-        overfow: auto;
     }
     .content {
         @include rounded(15px);
-        //height: 400px;
-       // padding: 50px;
     	background: $dgrey;
     	color: $tgrey;
-    	min-height: 500px;
+
     }
     .forgot-password {
         margin-top: 10px;
@@ -174,8 +181,11 @@
     }
     .leftindex {
         @include rounded(15px);
+        margin: 20px;
         background: $white;
-        border: 5px solid $tgrey;
+        border-top: 1px solid $tgrey;
+        border-left: 1px solid $tgrey;
+        border-bottom: 1px solid $tgrey;
         padding: 10px;
         height: 470px;
     }
@@ -187,8 +197,19 @@
     }
     /* The canvas containing the map */
     #map {
-        margin-left: auto; 
-        margin-right: auto;
+      margin-top: 15px;
+      margin-left: 8px;
+      //width: 660px;
+      height:400px;
+    }
+    .mapmodal {
+        max-width: 800px;
+    }
+    #mtitle {
+        @include rounded(15px);
+        background: $red;
+        text-align: center;
+        margin: 15px;
     }
     #notice {
         @include rounded();
@@ -229,16 +250,23 @@
         font-size: 16px;
         font-style:italic;
     }
+    ul#social-icons li {
+     display: block;
+     float: left;
+    }
+    .unlocked {
+      display: inline-block;
+      position: relative;
+      top: 20px;
+    }
     .vert {
         -moz-transform: rotate(270deg);
         -moz-transform-origin: 50% 50%;
         -webkit-transform: rotate(270deg);
         -webkit-transform-origin: 50% 50%;
     }
-    ul#social-icons li {
-     display: block;
-     float: left;
-    }
+
+    
 
 /* #Typography
 ================================================== */
@@ -284,6 +312,8 @@
     .usernav {
         padding: 10px;
         background: $orange;
+        border-top: 1px solid $dorange;
+        border-bottom: 1px solid darken($blue, 15%);
         text-align: right;
         font-size: 24px;
         margin-bottom: 60px;
@@ -416,13 +446,13 @@
 		padding: 0px 20px; 
 		line-height: 30px; 
 		border: solid 1px #ddd;
-		border-width: 1px 0 0 1px; 
+		border-width: 1px 0 0 0px; 
 		margin: 0;  
-		background: #f5f5f5;
+		background: $lgrey;//#f5f5f5;
 		font-size: 13px; }
 	ul.tabs li a.active { 
 	    @include roundedtab(15px);
-		background: #f5f5f5; 
+		background: #fff; 
 		height: 80px;
 		position: relative;
 		//top: -4px;
