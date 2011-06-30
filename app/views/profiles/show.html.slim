@@ -1,34 +1,35 @@
-h1
-  = @user.display_name
-  | 's Profile
-/= image_tag @user.photo.url
-/br/
-/= image_tag @user.photo.url(:mini)
-/br/
-/= image_tag @user.photo.url(:thumb)
-/br/
-/= image_tag @user.photo.url(:small)
-/br/
-= image_tag @user.photo.url
-br/
-div
-  | Name: #{@user.name}
+.cleancontent
+  h1
+    = @user.display_name
+    | 's Profile
+  /= image_tag @user.photo.url
+  /br/
+  /= image_tag @user.photo.url(:mini)
+  /br/
+  /= image_tag @user.photo.url(:thumb)
+  /br/
+  /= image_tag @user.photo.url(:small)
+  /br/
+  = image_tag @user.photo.url
   br/
-  | email: #{@user.email}
+  div
+    | Name: #{@user.name}
+    br/
+    | email: #{@user.email}
+    br/
   br/
-br/
-div.locations
-  p Locations:
-  br/
-  ul
-    - @user.locations.each do |loc|
-      li
-        p= loc.name
-div.badges
-  p Badges:
-  br/
-  ul
-    - @user.badges.each do |badge|
-      li
-        p= badge.name
-= link_to 'Edit Profile', edit_user_registration_path(current_user), :style=>'color: #0093ca;'
+  div.locations
+    p Locations:
+    br/
+    ul
+      - @user.locations.each do |loc|
+        li
+          p= loc.name
+  div.badges
+    p Badges:
+    br/
+    ul
+      - @user.badges.each do |badge|
+        li
+          p= badge.name
+  = link_to 'Edit Profile', edit_user_registration_path(current_user), :style=>'color: #0093ca;'

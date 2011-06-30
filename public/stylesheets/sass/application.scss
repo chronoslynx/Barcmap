@@ -71,6 +71,9 @@
 ==================================================*/
 
     @mixin align($side) { float: $side;}
+    @mixin engrave($color){
+        text-shadow: 1px 1px 0px darken($color, 20%);
+    }
     @mixin grad($start, $end){
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$start, endColorstr=#end); /* for IE */
 		background: $start; /* Old browsers */
@@ -140,9 +143,6 @@
         float: left;
         //display: inline-block;
     }
-    .btitle {
-        
-    }
     .cleancontent {
         @include rounded(15px);
         background: $white;
@@ -182,9 +182,9 @@
         @include rounded(15px);
         margin: 20px;
         background: $white;
-        border-top: 1px solid $tgrey;
-        border-left: 1px solid $tgrey;
-        border-bottom: 1px solid $tgrey;
+        border-top: 1px solid $lgrey;
+        border-left: 1px solid $lgrey;
+        border-bottom: 1px solid $lgrey;
         padding: 10px;
         height: 470px;
     }
@@ -209,6 +209,14 @@
         background: $red;
         text-align: center;
         margin: 15px;
+    }
+    .navlink {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .navlinkleft {
+        padding-left: 5px;
+        padding-right: 5px;
     }
     #notice {
         @include rounded();
@@ -270,6 +278,9 @@
 /* #Typography
 ================================================== */
     em { font-style: italic; }
+    .btitle {
+        color: $orange;
+    }
     h1, h2, h3, h4, h5, h6 { 
 		color: $text;//#181818; 
 		font-family: "Georgia", "Times New Roman", Helvetica, Arial, sans-serif;
@@ -296,7 +307,7 @@
         }
         color: #777777;
     }
-    p { margin: 0 0 0px; }
+    p { color: $text; margin: 0 0 0px; }
 	p img { margin: 0; }
 	p.lead { font-size: 21px; line-height: 27px; color: #777;  }
 	small { font-size: 80%; }
@@ -304,6 +315,8 @@
 	.subheader { color: #777; }
     .tall {
         font-size: 72px;
+        color: $blue;
+        font-style: italic;
     }
     .title {
         font-style: italic;
@@ -385,10 +398,10 @@
 	  border-radius: 3px;
 	  color: $white;//#444;
 	  display: inline-block;
-	  font-size: 11px;
+	  font-size: 12px;
 	  font-weight: bold;
 	  text-decoration: none;
-	  text-shadow: 0 1px darken($blue, 15%);//rgba(255, 255, 255, .75);
+	  //text-shadow: 0 1px darken($blue, 15%);//rgba(255, 255, 255, .75);
 	  cursor: pointer;
 	  margin-bottom: 20px;
 	  line-height: 21px;
@@ -444,8 +457,8 @@
 		width: 300px;
 		padding: 0px 20px; 
 		line-height: 30px; 
-		border: solid 1px #ddd;
-		border-width: 1px 0 0 0px; 
+		border: solid 1px $lgrey;
+		border-width: 1px 1px 1px 0px; 
 		margin: 0;  
 		background: $lgrey;//#f5f5f5;
 		font-size: 13px; }

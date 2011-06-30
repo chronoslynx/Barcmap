@@ -23,13 +23,10 @@ html
     a href='/'
       img.logo src='/images/logo.png' alt='{Logo}'
     .usernav
-      = link_to "Home", '/'
-      '  
-      = link_to "About", '/about'
-      '   
-      = link_to "Contact", '/contact'
-      ' 
-      = link_to "Map", '/map'
+      = link_to "Home", '/', :class => "navlinkleft"
+      = link_to "Map", '/map', :class => "navlink"
+      = link_to "About", '/about', :class => "navlink"
+      = link_to "Contact", '/contact', :class => "navlink"
     = raw notice_html
     = raw alert_html
     .container.content
@@ -53,5 +50,3 @@ html
         p Recent Badge!
       .barcon
         p Try something new!
-      /script src="http://connect.facebook.net/en_US/all.js#xfbml=1"
-
