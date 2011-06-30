@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 30 Jun 2011 07:21:26 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 30 Jun 2011 11:38:57 GMT from
  * /Users/chronon/Dropbox/Class/Summer2011/CS 3750/project/barcmap/app/coffeescripts/map.coffee
  */
 
@@ -34,17 +34,19 @@
       map = can.image("/images/map/map.jpg", 0, 0, 700, 400);
       locnums = [1, 2, 3];
       arc = can.image("/images/map/lock.png", 375, 193, 68, 70);
-      arc.node.onclick = function(e) {
-        return $.fancybox({
-          'href': '/locations/1',
-          'width': "50",
-          'height': '400px',
-          'autoScale': false,
-          'type': 'ajax',
-          'transitionIn': 'fade',
-          'transitionOut': 'fade'
-        });
-      };
+      arc.node.addEventListener('click', setupNode(1), false);
+      /*
+              arc.node.onclick = (e) ->
+                  $.fancybox {
+                      'href' : '/locations/1',
+                      'width' : "50",
+                      'height' : '400px',
+                      'autoScale' : false,
+                      'type' : 'ajax',
+                      'transitionIn' : 'fade',
+                      'transitionOut' : 'fade'
+                  }
+              */
       colombus = can.image("/images/map/lock.png", 250, 250, 68, 70);
       pcata = can.image("/images/map/lock.png", 280, 150, 68, 70);
       if (__indexOf.call(unlocked, 3) >= 0) {
