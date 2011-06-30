@@ -16,9 +16,10 @@ html
         ' 
         = link_to "Sign out", destroy_user_session_path, :style=>'color: #0093ca;'
       - else
-        /= link_to "Sign up", new_user_registration_path
         'You are not signed in.  
         = link_to "Sign in?", new_user_session_path, :style=>'color: #0093ca;'
+        '
+        = link_to "Join?", new_user_registration_path
     a href='/'
       img.logo src='/images/logo.png' alt='{Logo}'
     .usernav
@@ -52,6 +53,5 @@ html
         p Recent Badge!
       .barcon
         p Try something new!
-    
       /script src="http://connect.facebook.net/en_US/all.js#xfbml=1"
 

@@ -27,7 +27,9 @@ window.onload = () ->
         locnums = [1..3]
         #for num in locnums
         #    if id not in unlocked
-                
+            
+        # This next section is quite ugly
+        # Hacked it together to demonstrate its workings, now to find a more elegant solution...
         arc = can.image "/images/map/lock.png", 375, 193, 68, 70
         arc.node.onclick = (e) ->
             $.fancybox {
