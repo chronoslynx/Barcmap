@@ -17,6 +17,7 @@
         = f.input :current_password, :label => "Current Password", :hint => "we need your current password to confirm a password change"
         = f.input :photo
         p= f.submit "Update"
+        p= link_to "Delete Profile", "/explorer/delete"
       br/
       br/
       == render :partial => "devise/shared/social_connect_and_unconnect"

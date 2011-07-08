@@ -48,7 +48,8 @@ table {
 /* #Colors
 ==================================================*/
 .red {
-  background: #ff1e28; }
+  background: #ff1e28;
+  color: white; }
 
 .green {
   background: #00ff88; }
@@ -117,7 +118,8 @@ footer {
 header {
   padding: 5px;
   background: white;
-  text-align: right; }
+  text-align: right;
+  height: 30px; }
 
 #indextabs {
   position: relative;
@@ -127,7 +129,7 @@ header {
   border-radius: 15px;
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
-  margin: 20px;
+  margin-left: 20px;
   background: white;
   border-top: 1px solid #f5f5f5;
   border-left: 1px solid #f5f5f5;
@@ -139,6 +141,7 @@ header {
   float: left;
   position: relative;
   bottom: 30px;
+  left: 15px;
   margin-bottom: -60px; }
 
 /* The canvas containing the map */
@@ -146,6 +149,11 @@ header {
   margin-top: 15px;
   margin-left: 8px;
   height: 400px; }
+
+.maphead {
+  margin-top: 5px;
+  color: white;
+  margin-bottom: -10px; }
 
 .mapmodal {
   max-width: 800px; }
@@ -155,6 +163,7 @@ header {
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
   background: #ff1e28;
+  color: white;
   text-align: center;
   margin: 15px; }
 
@@ -316,20 +325,21 @@ strong {
 .title {
   font-style: italic; }
 
-.usernav {
+nav {
   padding: 10px;
   background: #fb9c26;
   border-top: 1px solid #db8418;
   border-bottom: 1px solid #246b8f;
   text-align: right;
   font-size: 24px;
-  margin-bottom: 60px; }
+  margin-bottom: 60px;
+  height: 30px; }
 
-.usernav a {
+nav a {
   color: white;
   text-decoration: none; }
 
-.usernav a:hover, a:focus {
+nav a:hover, a:focus {
   color: #fdfd5c; }
 
 /* #Links
@@ -460,16 +470,16 @@ ul.tabs {
   padding: 0;
   position: relative;
   right: 20px;
-  top: 20px; }
+  bottom: 35px; }
 
 ul.tabs li {
   font-size: 48px;
   display: block;
   width: auto;
-  height: 80px;
+  height: 100px;
   padding: 0;
   float: left;
-  margin-bottom: 0; }
+  margin-bottom: 25px; }
 
 ul.tabs li a {
   border-bottom-right-radius: 15px;
@@ -481,14 +491,11 @@ ul.tabs li a {
   display: block;
   text-decoration: none;
   width: auto;
-  height: 80px;
+  height: 120px;
   width: 300px;
   padding: 0px 20px;
   line-height: 30px;
-  border: solid 1px #f5f5f5;
-  border-width: 1px 1px 1px 0px;
   margin: 0;
-  background: #f5f5f5;
   font-size: 13px; }
 
 ul.tabs li a.active {
@@ -498,10 +505,8 @@ ul.tabs li a.active {
   -moz-border-top-right-radius: 15px;
   -webkit-border-bottom-right-radius: 15px;
   -webkit-border-top-right-radius: 15px;
-  background: #fff;
-  height: 80px;
+  height: 120px;
   position: relative;
-  border-right-width: 1px;
   margin: 0 -1px 0 0;
   color: #111; }
 

@@ -60,6 +60,7 @@
     
     .red {
         background: $red;
+        color: $white;
     }
     .green {
         background: $green;
@@ -152,6 +153,7 @@
     }
     .clear {clear: both; }
     .container {
+
     }
     .content {
         @include rounded(15px);
@@ -173,6 +175,7 @@
         padding: 5px;
         background:$white;
         text-align: right;
+        height: 30px;
     }
     #indextabs {
         position: relative;
@@ -180,7 +183,7 @@
     }
     .leftindex {
         @include rounded(15px);
-        margin: 20px;
+        margin-left: 20px;
         background: $white;
         border-top: 1px solid $lgrey;
         border-left: 1px solid $lgrey;
@@ -192,6 +195,7 @@
         float: left;
         position: relative;
         bottom: 30px;
+        left: 15px;
         margin-bottom: -60px;
     }
     /* The canvas containing the map */
@@ -201,12 +205,18 @@
       //width: 660px;
       height:400px;
     }
+    .maphead {
+        margin-top: 5px;
+        color: $white;
+        margin-bottom: -10px;
+    }
     .mapmodal {
         max-width: 800px;
     }
     #mtitle {
         @include rounded(15px);
         background: $red;
+        color: $white;
         text-align: center;
         margin: 15px;
     }
@@ -321,7 +331,7 @@
     .title {
         font-style: italic;
     }
-    .usernav {
+    nav {
         padding: 10px;
         background: $orange;
         border-top: 1px solid $dorange;
@@ -329,12 +339,13 @@
         text-align: right;
         font-size: 24px;
         margin-bottom: 60px;
+        height: 30px;
     }
-    .usernav a {
+    nav a {
         color: $white;
         text-decoration: none;
     }
-    .usernav a:hover, a:focus { color: $yellow; }	
+    nav a:hover, a:focus { color: $yellow; }	
 
 /* #Links
 ================================================== */
@@ -437,39 +448,39 @@
 		padding: 0;
 		position: relative;
 		right: 20px;
-		top: 20px;
+		bottom: 35px;
 		//border-bottom: solid 1px #ddd; 
 	}
 	ul.tabs li { 
 	    font-size: 48px;
 		display: block;
 		width: auto;
-		height: 80px;
+		height: 100px;
 		padding: 0;
 		float: left;
-		margin-bottom: 0; }
+		margin-bottom: 25px; }
 	ul.tabs li a { 
 	    @include roundedtab(15px);
 		display: block; 
 		text-decoration: none;
 		width: auto; 
-		height: 80px; 
+		height: 120px; 
 		width: 300px;
 		padding: 0px 20px; 
 		line-height: 30px; 
-		border: solid 1px $lgrey;
-		border-width: 1px 1px 1px 0px; 
+		//border: solid 1px $lgrey;
+		//border-width: 1px 1px 1px 0px; 
 		margin: 0;  
-		background: $lgrey;//#f5f5f5;
+		//background: $lgrey;//#f5f5f5;
 		font-size: 13px; }
 	ul.tabs li a.active { 
 	    @include roundedtab(15px);
-		background: #fff; 
-		height: 80px;
+		//background: #fff; 
+		height: 120px;
 		position: relative;
 		//top: -4px;
 		//padding-top: 4px;
-		border-right-width: 1px;
+		//border-right-width: 1px;
 		margin: 0 -1px 0 0;
 		color: #111;
 	}
