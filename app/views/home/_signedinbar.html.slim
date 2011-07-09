@@ -1,0 +1,21 @@
+.barcon
+  .one.column
+    = image_tag current_user.photo.url(:thumb)
+  .two.column
+    h5= current_user.name
+    h4.btitle Adventurer
+    = link_to "View profile", profile_path(current_user), :style=>'color: #0093ca; text-decoration: none;'
+.barcon
+  .one.column
+    = image_tag "/images/badgeslocked.png"
+  .two.column
+    h5 Most Recent Badge
+    h4.btitle Nonexistant!
+    p You should get started on that!
+.barcon
+  .one.column
+    = image_tag "/images/mnac.png"
+  .two.column
+    h5 Next adventure
+    h4.btitle MNAC!
+    p Look for it on your map

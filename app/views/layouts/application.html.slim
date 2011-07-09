@@ -22,31 +22,16 @@ html
         = link_to "Join?", new_user_registration_path
     a href='/'
       img.logo src='/images/logo.png' alt='{Logo}'
-    nav
+    nav.display
       = link_to "Home", '/', :class => "navlinkleft"
       = link_to "Map", '/map', :class => "navlink"
       = link_to "About", '/about', :class => "navlink"
-      = link_to "Contact", '/contact', :class => "navlink"
     = raw notice_html
     = raw alert_html
     .container.content
       = yield
     .bottombar
-      .barcon
-        .one.column
-          - if user_signed_in?
-            = image_tag current_user.photo.url(:small)
-          - else
-            = image_tag "/images/anon.jpg"
-        .two.column
-          h3.btitle Adventurer
-          - if user_signed_in?
-            h4= current_user.name
-            = link_to "View profile", profile_path(current_user), :style=>'color: #0093ca; text-decoration: none;'
-          - else
-            h4 This could be you!
-            = link_to "Join!", "/users/sign_up"
-      .barcon
-        p Recent Badge!
-      .barcon
-        p Try something new!
+      - if user_signed_in?
+        = render :partial => "home/signedinbar"
+      - else
+        = render :partial => "home/signedoutbar"

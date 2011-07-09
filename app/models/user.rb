@@ -21,11 +21,11 @@ class User < ActiveRecord::Base
   has_attached_file :photo,
                     :styles => {
                             :mini => "40x40#",
-                            :thumb => "80x80#",
+                            :thumb => "74x74#",
                             :small => "100x100#",
                             :big => "150x150#"
                     },
-                    :default_url => "/images/anon.jpg"
+                    :default_url => "/images/blankbull.png"
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable

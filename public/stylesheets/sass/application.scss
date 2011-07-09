@@ -14,6 +14,8 @@
 	#Forms
 	#Modal Dialogs
 	#Misc */
+
+    @import url(http://fonts.googleapis.com/css?family=Smythe&v2);
 /* #Reset & Basics (Inspired by E. Meyers)
 ================================================== */
 	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -43,28 +45,41 @@
 
 /* #Colors
 ==================================================*/
-    $red:     #ff1e28;
+    $red:     #ff3338;
     $orange:  #fb9c26;
     $dorange: #db8418;
     $yellow:  #fdfd5c;
-    $green:   #00ff88;
+    $green:   #00c55f;
     $blue:    #3399cc;
-    $purple:  #c570de;
+    $purple:  #c56ddd;
     $white:   #ffffff;
     $lgrey:   #f5f5f5;
     $grey:    #e6ebea;//#d4e3eb;//
     $tgrey:   #979797;
     $dgrey:   #363636;
     $black:   #000000;
-    $text:    #424242;
-    
-    .red {
-        background: $red;
-        color: $white;
+    $text:    #363636;
+
+    .rb {
+        border: 3px solid $red;
     }
+        
+    .red{
+        background: $red;
+    }
+
+    .gb {
+        border: 3px solid $green;
+    }
+
     .green {
         background: $green;
     }
+
+    .pb {
+        border: 3px solid $purple;
+    }
+
     .purple {
         background: $purple;
     }
@@ -123,7 +138,9 @@
         display: inline-block;
         margin-left: 10%;
         margin-top: 10px;
+        margin-bottom: -20px;
         width: 23.3%;
+        height: 100px;
         //padding: 10px;
     }
 	body { 
@@ -172,10 +189,10 @@
         }
     }
     header {
-        padding: 5px;
+        padding: 10px;
         background:$white;
         text-align: right;
-        height: 30px;
+        height: 18px;
     }
     #indextabs {
         position: relative;
@@ -189,7 +206,7 @@
         border-left: 1px solid $lgrey;
         border-bottom: 1px solid $lgrey;
         padding: 10px;
-        height: 470px;
+        height: 350px;
     }
     .logo {
         float: left;
@@ -221,12 +238,12 @@
         margin: 15px;
     }
     .navlink {
-        padding-left: 5px;
-        padding-right: 5px;
+        padding-left: 8px;
+        padding-right: 8px;
     }
     .navlinkleft {
-        padding-left: 5px;
-        padding-right: 5px;
+        padding-left: 8px;
+        padding-right: 8px;
     }
     #notice {
         @include rounded();
@@ -303,6 +320,7 @@
 	h5 { font-size: 17px; line-height: 24px; }
 	h6 { font-size: 14px; line-height: 21px; }
 	hr { border: solid #ddd; border-width: 1px 0 0; clear: both; margin: 10px 0 30px; height: 0; }
+    .display {font-family: 'Smythe', cursive;}
     .foot {
         font: {
             size: 0.75em;
@@ -323,10 +341,18 @@
 	small { font-size: 80%; }
 	strong { font-weight: bold; color: #333; }
 	.subheader { color: #777; }
-    .tall {
+    .tabText {
+        font-family: 'Smythe', cursive;
+        color: $white;
         font-size: 72px;
+        position: relative;
+        top: 15px;
+    }
+    .tall {
+        font-size: 100px;
         color: $blue;
-        font-style: italic;
+        font-family: 'Smythe', cursive;
+        margin-bottom: 25px;
     }
     .title {
         font-style: italic;
@@ -337,7 +363,7 @@
         border-top: 1px solid $dorange;
         border-bottom: 1px solid darken($blue, 15%);
         text-align: right;
-        font-size: 24px;
+        font-size: 48px;
         margin-bottom: 60px;
         height: 30px;
         color: #fff;
@@ -353,6 +379,7 @@
 	a, a:visited { 
 	    color: inherit; 
 	    text-decoration: underline; 
+        font-size: inherit;
 	    outline: 0; 
 	}
 	a:hover, a:focus { color: #000; }
@@ -449,23 +476,23 @@
 		padding: 0;
 		position: relative;
 		right: 20px;
-		bottom: 40px;
+		bottom: 50px;
 		//border-bottom: solid 1px #ddd; 
 	}
 	ul.tabs li { 
 	    font-size: 48px;
 		display: block;
 		width: auto;
-		height: 100px;
+		height: 80px;
 		padding: 0;
 		float: left;
-		margin-bottom: 25px; }
+		margin-bottom: 10px; }
 	ul.tabs li a { 
 	    @include roundedtab(15px);
 		display: block; 
 		text-decoration: none;
 		width: auto; 
-		height: 120px; 
+		height: 90px; 
 		width: 300px;
 		padding: 0px 20px; 
 		line-height: 30px; 
@@ -477,7 +504,7 @@
 	ul.tabs li a.active { 
 	    @include roundedtab(15px);
 		//background: #fff; 
-		height: 120px;
+		height: 90px;
 		position: relative;
 		//top: -4px;
 		//padding-top: 4px;
@@ -490,7 +517,7 @@
 	ul.tabs li:last-child a {
 }
 	
-	ul.tabs-content { margin: 0; display: block; }
+	ul.tabs-content { margin: 0; display: block;}
 	ul.tabs-content > li { display:none; }
 	ul.tabs-content > li.active { display: block; }
 		

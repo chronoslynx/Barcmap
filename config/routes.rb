@@ -4,11 +4,11 @@ OmniauthDeviseExample::Application.routes.draw do
   
   root :to => "home#index"
   match '/about' => "home#about"
-  match '/contact' => "home#contact"
-  match '/explorer/delete', :controller => 'profiles', :action => 'destroy', :via => :get
+  #match '/contact' => "home#contact"
+  match '/adventurer/delete', :controller => 'profiles', :action => 'destroy', :via => :get
   match '/addLoc/:id', :controller => 'profiles', :action => 'addLoc', :via => :get
   match '/addBadge/:id', :controller => 'profiles', :action => 'addBadge', :via => :get
-  match '/explorer/:id', :controller => 'profiles', :action => 'show', :as => 'profile', :via => :get
+  match '/adventurer/:id', :controller => 'profiles', :action => 'show', :as => 'profile', :via => :get
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

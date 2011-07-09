@@ -1,29 +1,34 @@
-.nine.columns.leftindex
-  ul.tabs-content
-    li#exploreTab.active
-      h2 Become an
-      h1.tall EXPLORER:
-      p Join the adventure now! You're only a few clicks away!
-      br/
-      a.button href="/users/sign_up" Become an Explorer!
-    li#unlockTab
-      h2 Explore
-      h1.tall BARCELONA:
-      p 
-        |Scan QR codes on posters distributed about the city to fill in your map and unlock 
-        | cool badges, along with useful information about each spot!
-    li#socialTab
-      h2 Connect with
-      h1.tall FRIENDS:
-      p Connect to your existing social networking services, including Facebook, Twitter and Gmail!
-.six.columns
+.ten.columns
+  .leftindex
+    ul.tabs-content
+      li#exploreTab.active
+        h1.display Become an
+        h1.tall ADVENTURER:
+        p Join the adventure now! You're only a few clicks away!
+        br/
+        a href="/users/sign_up"
+          img src="/images/signUp.png"
+      li#unlockTab
+        h1.display Explore
+        h1.tall BARCELONA:
+        p 
+          |Scan QR codes on posters distributed about the city to fill in your map and unlock 
+          | cool badges, along with useful information about each spot!
+      li#socialTab
+        h1.display Connect with
+        h1.tall FRIENDS:
+        p Connect to your existing social networking services, including Facebook, Twitter and Gmail!
+.five.columns
   #indextabs
     ul.tabs
       li
-        a.red href='#explore' class="active" Explore
+        a.red.active href='#explore' 
+          h1.tabText Explore
     ul.tabs
       li
-        a.green href='#unlock' Unlock
+        a.green href='#unlock' 
+          h1.tabText Unlock
     ul.tabs  
       li
-        a.purple href='#social' Get Social
+        a.purple href='#social' 
+          h1.tabText Get Social
