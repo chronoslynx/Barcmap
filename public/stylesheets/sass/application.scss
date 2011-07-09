@@ -183,7 +183,7 @@
     }
     .leftindex {
         @include rounded(15px);
-        margin-left: 20px;
+        margin-left: 40px;
         background: $white;
         border-top: 1px solid $lgrey;
         border-left: 1px solid $lgrey;
@@ -340,6 +340,7 @@
         font-size: 24px;
         margin-bottom: 60px;
         height: 30px;
+        color: #fff;
     }
     nav a {
         color: $white;
@@ -349,8 +350,8 @@
 
 /* #Links
 ================================================== */
-	a:not('.usernav'), a:visited { 
-	    color: #333; 
+	a, a:visited { 
+	    color: inherit; 
 	    text-decoration: underline; 
 	    outline: 0; 
 	}
@@ -448,7 +449,7 @@
 		padding: 0;
 		position: relative;
 		right: 20px;
-		bottom: 35px;
+		bottom: 40px;
 		//border-bottom: solid 1px #ddd; 
 	}
 	ul.tabs li { 

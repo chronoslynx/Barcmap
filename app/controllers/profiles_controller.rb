@@ -30,6 +30,7 @@ class ProfilesController < ApplicationController
   def destroy
     @user = current_user
     @user.destroy
+    set_flash_message :notice, 'Account successfully deleted'
     redirect_to '/'
   end
 end
