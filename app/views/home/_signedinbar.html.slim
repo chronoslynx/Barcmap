@@ -7,15 +7,22 @@
     = link_to "View profile", profile_path(current_user), :style=>'color: #3399cc; text-decoration: none;'
 .barcon
   .one.column
-    = image_tag "/images/badgeslocked.png"
-  .two.column
+    -if current_user.badges.length > 0
+      = image_tag "/images/unlocked.png"
+    -else
+      = image_tag "/images/badgeslocked.png"      
+  .three.column
     h5 Most Recent Badge
-    h4.btitle Nonexistant!
-    p You should get started on that!
+    -if current_user.badges.length > 0
+      h4.btitle= current_user.badges.last.name
+      p= current_user.badges.last.description
+    -else
+      h4.btitle Nonexistant!
+      p You should get started on that!
 .barcon
   .one.column
     = image_tag "/images/mnac.png"
   .two.column
     h5 Next adventure
     h4.btitle MNAC!
-    p Look for it on your map
+    p Don't look for it on your map. It's not there yet
