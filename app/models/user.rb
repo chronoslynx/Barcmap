@@ -135,6 +135,7 @@ class User < ActiveRecord::Base
     #todo for now throw, not sire the error cases
   end
 
+
   def twitter_client
     client = TwitterOAuth::Client.new(
             :consumer_key => ::TWITTER_CONSUMER_KEY,

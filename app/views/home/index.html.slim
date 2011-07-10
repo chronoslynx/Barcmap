@@ -2,22 +2,30 @@
   .leftindex
     ul.tabs-content
       li#exploreTab.active
-        h1.display Become an
-        h1.tall ADVENTURER:
-        p Join the adventure now! You're only a few clicks away!
-        br/
+        h1.display Explore
+        h1.tall BARCELONA.
+        p Scan QR codes on posters distributed about the city to fill in your map and unlock cool badges, along with useful information about each spot!
+        h4.blue Join the adventure now, you're only a few clicks away!
         a href="/users/sign_up"
           img src="/images/signUp.png"
       li#unlockTab
-        h1.display Explore
-        h1.tall BARCELONA:
-        p 
-          |Scan QR codes on posters distributed about the city to fill in your map and unlock 
-          | cool badges, along with useful information about each spot!
+        h1.display Unlock
+        h1.tall BADGES.
+        p Once you start exploring Barcelona and find our posters, you will earn fun badges to share with your friends!
+        = image_tag "/images/badgeslocked.png"
       li#socialTab
         h1.display Connect with
-        h1.tall FRIENDS:
-        p Connect to your existing social networking services, including Facebook, Twitter and Gmail!
+        h1.tall FRIENDS.
+        p Let your friends know about your adventures on Facebook, Twitter, and more!
+        br/
+        br/
+        = image_tag "/images/social/32px/twitter.png"
+        ' 
+        ' 
+        = image_tag "/images/social/32px/facebook.png"
+        ' 
+        ' 
+        = image_tag "/images/social/32px/google.png"
 .five.columns
   #indextabs
     ul.tabs

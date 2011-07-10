@@ -1,3 +1,10 @@
+coffee:
+  window.onload = ->
+    jQuery ($) ->
+      $('.deleteProfile').click ->
+        if confirm "Are you sure you wish to delete your account?"
+          window.location = '/adventurer/delete'
+
 .cleancontent
   .register
     h2 Edit Profile
@@ -15,8 +22,8 @@
       = f.input :password_confirmation, :label => "Password Confirmation"
       = f.input :current_password, :label => "Current Password", :hint => "we need your current password to confirm a password change"
       = f.input :photo
-      p= f.submit "Update"
-      p= link_to "Delete Profile", "/adventurer/delete"
+      = f.submit "Update"
+      a.button.deleteProfile href="" Delete Profile
     br/
     br/
     == render :partial => "devise/shared/social_connect_and_unconnect"

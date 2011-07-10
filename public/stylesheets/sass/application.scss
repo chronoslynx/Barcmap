@@ -297,6 +297,13 @@
     .signin {
         margin: 20px;
     }
+    .signup {
+        @include rounded(15px);
+        background: $white;
+        border: 1px solid darken($blue, 10%);
+        padding: 10px;
+        margin: 20px 20px 0 20px;
+    }
     #social-icons { }
     .spacer {
         margin: 10px 0;
@@ -348,6 +355,10 @@
         }
         color: $dgrey;   
     }
+    .logo {
+        position: relative;
+        bottom: 40px;
+    }
     .job {
         font: {
            size: 0.875em;
@@ -384,7 +395,7 @@
         border-bottom: 1px solid darken($blue, 15%);
         text-align: right;
         font-size: 48px;
-        margin-bottom: 60px;
+        margin-bottom: 110px;
         height: 30px;
         color: #fff;
     }
@@ -392,7 +403,7 @@
         color: $white;
         text-decoration: none;
     }
-    nav a:hover, a:focus { color: $yellow; }	
+    nav a:hover, a:focus { color: $yellow; }
 
 /* #Links
 ================================================== */
