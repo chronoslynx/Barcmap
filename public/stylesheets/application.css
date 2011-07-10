@@ -169,6 +169,16 @@ header {
 .mapmodal {
   max-width: 800px; }
 
+.mleft {
+  padding: 15px;
+  display: inline-block;
+  width: 300px; }
+
+.mright {
+  padding: 15px;
+  display: inline-block;
+  width: 400px; }
+
 #mtitle {
   border-radius: 15px;
   -moz-border-radius: 15px;
@@ -295,6 +305,10 @@ hr {
   clear: both;
   margin: 10px 0 30px;
   height: 0; }
+
+.blue {
+  color: #3399cc;
+  text-decoration: none; }
 
 .display {
   font-family: 'Smythe', cursive; }

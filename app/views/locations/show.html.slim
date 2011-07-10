@@ -1,23 +1,27 @@
-/script type='text/javascript' src='http://maps.google.com/maps/api/js?sensor=false'
-.mapmodal
+.mleft
   p#notice = notice
   p
-    h1= @location.name
+    h4= @location.name
   p
     img src='/#{{@location.mapurl}}'
-
-  p
-    h6 = @location.description
+  = link_to "Check it out on wikipedia!", "http://en.wikipedia.org/w/index.php?search=" + @location.name.gsub(' ', '+'), :style=>'font-family: "Georgia"; color: #3399cc; text-decoration: none;font-size: 17px; line-height: 36px;'
+  br/
+  = link_to "Find it on Google Maps! (in progress)", "", :style=>'font-family: "Georgia"; color: #3399cc; text-decoration: none;font-size: 17px; line-height: 36px;'
+.mright
   - if current_user.locations.exists?(@location.id)
     p
-      h5 Tips:
-      p= @location.tips
+      h5.blue About:
+      p= @location.description
     p
-      h5 Nearby:
+      h5.blue Nearby:
       p= @location.nearby
   - else
-    h6 {Find the QR code corresponding to this location to unlock it and view more info!}
+    h6 Find the Barcelona Adventure poster to unlock
+    h4.btitle= @location.name
+    = image_tag "/images/badgeslocked.png"
+  h5.blue Location information:
+  p =@location.tips
 
-  = link_to 'Edit', edit_location_path(@location)
-  '|
-  = link_to 'Back', locations_path
+  /= link_to 'Edit', edit_location_path(@location)
+  /'|
+  /= link_to 'Back', locations_path

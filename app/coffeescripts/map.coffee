@@ -34,9 +34,9 @@ window.onload = () ->
         arc.node.onclick = (e) ->
             $.fancybox {
                 'href' : '/locations/1',
-                'width' : "50",
-                'height' : '400px',
-                'autoScale' : false,
+                #'width' : "50",
+                #'height' : '400px',
+                'autoScale' : true,
                 'type' : 'ajax',
                 'transitionIn' : 'fade',
                 'transitionOut' : 'fade'
@@ -53,7 +53,7 @@ window.onload = () ->
                 'href' : '/locations/3',
                 'width' : '400px',
                 'height' : '400px',
-                'autoScale' : false,
+                'autoScale' : true,
                 'type' : 'ajax',
                 'transitionIn' : 'fade',
                 'transitionOut' : 'fade'

@@ -2,9 +2,9 @@
   .one.column
     = image_tag current_user.photo.url(:thumb)
   .two.column
-    h5= current_user.name
-    h4.btitle Adventurer
-    = link_to "View profile", profile_path(current_user), :style=>'color: #0093ca; text-decoration: none;'
+    h5 Adventurer
+    h4.btitle= current_user.name
+    = link_to "View profile", profile_path(current_user), :style=>'color: #3399cc; text-decoration: none;'
 .barcon
   .one.column
     = image_tag "/images/badgeslocked.png"

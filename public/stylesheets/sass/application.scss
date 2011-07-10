@@ -169,9 +169,6 @@
         margin: 20px 20px 0 20px;
     }
     .clear {clear: both; }
-    .container {
-
-    }
     .content {
         @include rounded(15px);
     	background: $dgrey;
@@ -229,6 +226,17 @@
     }
     .mapmodal {
         max-width: 800px;
+    }
+    .mleft {
+        padding: 15px;
+        display: inline-block;
+        width: 300px;
+    }
+    .mright {
+        padding: 15px;
+        display: inline-block;
+        width: 400px;
+        //margin-left: 10px;
     }
     #mtitle {
         @include rounded(15px);
@@ -320,6 +328,7 @@
 	h5 { font-size: 17px; line-height: 24px; }
 	h6 { font-size: 14px; line-height: 21px; }
 	hr { border: solid #ddd; border-width: 1px 0 0; clear: both; margin: 10px 0 30px; height: 0; }
+    .blue {color: $blue; text-decoration: none;}
     .display {font-family: 'Smythe', cursive;}
     .foot {
         font: {

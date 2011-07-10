@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 06 Jul 2011 17:19:53 GMT from
+/* DO NOT MODIFY. This file was compiled Sun, 10 Jul 2011 14:02:59 GMT from
  * /Users/chronon/Dropbox/Class/Summer2011/CS 3750/project/barcmap/app/coffeescripts/map.coffee
  */
 
@@ -37,9 +37,7 @@
       arc.node.onclick = function(e) {
         return $.fancybox({
           'href': '/locations/1',
-          'width': "50",
-          'height': '400px',
-          'autoScale': false,
+          'autoScale': true,
           'type': 'ajax',
           'transitionIn': 'fade',
           'transitionOut': 'fade'
@@ -57,7 +55,7 @@
           'href': '/locations/3',
           'width': '400px',
           'height': '400px',
-          'autoScale': false,
+          'autoScale': true,
           'type': 'ajax',
           'transitionIn': 'fade',
           'transitionOut': 'fade'
