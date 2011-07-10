@@ -153,8 +153,8 @@
     .bottombar {
         background: $white;
         margin-top: 60px;
-        border-top: 1px solid $grey;
-        border-bottom: 1px solid $grey;
+        border-top: 1px solid darken($blue, 15%);
+        border-bottom: 1px solid darken($blue, 15%);
         //height: 130px;
     }
     .bottompic {
@@ -265,19 +265,23 @@
         padding-right: 8px;
     }
     #notice {
-        @include rounded();
+        @include rounded(15px);
     }
     .notice, .alert{
-        @include rounded(3px);
+        position: absolute;
+        font: 14px/21px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        @include rounded(15px);
         padding: 20px 20px;
         width: 600px;
         font-size: 20px;
         text-align: center;
         margin: 10px auto;
-        color: black;
+        color: $white;
+        right: 350px;
+        bottom: 670px;
     }
     .notice {
-            background-color:$green;
+        background-color:$green;
     }
     .share_text {
         float: left;
