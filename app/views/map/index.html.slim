@@ -4,9 +4,33 @@
     #map data='#{@locids.to_json}'
     h4.maphead Click on the map to view more information
   .five.columns
-    #mapheader
-      h1#mtitle.display YOUR MAP
-    #mapinfo.cleancontent
-      p 
-        |This will, at some point in the future, display useful information about your map. 
-        |Currently, it's just filler text! Fill this space little text, and fill it well!
+    h1#mtitle.display MY MAP
+  .four.columns.mapinfo
+    ul
+      li 
+        h5 Percent Completed:
+      li
+        - if current_user.locations.length > 0
+          p= "#{current_user.locations.length/@numLocs}%"
+        - elsif @numLocs == 0
+          p No locations in the database! 
+        - else
+          p 0%
+      li
+        h5 Date started:
+      li
+        p= current_user.created_at
+      li
+        h5 Latest Discovery:
+      li
+        - if current_user.locations.length > 0
+          p = current_user.locations.last.name
+        - else
+          p You haven't discovered anything yet!
+      li
+        h5 Latest Badge:
+      li
+        - if current_user.badges.length > 0
+          p = current_user.badges.last.name
+        - else
+          p You haven't earned any yet!

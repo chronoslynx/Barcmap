@@ -136,10 +136,10 @@
     }
     .barcon {
         display: inline-block;
-        margin-left: 10%;
+        //margin-left: 10%;
         margin-top: 10px;
         margin-bottom: -20px;
-        width: 23.3%;
+        width: 33.3%;
         height: 100px;
         //padding: 10px;
     }
@@ -224,6 +224,14 @@
         color: $white;
         margin-bottom: -10px;
     }
+    .mapinfo {
+        @include rounded(15px);
+        background: #fff;
+        position: relative;
+        padding: 15px;
+        padding-right: 45px;
+        right: 5px;
+    }
     .mapmodal {
         max-width: 800px;
     }
@@ -244,6 +252,9 @@
         color: $white;
         text-align: center;
         margin: 15px;
+        width: 281px;
+        position: relative;
+        right: 20px;
     }
     .navlink {
         padding-left: 8px;

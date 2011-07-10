@@ -75,10 +75,9 @@ table {
 
 .barcon {
   display: inline-block;
-  margin-left: 10%;
   margin-top: 10px;
   margin-bottom: -20px;
-  width: 23.3%;
+  width: 33.3%;
   height: 100px; }
 
 body {
@@ -166,6 +165,16 @@ header {
   color: white;
   margin-bottom: -10px; }
 
+.mapinfo {
+  border-radius: 15px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  background: #fff;
+  position: relative;
+  padding: 15px;
+  padding-right: 45px;
+  right: 5px; }
+
 .mapmodal {
   max-width: 800px; }
 
@@ -186,7 +195,10 @@ header {
   background: #ff3338;
   color: white;
   text-align: center;
-  margin: 15px; }
+  margin: 15px;
+  width: 281px;
+  position: relative;
+  right: 20px; }
 
 .navlink {
   padding-left: 8px;

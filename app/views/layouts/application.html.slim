@@ -10,16 +10,17 @@ html
     = content_for :page_specific_head
   body
     header
-      - if user_signed_in?
-        'Signed in as 
-        = link_to "#{current_user.name}.", profile_path(current_user), :style=>'color: #0093ca;'
-        ' 
-        = link_to "Sign out", destroy_user_session_path, :style=>'color: #0093ca;'
-      - else
-        'You are not signed in.  
-        = link_to "Sign in?", new_user_session_path, :style=>'color: #0093ca;'
-        '
-        = link_to "Join?", new_user_registration_path
+      p
+        - if user_signed_in?
+          'Greetings 
+          = link_to "#{current_user.name}.", profile_path(current_user), :style=>'color: #0093ca;'
+          ' 
+          = link_to "Sign out", destroy_user_session_path, :style=>'color: #0093ca;'
+        - else
+          'You are not signed in.  
+          = link_to "Sign in?", new_user_session_path, :style=>'color: #0093ca;'
+          '
+          = link_to "Join?", new_user_registration_path
     a href='/'
       img.logo src='/images/logo.png' alt='{Logo}'
     nav.display
