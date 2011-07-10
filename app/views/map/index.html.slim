@@ -11,7 +11,7 @@
         h5 Percent Completed:
       li
         - if current_user.locations.length > 0
-          p= "#{current_user.locations.length/@numLocs}%"
+          p= "#{current_user.locations.length.to_f*100/@numLocs}%"
         - elsif @numLocs == 0
           p No locations in the database! 
         - else

@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Sun, 10 Jul 2011 21:17:10 GMT from
+/* DO NOT MODIFY. This file was compiled Sun, 10 Jul 2011 21:35:06 GMT from
  * /Users/chronon/Dropbox/Class/Summer2011/CS 3750/project/barcmap/app/coffeescripts/map.coffee
  */
 
@@ -50,7 +50,7 @@
         });
       };
       colombus = can.image("/images/map/lock.png", 250, 250, 68, 70);
-      if (__indexOf.call(unlocked, 3) >= 0) {
+      if (__indexOf.call(unlocked, 4) >= 0) {
         pcata = can.image("/images/map/placas.png", 288, 160, 42, 44);
       } else {
         pcata = can.image("/images/map/lock.png", 280, 150, 68, 70);
