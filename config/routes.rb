@@ -4,7 +4,6 @@ OmniauthDeviseExample::Application.routes.draw do
   
   root :to => "home#index"
   match '/about' => "home#about"
-  #match '/contact' => "home#contact"
   match '/adventurer/delete', :controller => 'profiles', :action => 'destroy', :via => :get
   match '/addLoc/:id', :controller => 'profiles', :action => 'addLoc', :via => :get
   match '/addBadge/:id', :controller => 'profiles', :action => 'addBadge', :via => :get

@@ -60,28 +60,40 @@
     $black:   #000000;
     $text:    #363636;
 
-    .rb {
-        border: 3px solid $red;
+    .rtext {
+        color: $red;    
     }
         
     .red{
         background: $red;
     }
 
-    .gb {
-        border: 3px solid $green;
+    .rb {
+        border: 5px solid $red;
+    }
+
+    .gtext {
+        color: $green;
     }
 
     .green {
         background: $green;
     }
 
-    .pb {
-        border: 3px solid $purple;
+    .gb {
+        border: 5px solid $green;
+    }
+
+    .ptext {
+        color: $purple;
     }
 
     .purple {
         background: $purple;
+    }
+
+    .pb {
+        border: 5px solid $purple;
     }
 /* #Mixins
 ==================================================*/
@@ -197,11 +209,11 @@
     }
     .leftindex {
         @include rounded(15px);
-        margin-left: 40px;
+        margin-left: -10px;
         background: $white;
-        border-top: 1px solid $lgrey;
-        border-left: 1px solid $lgrey;
-        border-bottom: 1px solid $lgrey;
+        //border-top: 1px solid darken($blue, 15%);
+        //border-left: 1px solid darken($blue, 15%);
+        //border-bottom: 1px solid darken($blue, 15%);
         padding: 10px;
         height: 350px;
     }
@@ -336,7 +348,7 @@
 ================================================== */
     em { font-style: italic; }
     .btitle {
-        color: $orange;
+        color: darken($orange, 15%);
     }
     h1, h2, h3, h4, h5, h6 { 
 		color: $text;//#181818; 
@@ -385,7 +397,6 @@
     }
     .tall {
         font-size: 100px;
-        color: $blue;
         font-family: 'Smythe', cursive;
         margin-bottom: 25px;
     }
@@ -538,12 +549,8 @@
 		font-size: 13px; }
 	ul.tabs li a.active { 
 	    @include roundedtab(15px);
-		//background: #fff; 
 		height: 90px;
 		position: relative;
-		//top: -4px;
-		//padding-top: 4px;
-		//border-right-width: 1px;
 		margin: 0 -1px 0 0;
 		color: #111;
 	}

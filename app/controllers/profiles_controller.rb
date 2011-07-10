@@ -11,6 +11,10 @@ class ProfilesController < ApplicationController
       @user = current_user
       if not @user.locations.exists?(:id => params[:id])
         @user.locations << @loc
+        if @loc.name == "La Sagrada Familia"
+          @unlocked_badge = true
+          @unlocked_badge_url = "/addBadge/2"
+        end
       else
         redirect_to '/'
       end

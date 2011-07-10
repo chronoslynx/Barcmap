@@ -30,7 +30,7 @@ html
     = raw notice_html
     = raw alert_html
     .container.content
-      = yield
+      == yield
     .bottombar
       - if user_signed_in?
         = render :partial => "home/signedinbar"

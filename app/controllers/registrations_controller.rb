@@ -1,5 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
-  disable_store_location :new
+  #disable_store_location :new
 
   def edit
     super

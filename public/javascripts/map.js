@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Sun, 10 Jul 2011 14:02:59 GMT from
+/* DO NOT MODIFY. This file was compiled Sun, 10 Jul 2011 21:17:10 GMT from
  * /Users/chronon/Dropbox/Class/Summer2011/CS 3750/project/barcmap/app/coffeescripts/map.coffee
  */
 
@@ -33,10 +33,16 @@
       can = Raphael(document.getElementById("map", 660, 600));
       map = can.image("/images/map/map.jpg", 0, 0, 700, 400);
       locnums = [1, 2, 3];
-      arc = can.image("/images/map/lock.png", 375, 193, 68, 70);
+      if (__indexOf.call(unlocked, 1) >= 0) {
+        arc = can.image("/images/map/arc.png", 375, 193, 90, 79);
+      } else {
+        arc = can.image("/images/map/lock.png", 375, 193, 68, 70);
+      }
       arc.node.onclick = function(e) {
         return $.fancybox({
           'href': '/locations/1',
+          'width': '400px',
+          'height': '400px',
           'autoScale': true,
           'type': 'ajax',
           'transitionIn': 'fade',
@@ -44,7 +50,22 @@
         });
       };
       colombus = can.image("/images/map/lock.png", 250, 250, 68, 70);
-      pcata = can.image("/images/map/lock.png", 280, 150, 68, 70);
+      if (__indexOf.call(unlocked, 3) >= 0) {
+        pcata = can.image("/images/map/placas.png", 288, 160, 42, 44);
+      } else {
+        pcata = can.image("/images/map/lock.png", 280, 150, 68, 70);
+      }
+      pcata.node.onclick = function(e) {
+        return $.fancybox({
+          'href': '/locations/4',
+          'width': '400px',
+          'height': '400px',
+          'autoScale': true,
+          'type': 'ajax',
+          'transitionIn': 'fade',
+          'transitionOut': 'fade'
+        });
+      };
       if (__indexOf.call(unlocked, 3) >= 0) {
         sagrada = can.image("/images/map/sagrada.png", 430, 0, 87, 108);
       } else {
@@ -61,32 +82,6 @@
           'transitionOut': 'fade'
         });
       };
-      /*
-              circle = can.circle 50, 40, 20
-              circle.attr "fill", "#000"
-              circle2 = can.circle 100, 200, 40
-              circle2.attr "fill", "#fb3"
-              circle.node.onclick = (e) ->
-                  $.fancybox {
-                      'href' : '/locations/1',
-                      'width' : '400px',
-                      'height' : '400px',
-                      'autoScale' : false,
-                      'type' : 'ajax',
-                      'transitionIn' : 'fade',
-                      'transitionOut' : 'fade'
-                  }
-              circle2.node.onclick = (e) ->
-                  $.fancybox {
-                      'href' : '/locations/2',
-                      'width' : '400px',
-                      'height' : '400px',
-                      'autoScale' : false,
-                      'type' : 'ajax',
-                      'transitionIn' : 'fade',
-                      'transitionOut' : 'fade'
-                  }
-              */
     });
   };
 }).call(this);

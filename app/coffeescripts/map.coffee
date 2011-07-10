@@ -17,10 +17,8 @@ window.onload = () ->
                 'transitionIn' : 'fade',
                 'transitionOut' : 'fade'
             }
-        # this gets the user object from ruby to javascript
+        # this gets the unlocked locations from the DOM
         unlocked = $.parseJSON( $('#map').attr('data') )
-        #alert num for num in ids
-        #Using raphaeljs drawing library:
         can = Raphael document.getElementById "map", 660, 600
         #setup(id, "50", "40") for id in ids
         map = can.image "/images/map/map.jpg", 0, 0, 700, 400
@@ -29,21 +27,36 @@ window.onload = () ->
         #    if id not in unlocked
             
         # This next section is quite ugly
-        # Hacked it together to demonstrate its workings, now to find a more elegant solution...
-        arc = can.image "/images/map/lock.png", 375, 193, 68, 70
+        # Hacked it together to make it work. I need to find a more elegant solution that doesn't involve seppuku
+        if 1 in unlocked
+            arc = can.image "/images/map/arc.png", 375, 193, 90, 79
+        else
+            arc = can.image "/images/map/lock.png", 375, 193, 68, 70  
         arc.node.onclick = (e) ->
             $.fancybox {
                 'href' : '/locations/1',
-                #'width' : "50",
-                #'height' : '400px',
+                'width' : '400px',
+                'height' : '400px',
                 'autoScale' : true,
                 'type' : 'ajax',
                 'transitionIn' : 'fade',
                 'transitionOut' : 'fade'
             }
-        
         colombus = can.image "/images/map/lock.png", 250, 250, 68, 70 
-        pcata = can.image "/images/map/lock.png", 280, 150, 68, 70 
+        if 3 in unlocked
+            pcata = can.image "/images/map/placas.png", 288, 160, 42, 44
+        else
+            pcata = can.image "/images/map/lock.png", 280, 150, 68, 70 
+        pcata.node.onclick = (e) ->
+            $.fancybox {
+                'href' : '/locations/4',
+                'width' : '400px',
+                'height' : '400px',
+                'autoScale' : true,
+                'type' : 'ajax',
+                'transitionIn' : 'fade',
+                'transitionOut' : 'fade'
+            }
         if 3 in unlocked
             sagrada = can.image "/images/map/sagrada.png", 430, 0, 87, 108
         else
@@ -58,32 +71,3 @@ window.onload = () ->
                 'transitionIn' : 'fade',
                 'transitionOut' : 'fade'
             }
-        
-        ###
-        circle = can.circle 50, 40, 20
-        circle.attr "fill", "#000"
-        circle2 = can.circle 100, 200, 40
-        circle2.attr "fill", "#fb3"
-        circle.node.onclick = (e) ->
-            $.fancybox {
-                'href' : '/locations/1',
-                'width' : '400px',
-                'height' : '400px',
-                'autoScale' : false,
-                'type' : 'ajax',
-                'transitionIn' : 'fade',
-                'transitionOut' : 'fade'
-            }
-        circle2.node.onclick = (e) ->
-            $.fancybox {
-                'href' : '/locations/2',
-                'width' : '400px',
-                'height' : '400px',
-                'autoScale' : false,
-                'type' : 'ajax',
-                'transitionIn' : 'fade',
-                'transitionOut' : 'fade'
-            }
-        ###
-        
-        
