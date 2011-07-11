@@ -22,7 +22,7 @@ window.onload = () ->
         can = Raphael document.getElementById "map", 660, 600
         #setup(id, "50", "40") for id in ids
         map = can.image "/images/map/map.jpg", 0, 0, 700, 400
-        locnums = [1..3]
+        locnums = [1..4]
         #for num in locnums
         #    if id not in unlocked
             

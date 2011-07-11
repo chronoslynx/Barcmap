@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110528132223) do
+ActiveRecord::Schema.define(:version => 20110711154628) do
 
   create_table "badges", :force => true do |t|
     t.string   "name"
@@ -35,6 +35,12 @@ ActiveRecord::Schema.define(:version => 20110528132223) do
     t.string   "uid"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "xlocked"
+    t.integer  "ylocked"
+    t.integer  "xunlocked"
+    t.integer  "yunlocked"
+    t.integer  "unlockedWidth"
+    t.integer  "unlockedHeight"
   end
 
   create_table "locations_users", :id => false, :force => true do |t|
