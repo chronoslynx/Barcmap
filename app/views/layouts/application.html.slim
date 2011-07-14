@@ -32,6 +32,7 @@ html
     .container.content
       == yield
     .bottombar
+      script src="http://platform.twitter.com/widgets.js" type="text/javascript"
       - if user_signed_in?
         = render :partial => "home/signedinbar"
       - else

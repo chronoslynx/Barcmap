@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Sun, 10 Jul 2011 21:35:06 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 14 Jul 2011 18:20:36 GMT from
  * /Users/chronon/Dropbox/Class/Summer2011/CS 3750/project/barcmap/app/coffeescripts/map.coffee
  */
 
@@ -17,7 +17,7 @@
   };
   window.onload = function() {
     return jQuery(function($) {
-      var arc, can, colombus, locnums, map, pcata, sagrada, setupNode, unlocked;
+      var arc, can, locnums, map, pcata, sagrada, setupNode, unlocked;
       setupNode = function(num) {
         return $.fancybox({
           'href': '/locations/' + num,
@@ -32,7 +32,7 @@
       unlocked = $.parseJSON($('#map').attr('data'));
       can = Raphael(document.getElementById("map", 660, 600));
       map = can.image("/images/map/map.jpg", 0, 0, 700, 400);
-      locnums = [1, 2, 3];
+      locnums = [1, 2, 3, 4];
       if (__indexOf.call(unlocked, 1) >= 0) {
         arc = can.image("/images/map/arc.png", 375, 193, 90, 79);
       } else {
@@ -49,7 +49,6 @@
           'transitionOut': 'fade'
         });
       };
-      colombus = can.image("/images/map/lock.png", 250, 250, 68, 70);
       if (__indexOf.call(unlocked, 4) >= 0) {
         pcata = can.image("/images/map/placas.png", 288, 160, 42, 44);
       } else {

@@ -10,12 +10,12 @@
     -if current_user.badges.length > 0
       = image_tag "/images/unlocked.png"
     -else
-      = image_tag "/images/badgeslocked.png"      
+      = image_tag "/images/badgeslocked.png"    
   .three.column
     h5 Most Recent Badge
     -if current_user.badges.length > 0
       h4.btitle= current_user.badges.last.name
-      p= current_user.badges.last.description
+      a href="http://twitter.com/share" class="twitter-share-button" data-text="#{current_user.name} has unlocked the #{current_user.badges.last.name} badge on Barcelona Adventurer!" data-count="none" style="display: inline;"
     -else
       h4.btitle Nonexistant!
       p You should get started on that!

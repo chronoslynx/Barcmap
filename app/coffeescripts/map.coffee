@@ -42,7 +42,7 @@ window.onload = () ->
                 'transitionIn' : 'fade',
                 'transitionOut' : 'fade'
             }
-        colombus = can.image "/images/map/lock.png", 250, 250, 68, 70 
+        #colombus = can.image "/images/map/lock.png", 250, 250, 68, 70 
         if 4 in unlocked
             pcata = can.image "/images/map/placas.png", 288, 160, 42, 44
         else
