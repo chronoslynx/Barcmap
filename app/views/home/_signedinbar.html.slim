@@ -4,7 +4,7 @@
   .two.column
     h5 Adventurer
     h4.btitle= current_user.name
-    = link_to "View profile", profile_path(current_user), :style=>'color: #3399cc; text-decoration: none;'
+    = link_to "View progress", profile_path(current_user), :style=>'color: #3399cc; text-decoration: none;'
 .barcon
   .one.column
     -if current_user.badges.length > 0
@@ -14,7 +14,8 @@
   .three.column
     h5 Most Recent Badge
     -if current_user.badges.length > 0
-      h4.btitle= current_user.badges.last.name
+      a href="/badges/#{current_user.badges.last.id}" style="text-decoration: none;"
+        h4.btitle= current_user.badges.last.name
       a href="http://twitter.com/share" class="twitter-share-button" data-text="#{current_user.name} has unlocked the #{current_user.badges.last.name} badge on Barcelona Adventurer!" data-count="none" style="display: inline;"
     -else
       h4.btitle Nonexistant!
@@ -23,6 +24,13 @@
   .one.column
     = image_tag "/images/mnac.png"
   .two.column
-    h5 Next adventure
-    h4.btitle MNAC!
-    p Don't look for it on your map. It's not there yet
+    h5 Most Recent Adventure
+    /h4.btitle MNAC!
+    /p Don't look for it on your map. It's not there yet
+    -if current_user.locations.length > 0
+      a href="/locations/#{current_user.locations.last.id}" style="text-decoration: none;"
+       h4.btitle= current_user.locations.last.name
+      a href="http://twitter.com/share" class="twitter-share-button" data-text="#{current_user.name} has unlocked the #{current_user.locations.last.name} location on Barcelona Adventurer!" data-count="none" style="display: inline;"
+    -else
+      h4.btitle Nonexistant!
+      p You should get started on that!

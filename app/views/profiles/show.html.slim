@@ -2,14 +2,6 @@
   h1
     = @user.display_name
     | 's Profile
-  /= image_tag @user.photo.url
-  /br/
-  /= image_tag @user.photo.url(:mini)
-  /br/
-  /= image_tag @user.photo.url(:thumb)
-  /br/
-  /= image_tag @user.photo.url(:small)
-  /br/
   = image_tag @user.photo.url
   br/
   div
@@ -31,5 +23,6 @@
     ul
       - @user.badges.each do |badge|
         li
+          a href="/badges/show"
           p= badge.name
   = link_to 'Edit Profile', edit_user_registration_path(current_user), :style=>'color: #0093ca;'

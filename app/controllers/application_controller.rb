@@ -11,4 +11,8 @@ class ApplicationController < ActionController::Base
   def user_signed_in?
     !current_user.nil?
   end
+
+  def after_sign_in_path_for(resource) 
+    "/map"
+  end 
 end
